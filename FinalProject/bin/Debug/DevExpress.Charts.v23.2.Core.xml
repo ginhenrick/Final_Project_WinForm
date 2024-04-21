@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DevExpress.Charts.v23.2.Core</name>
+  </assembly>
+  <members>
+    <member name="N:DevExpress.Charts.Heatmap">
+      <summary>
+        <para>Contains classes that the <see cref="T:DevExpress.XtraCharts.Heatmap.HeatmapControl">Heatmap Control for WinForms</see> and <see cref="T:DevExpress.Xpf.Charts.Heatmap.HeatmapControl">Heatmap Control for WPF</see> require to function.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Charts.Heatmap.HeatmapCell">
+      <summary>
+        <para>Contains heatmap cell arguments and value.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Charts.Heatmap.HeatmapCell.ColorValue">
+      <summary>
+        <para>Returns a cell color or value that is used to determine a color.</para>
+      </summary>
+      <value>An object that is used to apply a color to the cell.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Heatmap.HeatmapCell.Tag">
+      <summary>
+        <para>Returns additional information that is related to the heatmap cell.</para>
+      </summary>
+      <value>An object that contains data about the heatmap cell.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Heatmap.HeatmapCell.XArgument">
+      <summary>
+        <para>Returns a heatmap cell argument for an x-axis.</para>
+      </summary>
+      <value>The heatmap cell x-argument.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Heatmap.HeatmapCell.YArgument">
+      <summary>
+        <para>Returns a heatmap cell argument for a y-axis.</para>
+      </summary>
+      <value>The heatmap cell y-argument.</value>
+    </member>
+    <member name="N:DevExpress.Charts.Sankey">
+      <summary>
+        <para>Contains members used to plot Sankey diagrams.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Charts.Sankey.ISankeyLinkLayoutItem">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyLinkLayoutItem.Source">
+      <summary>
+        <para>Returns the link’s source node.</para>
+      </summary>
+      <value>The link’s source node.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyLinkLayoutItem.Target">
+      <summary>
+        <para>Returns the link’s target node.</para>
+      </summary>
+      <value>The link’s target node.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyLinkLayoutItem.Weight">
+      <summary>
+        <para>Returns the weight of the link.</para>
+      </summary>
+      <value>The weight of the link.</value>
+    </member>
+    <member name="T:DevExpress.Charts.Sankey.ISankeyNodeLayoutItem">
+      <summary>
+        <para>Is used in the <see cref="M:DevExpress.XtraCharts.Sankey.SankeyLayoutAlgorithmBase.CalculateNodeBounds(System.Collections.Generic.IEnumerable{DevExpress.Charts.Sankey.ISankeyNodeLayoutItem},DevExpress.Utils.DXRectangle)">SankeyLayoutAlgorithmBase.CalculateNodeBounds</see> method.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyNodeLayoutItem.Bounds">
+      <summary>
+        <para>Specifies node bounds.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyNodeLayoutItem.InputLinks">
+      <summary>
+        <para>Returns a collection of Sankey node input links.</para>
+      </summary>
+      <value>A collection that contains links for which the node is the target node.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyNodeLayoutItem.LevelIndex">
+      <summary>
+        <para>Returns a value that specifies the node level.</para>
+      </summary>
+      <value>A zero-based value that specifies the node level.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyNodeLayoutItem.OutputLinks">
+      <summary>
+        <para>Returns a collection of Sankey node output links.</para>
+      </summary>
+      <value>A collection that contains links for which the node is the source node.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyNodeLayoutItem.SourceWeight">
+      <summary>
+        <para>Returns the summarized weight of all links for which the current node is the source.</para>
+      </summary>
+      <value>The summarized weight of all links for which the current node is the source.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyNodeLayoutItem.Tag">
+      <summary>
+        <para>Returns a data source object that is used to create the node.</para>
+      </summary>
+      <value>A data source object that is used to create the node.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyNodeLayoutItem.TargetWeight">
+      <summary>
+        <para>Returns the summarized weight of all links for which the current node is the target.</para>
+      </summary>
+      <value>The summarized weight of all links for which the current node is the target.</value>
+    </member>
+    <member name="P:DevExpress.Charts.Sankey.ISankeyNodeLayoutItem.TotalWeight">
+      <summary>
+        <para>Returns the maximum value between the source and target weights of the node.</para>
+      </summary>
+      <value>The maximum value between the source and target weights of the node.</value>
+    </member>
+  </members>
+</doc>

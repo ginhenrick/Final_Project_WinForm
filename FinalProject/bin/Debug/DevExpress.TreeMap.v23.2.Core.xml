@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DevExpress.TreeMap.v23.2.Core</name>
+  </assembly>
+  <members>
+    <member name="N:DevExpress.TreeMap">
+      <summary>
+        <para>Contains all common classes that <see href="https://docs.devexpress.com/WindowsForms/115741/controls-and-libraries/treemap-control">WinForms TreeMap Control</see>, <see href="https://docs.devexpress.com/WPF/114684/controls-and-libraries/treemap-control">WPF TreeMap Control</see>, and <see href="https://docs.devexpress.com/WindowsForms/120619/controls-and-libraries/sunburst-control">WinForms Sunburst Control</see> require to function.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.TreeMap.IHierarchicalItem">
+      <summary>
+        <para>The base interface for the treemap and sunburst items.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.TreeMap.IHierarchicalItem.Children">
+      <summary>
+        <para>Returns an item’s child items.</para>
+      </summary>
+      <value>A collection of items that implement the <see cref="T:DevExpress.TreeMap.IHierarchicalItem">IHierarchicalItem</see> interface.</value>
+    </member>
+    <member name="P:DevExpress.TreeMap.IHierarchicalItem.DataSourceColor">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.TreeMap.IHierarchicalItem.Label">
+      <summary>
+        <para>Returns a label for the item.</para>
+      </summary>
+      <value>An object that represents the item label.</value>
+    </member>
+    <member name="P:DevExpress.TreeMap.IHierarchicalItem.Tag">
+      <summary>
+        <para>Returns the object that contains data related to the item.</para>
+      </summary>
+      <value>A <see cref="T:System.Object"/> that contains data about the chart element.</value>
+    </member>
+    <member name="P:DevExpress.TreeMap.IHierarchicalItem.Value">
+      <summary>
+        <para>Returns the item value.</para>
+      </summary>
+      <value>A floating-point number that defines the item value.</value>
+    </member>
+    <member name="T:DevExpress.TreeMap.ISunburstItem">
+      <summary>
+        <para>The base interface for sunburst items.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.TreeMap.ITreeMapItem">
+      <summary>
+        <para>The interface that should be implemented by a class which can be used as a tree map item.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.TreeMap.TreeMapRect.#ctor(System.Double,System.Double,System.Double,System.Double)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.TreeMap.TreeMapRect"/> class with specified settings.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DevExpress.Map.v23.2.Core</name>
+  </assembly>
+  <members>
+    <member name="N:DevExpress.Map">
+      <summary>
+        <para>Contains common utility classes used by the Map controls from DevExpress.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Map.AttributeDisplayValueEditEventArgs">
+      <summary>
+        <para>Provides data for the <see cref="E:DevExpress.XtraMap.MapItemsLayerBase.AttributeDisplayValueEdit">MapItemsLayerBase.AttributeDisplayValueEdit</see> and <see cref="E:DevExpress.Xpf.Map.VectorLayerBase.AttributeDisplayValueEdit">VectorLayerBase.AttributeDisplayValueEdit</see> events.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Map.AttributeDisplayValueEditEventArgs.#ctor(System.String,System.Object,System.String,System.String)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Map.AttributeDisplayValueEditEventArgs"/> class with the specified values of event arguments.</para>
+      </summary>
+      <param name="name">A <see cref="T:System.String"/> object representing the name of an attribute.</param>
+      <param name="value">An <see cref="T:System.Object"/> storing an attribute value.</param>
+      <param name="displayValue">A <see cref="T:System.String"/> object that is the string representation of the attribute value.</param>
+      <param name="patternFragment">A <see cref="T:System.String"/> object representing a fragment of a text pattern, which will be replaced with the display value.</param>
+    </member>
+    <member name="P:DevExpress.Map.AttributeDisplayValueEditEventArgs.DisplayValue">
+      <summary>
+        <para>Gets or sets an attribute display value.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> object that is the string representation of the attribute value.</value>
+    </member>
+    <member name="P:DevExpress.Map.AttributeDisplayValueEditEventArgs.Name">
+      <summary>
+        <para>Returns the name of an attribute.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> object representing the name of attribute whose display value should be customized.</value>
+    </member>
+    <member name="P:DevExpress.Map.AttributeDisplayValueEditEventArgs.PatternFragment">
+      <summary>
+        <para>Returns the pattern fragment which will be replaced with the <see cref="P:DevExpress.Map.AttributeDisplayValueEditEventArgs.DisplayValue">AttributeDisplayValueEditEventArgs.DisplayValue</see>.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> object representing the fragment pattern.</value>
+    </member>
+    <member name="P:DevExpress.Map.AttributeDisplayValueEditEventArgs.Value">
+      <summary>
+        <para>Returns an attribute value.</para>
+      </summary>
+      <value>A <see cref="T:System.Object"/> storing an attribute value.</value>
+    </member>
+    <member name="T:DevExpress.Map.AttributeDisplayValueEditEventHandler">
+      <summary>
+        <para>A method that will handle the <see cref="E:DevExpress.XtraMap.MapItemsLayerBase.AttributeDisplayValueEdit">MapItemsLayerBase.AttributeDisplayValueEdit</see> and <see cref="E:DevExpress.Xpf.Map.VectorLayerBase.AttributeDisplayValueEdit">VectorLayerBase.AttributeDisplayValueEdit</see> events.</para>
+      </summary>
+      <param name="sender">The event source. This parameter identifies the <see cref="T:DevExpress.XtraMap.MapItemsLayerBase"/> (WinForms) or <see cref="T:DevExpress.Xpf.Map.VectorLayerBase"/> (WPF) which raised the event.</param>
+    </member>
+    <member name="T:DevExpress.Map.CoordPoint">
+      <summary>
+        <para>The base class for all map coordinate points.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Map.CoordPoint.Equals(System.Object)">
+      <summary>
+        <para>Determines whether the two specified <see cref="T:DevExpress.Map.CoordPoint"/> objects are equal.</para>
+      </summary>
+      <param name="o">The object to compare with the current object.</param>
+      <returns>true if specified objects are equal; otherwise false.</returns>
+    </member>
+    <member name="M:DevExpress.Map.CoordPoint.GetHashCode">
+      <summary>
+        <para>Gets the hash code (a number) that corresponds to the value of the current <see cref="T:DevExpress.Map.CoordPoint"/> object.</para>
+      </summary>
+      <returns>An integer value that is the hash code for the current object.</returns>
+    </member>
+    <member name="M:DevExpress.Map.CoordPoint.GetX">
+      <summary>
+        <para>Returns the value of the X coordinate.</para>
+      </summary>
+      <returns>A <see cref="T:System.Double"/> value.</returns>
+    </member>
+    <member name="M:DevExpress.Map.CoordPoint.GetY">
+      <summary>
+        <para>Returns the value of the Y coordinate.</para>
+      </summary>
+      <returns>A <see cref="T:System.Double"/> value.</returns>
+    </member>
+    <member name="M:DevExpress.Map.CoordPoint.Offset(System.Double,System.Double)">
+      <summary>
+        <para>Initializes an instance of a <see cref="T:DevExpress.Map.CoordPoint"/> class descendant object offset by specified values.</para>
+      </summary>
+      <param name="offsetX">A <see cref="T:System.Double"/> value specifying an X coordinate offset.</param>
+      <param name="offsetY">A <see cref="T:System.Double"/> value specifying an Y coordinate offset.</param>
+      <returns>A <see cref="T:DevExpress.Map.CoordPoint"/> class descendant object.</returns>
+    </member>
+    <member name="M:DevExpress.Map.CoordPoint.ToString">
+      <summary>
+        <para>Returns the textual representation of the <see cref="T:DevExpress.Map.CoordPoint"/>.</para>
+      </summary>
+      <returns>A <see cref="T:System.String"/> value, which is the textual representation of the <see cref="T:DevExpress.Map.CoordPoint"/>.</returns>
+    </member>
+    <member name="M:DevExpress.Map.CoordPoint.ToString(System.IFormatProvider)">
+      <summary>
+        <para>Returns the textual representation of the <see cref="T:DevExpress.Map.CoordPoint"/>.</para>
+      </summary>
+      <param name="provider">An object implementing the <see cref="T:System.IFormatProvider"/> interface.</param>
+      <returns>A <see cref="T:System.String"/> value, which is the textual representation of the <see cref="T:DevExpress.Map.CoordPoint"/>.</returns>
+    </member>
+    <member name="T:DevExpress.Map.IHeatmapPoint">
+      <summary>
+        <para>The base interface for heatmap points.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Map.IHeatmapPoint.Location">
+      <summary>
+        <para>Gets or sets the <see cref="T:DevExpress.XtraMap.HeatmapProvider">heatmap</see> point location.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Map.CoordPoint"/> descendant.</value>
+    </member>
+    <member name="P:DevExpress.Map.IHeatmapPoint.Value">
+      <summary>
+        <para>Gets or sets the heatmap point value.</para>
+      </summary>
+      <value>A point-floating number that represents the heatmap point value.</value>
+    </member>
+    <member name="T:DevExpress.Map.ISupportCoordLocation">
+      <summary>
+        <para>The interface that should be provided by map vector items whose location can be determined.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Map.ISupportCoordLocation.Location">
+      <summary>
+        <para>Gets or sets the location of map items implementing this interface.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Map.CoordPoint"/> class descendant object.</value>
+    </member>
+    <member name="T:DevExpress.Map.ISupportCoordPoints">
+      <summary>
+        <para>The interface that should be implemented by map vector items specified using an array of points.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Map.ISupportCoordPoints.Points">
+      <summary>
+        <para>Gets or sets the list of points determining the shape of map items implementing this interface.</para>
+      </summary>
+      <value>A list of <see cref="T:DevExpress.Map.CoordPoint"/> class descendant objects.</value>
+    </member>
+    <member name="T:DevExpress.Map.MapBounds">
+      <summary>
+        <para>Represents the map bounds.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.#ctor(DevExpress.Map.CoordPoint,DevExpress.Map.CoordPoint)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Map.MapBounds"/> class with the specified values.</para>
+      </summary>
+      <param name="leftTop">The upper-left point coordinates.</param>
+      <param name="rightBottom">The lower-right point coordinates.</param>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.#ctor(System.Double,System.Double,System.Double,System.Double)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Map.MapBounds"/> class with the specified values.</para>
+      </summary>
+      <param name="x1">The upper-left point x-coordinate.</param>
+      <param name="y1">The upper-left point y-coordinate.</param>
+      <param name="x2">The lower-right point x-coordinate.</param>
+      <param name="y2">The lower-right point y-coordinate.</param>
+    </member>
+    <member name="P:DevExpress.Map.MapBounds.Bottom">
+      <summary>
+        <para>Returns the y-coordinate that is equal to the sum of the upper-left y-coordinate and <see cref="P:DevExpress.Map.MapBounds.Height">Height</see> property values.</para>
+      </summary>
+      <value>The sum of the upper-left y-coordinate and <see cref="P:DevExpress.Map.MapBounds.Height">Height</see> property values.</value>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.Contains(DevExpress.Map.MapBounds)">
+      <summary>
+        <para>Checks whether the passed map bounds are entirely contained within these map bounds.</para>
+      </summary>
+      <param name="bounds">The map bounds to be checked.</param>
+      <returns>true the passed map bounds are entirely contained within these map bounds; otherwise false.</returns>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.Correct">
+      <summary>
+        <para>For internal use.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Map.MapBounds.Empty">
+      <summary>
+        <para>Returns a <see cref="T:DevExpress.Map.MapBounds"/> object whose settings are not initialized.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Map.MapBounds"/> object whose settings are not initialized.</value>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.Equals(System.Object)">
+      <summary>
+        <para>Determines whether the current object has the same settings as the specified object.</para>
+      </summary>
+      <param name="o">A <see cref="T:DevExpress.Map.MapBounds"/> object to compare with the current object.</param>
+      <returns>true if the object specified by the parameter has the same settings as the current object; otherwise, false.</returns>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.GetHashCode">
+      <summary>
+        <para>Returns the hash code for the current <see cref="T:DevExpress.Map.MapBounds"/> object.</para>
+      </summary>
+      <returns>The hash code for the current <see cref="T:DevExpress.Map.MapBounds"/> object.</returns>
+    </member>
+    <member name="P:DevExpress.Map.MapBounds.Height">
+      <summary>
+        <para>Gets or sets the height of the map bounds’ bounding box.</para>
+      </summary>
+      <value>Height of the map bounds’ bounding box.</value>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.Inflate(DevExpress.Map.MapBounds,System.Double)">
+      <summary>
+        <para>Creates and returns an enlarged copy of the specified map bounds.</para>
+      </summary>
+      <param name="bounds">The map bounds with which to start. These map bounds are not modified.</param>
+      <param name="delta">The amount to inflate these map bounds.</param>
+      <returns>The enlarged map bounds.</returns>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.Intersect(DevExpress.Map.MapBounds,DevExpress.Map.MapBounds)">
+      <summary>
+        <para>Returns the map bounds that represent the intersection of two map bounds.</para>
+      </summary>
+      <param name="rect1">The first map bounds.</param>
+      <param name="rect2">The second map bounds.</param>
+      <returns>The map bounds that represent the intersection of two map bounds.</returns>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.IntersectsWith(DevExpress.Map.MapBounds)">
+      <summary>
+        <para>Checks whether the map bounds intersect with the given map bounds.</para>
+      </summary>
+      <param name="bounds">The rectangle to check.</param>
+      <returns>true if the passed map bounds intersect these map bounds; otherwise false.</returns>
+    </member>
+    <member name="P:DevExpress.Map.MapBounds.IsEmpty">
+      <summary>
+        <para>Checks whether the numeric map bound parameters are empty.</para>
+      </summary>
+      <value>true if the numeric map bound parameters are empty; otherwise, false.</value>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.IsPointInBounds(DevExpress.Map.CoordPoint)">
+      <summary>
+        <para>Checks whether the given point is within the map bounds.</para>
+      </summary>
+      <param name="point">A <see cref="T:DevExpress.Map.CoordPoint"/> descendant to check.</param>
+      <returns>true if the tested point is within map bounds; otherwise, false.</returns>
+    </member>
+    <member name="P:DevExpress.Map.MapBounds.Left">
+      <summary>
+        <para>Returns the x-coordinate of the map bounds’ left edge.</para>
+      </summary>
+      <value>The x-coordinate of the map bounds’ left edge.</value>
+    </member>
+    <member name="P:DevExpress.Map.MapBounds.Right">
+      <summary>
+        <para>Returns the x-coordinate of the map bounds’ right edge.</para>
+      </summary>
+      <value>The x-coordinate of the map bounds’ right edge.</value>
+    </member>
+    <member name="P:DevExpress.Map.MapBounds.Top">
+      <summary>
+        <para>Returns the x-coordinate of the map bounds’ top edge.</para>
+      </summary>
+      <value>The x-coordinate of the map bounds’ top edge.</value>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.ToString">
+      <summary>
+        <para>Returns a string that represents the current object.</para>
+      </summary>
+      <returns>A <see cref="T:System.String"/> that represents the current <see cref="T:DevExpress.Map.MapBounds"/> object.</returns>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.Union(DevExpress.Map.MapBounds,DevExpress.Map.MapBounds)">
+      <summary>
+        <para>Returns map bounds that are composed of two given rectangular map bounds.</para>
+      </summary>
+      <param name="rect1">The first map bounds to join.</param>
+      <param name="rect2">The second map bounds to join.</param>
+      <returns>The resulting map bounds.</returns>
+    </member>
+    <member name="M:DevExpress.Map.MapBounds.Union(DevExpress.Map.MapBounds,System.Double,System.Double)">
+      <summary>
+        <para>Returns map bounds that are composed of the given rectangular map bounds and a point specified by two coordinates.</para>
+      </summary>
+      <param name="bounds">The map bounds to join.</param>
+      <param name="x">The point’s x-coordinate.</param>
+      <param name="y">The point’s y-coordinate.</param>
+      <returns>The new map bounds.</returns>
+    </member>
+    <member name="P:DevExpress.Map.MapBounds.Width">
+      <summary>
+        <para>Gets or sets the width of the map bounds’ bounding box.</para>
+      </summary>
+      <value>The width of the map bounds’ bounding box.</value>
+    </member>
+    <member name="P:DevExpress.Map.MapBounds.Zero">
+      <summary>
+        <para>Returns a <see cref="T:DevExpress.Map.MapBounds"/> object whose parameters (an initial point’s coordinates, width, and height) are set to zero.</para>
+      </summary>
+      <value>Returns a <see cref="T:DevExpress.Map.MapBounds"/> object whose parameters are set to zero.</value>
+    </member>
+    <member name="T:DevExpress.Map.RangeDistributionBase">
+      <summary>
+        <para>The base for classes that define distribution of color ranges in a colorizer.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Map.RangeDistributionBase.ConvertRangeValue(System.Double,System.Double,System.Double)">
+      <summary>
+        <para>Converts the specified range value.</para>
+      </summary>
+      <param name="min">A <see cref="T:System.Double"/> object that is the minimum possible value.</param>
+      <param name="max">A <see cref="T:System.Double"/> object that is the maximum possible value.</param>
+      <param name="value">A value to be converted.</param>
+      <returns>A <see cref="T:System.Double"/> object that is the result of the conversion.</returns>
+    </member>
+  </members>
+</doc>

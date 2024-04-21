@@ -1,0 +1,1552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DevExpress.Data.Desktop.v23.2</name>
+  </assembly>
+  <members>
+    <member name="N:DevExpress.Data.Camera">
+      <summary>
+        <para>Provides types that describe video capture devices and video properties.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.Camera.CameraDeviceBase">
+      <summary>
+        <para>The base class for classes that describe video capture devices.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.#ctor(DevExpress.Data.Camera.CameraDeviceInfo)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.Camera.CameraDeviceBase"/> class with the specified settings.</para>
+      </summary>
+      <param name="deviceInfo">An object that comprises system information about the video capture device.</param>
+    </member>
+    <member name="P:DevExpress.Data.Camera.CameraDeviceBase.DeviceMoniker">
+      <summary>
+        <para>Gets the string representation of the moniker for the current device.</para>
+      </summary>
+      <value>A String value that specifies the string representation of the moniker for the current device.</value>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.Dispose">
+      <summary>
+        <para>Disposes of the current object and releases all the allocated resources.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.Equals(System.Object)">
+      <summary>
+        <para>Determines whether the specified object is equal to the current object.</para>
+      </summary>
+      <param name="obj">The object to compare with the current object.</param>
+      <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.GetAvailableResolutions">
+      <summary>
+        <para>Returns the list of video resolutions available on the current device.</para>
+      </summary>
+      <returns>The list of video resolutions available on the current device.</returns>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.GetAvailiableResolutions">
+      <summary>
+        <para>Returns the list of video resolutions available on the current device.</para>
+      </summary>
+      <returns>The list of video resolutions available on the current device.</returns>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.GetHashCode">
+      <summary>
+        <para>Returns the hash code for the current <see cref="T:DevExpress.Data.Camera.CameraDeviceBase"/> object.</para>
+      </summary>
+      <returns>The hash code for the current <see cref="T:DevExpress.Data.Camera.CameraDeviceBase"/> object.</returns>
+    </member>
+    <member name="P:DevExpress.Data.Camera.CameraDeviceBase.IsBusy">
+      <summary>
+        <para>Gets whether the video capture device is already in use in another application.</para>
+      </summary>
+      <value>true, the video capture device is already in use in another application; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.CameraDeviceBase.IsRunning">
+      <summary>
+        <para>Gets whether the device is currently capturing video.</para>
+      </summary>
+      <value>true, if the device is currently capturing video; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.CameraDeviceBase.Name">
+      <summary>
+        <para>Gets the UI display name of the video capture device.</para>
+      </summary>
+      <value>A String value that specifies the UI display name of the video capture device.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.CameraDeviceBase.Resolution">
+      <summary>
+        <para>Gets or sets the resolution of a video stream captured by the current device.</para>
+      </summary>
+      <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the resolution of a video stream captured by the current device.</value>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.SetClient(DevExpress.Data.Camera.Interfaces.ICameraDeviceClient)">
+      <summary>
+        <para>Sets the ICameraDeviceClient object that processes the video from the current capture device.</para>
+      </summary>
+      <param name="client">An ICameraDeviceClient object that processes the video from the current capture device.</param>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.Start">
+      <summary>
+        <para>Starts capturing video from the current device.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.Stop">
+      <summary>
+        <para>Stops capturing video from the current device.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.TakeSnapshot">
+      <summary>
+        <para>Returns the video frame currently captured by the device.</para>
+      </summary>
+      <returns>A <see cref="T:System.Drawing.Bitmap"/> object that is the video frame currently captured by the device.</returns>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceBase.WndProc(System.Windows.Forms.Message@)">
+      <summary>
+        <para>Processes Windows messages.</para>
+      </summary>
+      <param name="m">The Windows Message to process.</param>
+    </member>
+    <member name="T:DevExpress.Data.Camera.CameraDeviceInfo">
+      <summary>
+        <para>Contains system information used to identify a video capture device.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceInfo.#ctor(System.String,System.String)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.Camera.CameraDeviceInfo"/> class with the specified settings.</para>
+      </summary>
+      <param name="monikerString">A String value that specifies the string representation of the moniker for the video capture device. This value is assigned to the <see cref="F:DevExpress.Data.Camera.CameraDeviceInfo.MonikerString">CameraDeviceInfo.MonikerString</see> field.</param>
+      <param name="name">A String value that specifies the UI display name of the video capture device. This value is assigned to the <see cref="F:DevExpress.Data.Camera.CameraDeviceInfo.Name">CameraDeviceInfo.Name</see> field.</param>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceInfo.#ctor(System.String)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.Camera.CameraDeviceInfo"/> class with the specified settings.</para>
+      </summary>
+      <param name="monikerString">A String value that specifies the string representation of the moniker for the video capture device. This value is assigned to the <see cref="F:DevExpress.Data.Camera.CameraDeviceInfo.MonikerString">CameraDeviceInfo.MonikerString</see> field.</param>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceInfo.CompareTo(System.Object)">
+      <summary>
+        <para>Compares the current instance with a specified object and indicates whether the current instance precedes, follows, or appears at the same position in the sort order as the specified object.</para>
+      </summary>
+      <param name="value">An object to compare with the current instance.</param>
+      <returns>An integer value that specifies whether the current instance precedes, follows, or appears at the same position in the sort order as the specified object.</returns>
+    </member>
+    <member name="F:DevExpress.Data.Camera.CameraDeviceInfo.MonikerString">
+      <summary>
+        <para>The string representation of the moniker for the video capture device.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Data.Camera.CameraDeviceInfo.Name">
+      <summary>
+        <para>The UI display name of the video capture device.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Camera.CameraDeviceInfo.ToString">
+      <summary>
+        <para>Returns the UI display name of the video capture device.</para>
+      </summary>
+      <returns>A String value that is the UI display name of the video capture device.</returns>
+    </member>
+    <member name="T:DevExpress.Data.Camera.DeviceVideoProperty">
+      <summary>
+        <para>Describes a video property on a video capture device.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoProperty.Default">
+      <summary>
+        <para>Gets the default value of the video property.</para>
+      </summary>
+      <value>An <see cref="T:System.Int32"/> value that specifies the default value of the video property.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoProperty.Max">
+      <summary>
+        <para>Gets the maximum value of the video property.</para>
+      </summary>
+      <value>An <see cref="T:System.Int32"/> value that specifies the maximum value of the video property.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoProperty.Min">
+      <summary>
+        <para>Gets  the minimum value of the video property.</para>
+      </summary>
+      <value>An <see cref="T:System.Int32"/> value that specifies the minimum value of the video property.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoProperty.Name">
+      <summary>
+        <para>Gets the name of the video property.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> value that specifies the name of the video property.</value>
+    </member>
+    <member name="E:DevExpress.Data.Camera.DeviceVideoProperty.PropertyChanged">
+      <summary>
+        <para>Occurs when a property value changes.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Camera.DeviceVideoProperty.ResetToDefault">
+      <summary>
+        <para>Resets the video property value to its default.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoProperty.SteppingDelta">
+      <summary>
+        <para>Gets the step size for the video property. The step size is the smallest increment by which the property can change.</para>
+      </summary>
+      <value>An <see cref="T:System.Int32"/> value that specifies the step size for the video property.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoProperty.Value">
+      <summary>
+        <para>Gets or sets the current setting of the video property.</para>
+      </summary>
+      <value>An <see cref="T:System.Int32"/> value that specifies the current setting of the video property.</value>
+    </member>
+    <member name="T:DevExpress.Data.Camera.DeviceVideoSettings">
+      <summary>
+        <para>Provides access to the video properties on a video capture device.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Camera.DeviceVideoSettings.#ctor(DevExpress.Data.Camera.Interfaces.ICameraDeviceClient)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.Camera.DeviceVideoSettings"/> class with the specified settings.</para>
+      </summary>
+      <param name="client">An ICameraDeviceClient object that processes the video stream received from a video capture device.</param>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoSettings.BacklightCompensation">
+      <summary>
+        <para>Provides access to the video property that specifies the backlight compensation setting.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Camera.DeviceVideoProperty"/> object that is the video property specifying the backlight compensation setting.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoSettings.Brightness">
+      <summary>
+        <para>Provides access to the video property that specifies the brightness, also called the black level.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Camera.DeviceVideoProperty"/> object that is the video property specifying the brightness, also called the black level.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoSettings.ColorEnable">
+      <summary>
+        <para>Provides access to the video property that specifies the color enable setting.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Camera.DeviceVideoProperty"/> object that is the video property specifying the color enable setting.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoSettings.Contrast">
+      <summary>
+        <para>Provides access to the video property that specifies the contrast.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Camera.DeviceVideoProperty"/> object that is the video property specifying the contrast.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoSettings.Gain">
+      <summary>
+        <para>Provides access to the video property that specifies the gain adjustment.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Camera.DeviceVideoProperty"/> object that is the video property specifying the gain adjustment.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoSettings.Gamma">
+      <summary>
+        <para>Provides access to the video property that specifies the gamma.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Camera.DeviceVideoProperty"/> object that is the video property specifying the gamma.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoSettings.Hue">
+      <summary>
+        <para>Provides access to the video property that specifies the hue.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Camera.DeviceVideoProperty"/> object that is the video property specifying the hue.</value>
+    </member>
+    <member name="E:DevExpress.Data.Camera.DeviceVideoSettings.PropertyChanged">
+      <summary>
+        <para>Occurs when a property value changes.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Camera.DeviceVideoSettings.ResetToDefaults">
+      <summary>
+        <para>Resets the video properties to their defaults.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoSettings.Saturation">
+      <summary>
+        <para>Provides access to the video property that specifies the saturation.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Camera.DeviceVideoProperty"/> object that is the video property specifying the saturation.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoSettings.Sharpness">
+      <summary>
+        <para>Provides access to the video property that specifies the sharpness.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Camera.DeviceVideoProperty"/> object that is the video property specifying the sharpness.</value>
+    </member>
+    <member name="P:DevExpress.Data.Camera.DeviceVideoSettings.WhiteBalance">
+      <summary>
+        <para>Provides access to the video property that specifies the white balance, as a color temperature in degrees Kelvin.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Camera.DeviceVideoProperty"/> object that is the video property specifying the white balance, as a color temperature in degrees Kelvin.</value>
+    </member>
+    <member name="F:DevExpress.Data.Controls.ControlRows.Selected">
+      <summary>
+        <para>The Chart Control visualizes data rows that are selected within a source control.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Data.Controls.ControlRows.Source">
+      <summary>
+        <para>The Chart Control visualizes a source control’s all data rows.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Data.Controls.ControlRows.Visible">
+      <summary>
+        <para>The Chart Control visualizes data rows that the source control filters.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Controls.ControlRowSource.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.Controls.ControlRowSource"/> class with the default settings.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.Controls.ControlRowSource.Control">
+      <summary>
+        <para>Gets or sets the control that provides its data rows to another control.</para>
+      </summary>
+      <value>The control that provides its data rows to another control.</value>
+    </member>
+    <member name="P:DevExpress.Data.Controls.ControlRowSource.ControlRows">
+      <summary>
+        <para>Gets or sets the type of rows that the source control provides.</para>
+      </summary>
+      <value>The type of rows that the source control provides.</value>
+    </member>
+    <member name="E:DevExpress.Data.Controls.ControlRowSource.PropertyChanged">
+      <summary>
+        <para>Occurs every time any of the class’ properties has changed its value.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Controls.ControlRowSource.ReloadRows(System.Boolean)">
+      <summary>
+        <para>Reloads data rows from the source control.</para>
+      </summary>
+      <param name="raiseList">The value indicating whether the PropertyChanged event should be raised.</param>
+    </member>
+    <member name="M:DevExpress.Data.Controls.ControlRowSourceChangedEventArgs.#ctor(DevExpress.Data.Controls.ControlRows)">
+      <summary>
+        <para>Initializes new instance of the <see cref="T:DevExpress.Data.Controls.ControlRowSourceChangedEventArgs"></see> class with the specified settings.</para>
+      </summary>
+      <param name="changedRows">The value indicating the currently provided data row type.</param>
+    </member>
+    <member name="P:DevExpress.Data.Controls.ControlRowSourceChangedEventArgs.ChangedRows">
+      <summary>
+        <para>Returns the type of changed rows.</para>
+      </summary>
+      <value>The type of changed rows.</value>
+    </member>
+    <member name="T:DevExpress.Data.Controls.ControlRowSourceChangedEventHandler">
+      <summary>
+        <para>Represents the method that will handle the <see cref="E:DevExpress.Data.Controls.IControlRowSource.Changed">IControlRowSource.Changed</see> event.</para>
+      </summary>
+      <param name="sender">An object of any type that triggers the <see cref="E:DevExpress.Data.Controls.IControlRowSource.Changed">IControlRowSource.Changed</see> event.</param>
+      <param name="e">Event arguments that provide data for the <see cref="E:DevExpress.XtraPrinting.PrintingSystemBase.PrintProgress">PrintingSystemBase.PrintProgress</see> event.</param>
+    </member>
+    <member name="E:DevExpress.Data.Controls.IControlRowSource.Changed">
+      <summary>
+        <para>Occurs every time the data source is changed.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Controls.IControlRowSource.GetRows(DevExpress.Data.Controls.ControlRows)">
+      <summary>
+        <para>Returns data rows of the specified row type.</para>
+      </summary>
+      <param name="rows">The requested row type.</param>
+      <returns>Data rows of the specified row type.</returns>
+    </member>
+    <member name="P:DevExpress.Data.Controls.IControlRowSource.RowSource">
+      <summary>
+        <para>Returns the data row source.</para>
+      </summary>
+      <value>The data row source.</value>
+    </member>
+    <member name="N:DevExpress.Data.Utils">
+      <summary>
+        <para>Contains utility classes and interfaces for DevExpress components.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.Utils.ClipboardAccessPolicy">
+      <summary>
+        <para>Allows you to control clipboard-related operations initiated by users and DevExpress UI controls for WinForms and WPF.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.AllowDataFormats(System.String[])">
+      <summary>
+        <para>Enables clipboard-related operations for the specified data formats.</para>
+      </summary>
+      <param name="dataFormats">Data formats.</param>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.AllowOperation(DevExpress.Data.Internal.ClipboardOperation,System.String)">
+      <summary>
+        <para>Enables the specified clipboard-related operation(s) for the specified data format.</para>
+      </summary>
+      <param name="operation">The clipboard-related operation.</param>
+      <param name="dataFormat">The data format.</param>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.AllowOperation(DevExpress.Data.Internal.ClipboardOperation)">
+      <summary>
+        <para>Enables the specified clipboard-related operation.</para>
+      </summary>
+      <param name="operation">The clipboard-related operation.</param>
+    </member>
+    <member name="E:DevExpress.Data.Utils.ClipboardAccessPolicy.Cleared">
+      <summary>
+        <para>Fires after a DevExpress UI control has cleared the clipboard.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Data.Utils.ClipboardAccessPolicy.Clearing">
+      <summary>
+        <para>Fires when a DevExpress UI control attempts to clear the clipboard and allows you to allow (or cancel) the operation.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationEventArgs">
+      <summary>
+        <para>Contains data for clipboard-related events.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationEventArgs.DataFormat">
+      <summary>
+        <para>Gets the data format.</para>
+      </summary>
+      <value>The data format.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationEventArgs.DataObject">
+      <summary>
+        <para>Gets an object that defines a format-independent mechanism for transferring data.</para>
+      </summary>
+      <value>An object that implements IDataObject. null (Nothing in Visual Basic) if there is no object.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationEventArgs.IsClearOperation">
+      <summary>
+        <para>Gets a value that indicates whether the clipboard clear operation is being processed.</para>
+      </summary>
+      <value>true if the clipboard clear operation is being processed; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationEventArgs.IsCopyOperation">
+      <summary>
+        <para>Gets a value that indicates whether the copy-to-clipboard operation is being processed.</para>
+      </summary>
+      <value>true if the copy-to-clipboard operation is being processed; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationEventArgs.IsPasteOperation">
+      <summary>
+        <para>Gets a value that indicates whether the paste-from-clipboard operation is being processed.</para>
+      </summary>
+      <value>true if the paste-from-clipboard operation is being processed; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationEventArgs.Operation">
+      <summary>
+        <para>Gets the clipboard-related operation being processed.</para>
+      </summary>
+      <value>The clipboard-related operation.</value>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationEventArgs.ToString">
+      <summary>
+        <para>Returns a string representation of the current object.</para>
+      </summary>
+      <returns>A string representation of the current object.</returns>
+    </member>
+    <member name="T:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationRequestEventArgs">
+      <summary>
+        <para>Contains data for clipboard-related events.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationRequestEventArgs.DataFormat">
+      <summary>
+        <para>Gets the data format.</para>
+      </summary>
+      <value>The data format.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationRequestEventArgs.DataObject">
+      <summary>
+        <para>Gets an object that defines a format-independent mechanism for transferring data.</para>
+      </summary>
+      <value>An object that implements IDataObject. null (Nothing in Visual Basic) if there is no object.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationRequestEventArgs.IsClearOperation">
+      <summary>
+        <para>Gets a value that indicates whether the clipboard clear operation is being processed.</para>
+      </summary>
+      <value>true if the clipboard clear operation is being processed; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationRequestEventArgs.IsCopyOperation">
+      <summary>
+        <para>Gets a value that indicates whether the copy-to-clipboard operation is being processed.</para>
+      </summary>
+      <value>true if the copy-to-clipboard operation is being processed; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationRequestEventArgs.IsPasteOperation">
+      <summary>
+        <para>Gets a value that indicates whether the paste-from-clipboard operation is being processed.</para>
+      </summary>
+      <value>true if the paste-from-clipboard operation is being processed; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationRequestEventArgs.IsUIStateQuery">
+      <summary>
+        <para>Gets a value that indicates whether a DevExpress UI control requests a copy/paste operation to update its UI (for example, menu commands).</para>
+      </summary>
+      <value>true if the DevExpress UI control requests a copy/paste operation to update its UI; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationRequestEventArgs.Operation">
+      <summary>
+        <para>Gets the clipboard-related operation being processed.</para>
+      </summary>
+      <value>The clipboard-related operation.</value>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.ClipboardOperationRequestEventArgs.ToString">
+      <summary>
+        <para>Returns a string representation of the current object.</para>
+      </summary>
+      <returns>A string representation of the current object.</returns>
+    </member>
+    <member name="E:DevExpress.Data.Utils.ClipboardAccessPolicy.Copied">
+      <summary>
+        <para>Fires after the user has copied data displayed in a DevExpress control to the clipboard.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Data.Utils.ClipboardAccessPolicy.Copying">
+      <summary>
+        <para>Fires when the user attempts to copy data displayed in a DevExpress control to the clipboard and allows you to allow (or cancel) the operation.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Data.Utils.ClipboardAccessPolicy.Failed">
+      <summary>
+        <para>Allows you to respond to associated failures.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.Utils.ClipboardAccessPolicy.FailedEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.Data.Utils.ClipboardAccessPolicy.Failed"/> event.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.FailedEventArgs.Exception">
+      <summary>
+        <para>Gets the exception.</para>
+      </summary>
+      <value>The exception.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ClipboardAccessPolicy.FailedEventArgs.Throw">
+      <summary>
+        <para>Gets or sets whether to throw an exception.</para>
+      </summary>
+      <value>true to throw an exception; otherwise, false.</value>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.FailedEventArgs.ToString">
+      <summary>
+        <para>Returns a string representation of the current object.</para>
+      </summary>
+      <returns>A string representation of the current object.</returns>
+    </member>
+    <member name="E:DevExpress.Data.Utils.ClipboardAccessPolicy.Pasted">
+      <summary>
+        <para>Fires after the user has pasted data into a DevExpress control from the clipboard.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Data.Utils.ClipboardAccessPolicy.Pasting">
+      <summary>
+        <para>Fires when the user attempts to paste data into a DevExpress control from the clipboard and allows you to allow (or cancel) the operation.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.SuppressAllOperations">
+      <summary>
+        <para>Applies a policy to suppress all clipboard-related operations within DevExpress WinForms and WPF controls (including operations performed by DevExpress WinForms and WPF controls).</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.SuppressClearOperations">
+      <summary>
+        <para>Applies a policy to suppress clipboard clearing operations performed by DevExpress WinForms and WPF controls.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.SuppressContainsOperations">
+      <summary>
+        <para>Applies a policy to suppress clipboard-access operations performed by DevExpress WinForms and WPF controls.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.SuppressCopyOperations">
+      <summary>
+        <para>Applies a policy to suppress all copy-to-clipboard operations within DevExpress WinForms and WPF controls.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.SuppressPasteOperations">
+      <summary>
+        <para>Applies a policy to suppress all paste-from-clipboard operations within DevExpress WinForms and WPF controls.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.ThrowAlways">
+      <summary>
+        <para>Applies a policy that suppresses all clipboard-related operations in DevExpress WinForms and WPF controls.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ClipboardAccessPolicy.ThrowOnErrors">
+      <summary>
+        <para>Applies a policy that throws an exception when a clipboard-related operation fails in a DevExpress WinForms or WPF control.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.Utils.ProcessStartPolicy">
+      <summary>
+        <para>Allows you to control processes initiated by DevExpress UI controls in response to user actions.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ProcessStartPolicy.DefaultConfirmationService">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+      <value>The service.</value>
+    </member>
+    <member name="E:DevExpress.Data.Utils.ProcessStartPolicy.Failed">
+      <summary>
+        <para>Allows you to respond to associated failures.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Data.Utils.ProcessStartPolicy.ProcessStartFailedExceptionEventArgs">
+      <summary>
+        <para>Contains data for the <see cref="E:DevExpress.Data.Utils.ProcessStartPolicy.Failed"/> event.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ProcessStartPolicy.ProcessStartFailedExceptionEventArgs.#ctor(System.Exception)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Data.Utils.ProcessStartPolicy.ProcessStartFailedExceptionEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="exception">The exception. This value is assigned to the <see cref="P:DevExpress.Data.Utils.ProcessStartPolicy.ProcessStartFailedExceptionEventArgs.Exception"/> property.</param>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ProcessStartPolicy.ProcessStartFailedExceptionEventArgs.Exception">
+      <summary>
+        <para>Gets the exception.</para>
+      </summary>
+      <value>The exception.</value>
+    </member>
+    <member name="P:DevExpress.Data.Utils.ProcessStartPolicy.ProcessStartFailedExceptionEventArgs.Throw">
+      <summary>
+        <para>Gets or sets whether to throw an exception.</para>
+      </summary>
+      <value>true to throw an exception; otherwise, false.</value>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ProcessStartPolicy.RegisterTrustedProcess(System.String,System.String)">
+      <summary>
+        <para>Registers a trusted resource.</para>
+      </summary>
+      <param name="fileName">The trusted resource.</param>
+      <param name="arguments">The arguments.</param>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ProcessStartPolicy.RegisterTrustedProcess(System.String)">
+      <summary>
+        <para>Registers a trusted resource.</para>
+      </summary>
+      <param name="fileName">The trusted resource.</param>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ProcessStartPolicy.RequireConfirmation">
+      <summary>
+        <para>Applies a policy that displays a confirmation dialog that prompts a user to confirm or cancel a process.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Data.Utils.ProcessStartPolicy.Started">
+      <summary>
+        <para>Fires after a process has started.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Data.Utils.ProcessStartPolicy.Starting">
+      <summary>
+        <para>Fires before a process starts and allows you to cancel the process.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ProcessStartPolicy.SuppressAll">
+      <summary>
+        <para>Applies a policy that suppresses all new processes.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ProcessStartPolicy.ThrowAlways">
+      <summary>
+        <para>Applies a policy that throws an exception when a process is about to start.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Utils.ProcessStartPolicy.ThrowOnErrors">
+      <summary>
+        <para>Throws an exception if a process fails to start.</para>
+      </summary>
+    </member>
+    <member name="N:DevExpress.Printing">
+      <summary>
+        <para>Contains classes that provide the basic printing functionality.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Printing.PrinterItem">
+      <summary>
+        <para>Provides settings for a printer.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Printing.PrinterItem.#ctor(System.Printing.PrintQueue,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Printing.PrinterItem"/> class with specified settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Printing.PrinterItem.#ctor(System.String,System.String,System.String,System.String,System.String,DevExpress.Printing.Native.PrintEditor.PrinterStatus)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Printing.PrinterItem"/> class with specified settings.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Printing.PrinterItem.Comment">
+      <summary>
+        <para>Gets a comment about a printer.</para>
+      </summary>
+      <value>A string that specifies the comment about the printer.</value>
+    </member>
+    <member name="P:DevExpress.Printing.PrinterItem.DisplayName">
+      <summary>
+        <para>Gets the printer display name.</para>
+      </summary>
+      <value>A string that specifies the printer display name.</value>
+    </member>
+    <member name="P:DevExpress.Printing.PrinterItem.FullName">
+      <summary>
+        <para>Gets the printer full name.</para>
+      </summary>
+      <value>A string that specifies the printer name.</value>
+    </member>
+    <member name="P:DevExpress.Printing.PrinterItem.Location">
+      <summary>
+        <para>Gets the printer location.</para>
+      </summary>
+      <value>A string that specifies the printer location.</value>
+    </member>
+    <member name="P:DevExpress.Printing.PrinterItem.PrinterDocumentsInQueue">
+      <summary>
+        <para>Gets information on documents in the print queue.</para>
+      </summary>
+      <value>A string that specifies the documents in the print queue.</value>
+    </member>
+    <member name="P:DevExpress.Printing.PrinterItem.PrinterType">
+      <summary>
+        <para>Gets the printer type.</para>
+      </summary>
+      <value>The printer type.</value>
+    </member>
+    <member name="P:DevExpress.Printing.PrinterItem.Status">
+      <summary>
+        <para>Gets the printer status.</para>
+      </summary>
+      <value>A string that specifies the printer status.</value>
+    </member>
+    <member name="T:DevExpress.Utils.Html.DxHtmlElement">
+      <summary>
+        <para>An element of an <see href="https://docs.devexpress.com/WindowsForms/403397/common-features/html-css-based-desktop-ui">HTML-CSS template</see>.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElement.#ctor(DevExpress.Utils.Html.Dom.DxHtmlDocumentNode)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.Html.DxHtmlElement"/> class with specified settings.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.ChildElementCount">
+      <summary>
+        <para>Returns the number of elements owned by this HTML element (the length of the <see cref="P:DevExpress.Utils.Html.DxHtmlElement.Children">DxHtmlElement.Children</see> collection).</para>
+      </summary>
+      <value>The number of HTML elements owned by this element.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.Children">
+      <summary>
+        <para>Returns HTML elements owned by this element. This collection includes only direct children; elements owned by child elements are not included.</para>
+      </summary>
+      <value>The collection of child HTML elements.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.ClassName">
+      <summary>
+        <para>Gets or sets the name of the CSS style applied to this element.</para>
+      </summary>
+      <value>The name of the CSS style applied to this element.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.ClientHeight">
+      <summary>
+        <para>Returns the height of the element’s client area (the area that contains child elements of this HTML element).</para>
+      </summary>
+      <value>The height of this element’s client area.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.ClientLeft">
+      <summary>
+        <para>Returns the distance between the element’s left border and the left border of this element’s client area (the area that contains child elements of this HTML element).</para>
+      </summary>
+      <value>The left margin of the element’s client area.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.ClientTop">
+      <summary>
+        <para>Returns the distance between the element’s top border and the top border of this element’s client area (the area that contains child elements of this HTML element).</para>
+      </summary>
+      <value>The top margin of the element’s client area.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.ClientWidth">
+      <summary>
+        <para>Returns the width of the element’s client area (the area that contains child elements of this HTML element).</para>
+      </summary>
+      <value>The width of this element’s client area.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.Disabled">
+      <summary>
+        <para>Gets or sets whether this element is disabled. Disabled elements do not trigger HtmlElementMouseClick and HtmlElementMouseDown events, and are styled with the “main_class_name:disabled” CSS pseudo-class.</para>
+      </summary>
+      <value>true if this element is disabled; otherwise, false.</value>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElement.FindElementById(System.String)">
+      <summary>
+        <para>Returns an item of this element’s <see cref="P:DevExpress.Utils.Html.DxHtmlElement.Children">Children</see> collection that has the target ID. If multiple items are present, it returns the first found item.</para>
+      </summary>
+      <param name="id">The ID to search.</param>
+      <returns>The HTML element with the target ID.</returns>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElement.FindElementsByClass(System.String)">
+      <summary>
+        <para>Returns all of this element’s <see cref="P:DevExpress.Utils.Html.DxHtmlElement.Children">Children</see> collection items that are styled with the target CSS class.</para>
+      </summary>
+      <param name="class">The name of a CSS style to find.</param>
+      <returns>The list of found HTML elements.</returns>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElement.FindElementsByTag(System.String)">
+      <summary>
+        <para>Returns all of this element’s <see cref="P:DevExpress.Utils.Html.DxHtmlElement.Children">Children</see> collection items that have the specific tag.</para>
+      </summary>
+      <param name="name">The tag to find.</param>
+      <returns>The collection of child elements with the given tag.</returns>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElement.Focus(System.Boolean)">
+      <summary>
+        <para>Gets or sets whether this element is focused. Focused elements are styled with the “main_class_name:focus” CSS pseudo-class.</para>
+      </summary>
+      <param name="value">true to focus the element and apply the “:focus” CSS pseudo-class; false to unfocus the element and apply the regular CSS style.</param>
+      <returns>true if the item was successfully focused; otherwise, false.</returns>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElement.ForEach(System.Action{DevExpress.Utils.Html.DxHtmlElement},System.Predicate{DevExpress.Utils.Html.DxHtmlElement})">
+      <summary>
+        <para>Modifies all child elements that match the given predicate. This method searches for matching elements recursively: first among this element’s <see cref="P:DevExpress.Utils.Html.DxHtmlElement.Children">Children</see> collection, then among child elements of these children, and so on, until it reaches the lowermost elements.</para>
+      </summary>
+      <param name="action">The action that modifies found elements.</param>
+      <param name="predicate">The condition used to find HTML elements.</param>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElement.GetComputedStyle">
+      <summary>
+        <para>Returns the actual CSS style applied to this element.</para>
+      </summary>
+      <returns>The actual CSS style of this element.</returns>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.Hidden">
+      <summary>
+        <para>Gets or sets whether this element is shown on-screen.</para>
+      </summary>
+      <value>true to completely hide this element; false to display the element.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.Id">
+      <summary>
+        <para>Gets or sets the unique element identifier. You can search elements by their IDs with the <see cref="M:DevExpress.Utils.Html.DxHtmlElement.FindElementById(System.String)">FindElementById(String)</see> method.</para>
+      </summary>
+      <value>The element identifier.</value>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElement.Select(System.Boolean)">
+      <summary>
+        <para>Gets or sets whether this element is selected. Focused elements are styled with the “main_class_name:select” CSS pseudo-class.</para>
+      </summary>
+      <param name="value">true to select the element and apply the “:select” CSS pseudo-class; false to deselect the element and apply the regular CSS style.</param>
+      <returns>true if the element was successfully selected; otherwise, false.</returns>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElement.Title">
+      <summary>
+        <para>Gets or sets the element tooltip.</para>
+      </summary>
+      <value>The tooltip displayed when a user hovers over this element.</value>
+    </member>
+    <member name="T:DevExpress.Utils.Html.DxHtmlElementEventArgs">
+      <summary>
+        <para>Stores information about an HTML element with which a user has interacted.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElementEventArgs.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.Html.DxHtmlElementEventArgs"/> class.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElementEventArgs.#ctor(DevExpress.Utils.Html.DxHtmlNode)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.Html.DxHtmlElementEventArgs"/> class with specified settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElementEventArgs.#ctor(DevExpress.Utils.Html.DxHtmlRootElement,DevExpress.Utils.Html.DxHtmlNode)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.Html.DxHtmlElementEventArgs"/> class with specified settings.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementEventArgs.Bubbles">
+      <summary>
+        <para>Returns whether this element can pass an event up along the tree, to its parent HTML elements. You can enable the <see cref="P:DevExpress.Utils.Html.DxHtmlElementEventArgs.CancelBubble">CancelBubble</see> property to stop an event at this control level. See any “HtmlElementMouse~” event description for more details on bubbling (for example, <see cref="E:DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView.HtmlElementMouseClick">WinExplorerView.HtmlElementMouseClick</see>).</para>
+      </summary>
+      <value>true if this element can pass an event to its parent elements; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementEventArgs.CancelBubble">
+      <summary>
+        <para>Specifies whether this element should pass an event to its parent elements. See any “HtmlElementMouse~” event description for more information about bubbling (for example, <see cref="E:DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView.HtmlElementMouseClick">WinExplorerView.HtmlElementMouseClick</see>).</para>
+      </summary>
+      <value>true to prevent an event from bubbling up along the element tree; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementEventArgs.ElementId">
+      <summary>
+        <para>Returns the unique identifier of an HTML element. Element IDs are set in HTML markup (the “id” property). See any “HtmlElementMouse~” event description for more information (for example, <see cref="E:DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView.HtmlElementMouseClick">WinExplorerView.HtmlElementMouseClick</see>).</para>
+      </summary>
+      <value>The unique identifier of an HTML element.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementEventArgs.SuppressOwnerEvent">
+      <summary>
+        <para>Specifies whether a control whose HTML element triggered this event should raise its own related event. See any “HtmlElementMouse~” event description for more information (for example, <see cref="E:DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView.HtmlElementMouseClick">WinExplorerView.HtmlElementMouseClick</see>).</para>
+      </summary>
+      <value>true if a parent control’s own event should not fire; otherwise, false.</value>
+    </member>
+    <member name="T:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs">
+      <summary>
+        <para>Stores information about a mouse action that triggered a related event.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs.#ctor(DevExpress.Utils.Html.DxHtmlHitInfo,System.Windows.Forms.MouseEventArgs,System.Object)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs"/> class with specified settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs.#ctor(DevExpress.Utils.Html.DxHtmlHitInfo,System.Windows.Forms.MouseEventArgs)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="hitInfo">Stores information about a clicked element.</param>
+      <param name="mouseArgs">Stores information about a mouse pointer.</param>
+    </member>
+    <member name="M:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs.#ctor(System.Windows.Forms.MouseEventArgs)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs"/> class with specified settings.</para>
+      </summary>
+      <param name="mouseArgs">Stores information about a mouse pointer.</param>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs.Bounds">
+      <summary>
+        <para>Returns actual bounds of a clicked element. The returned value depends on the screen scaling. For example, the Bounds property for a square div element with 50px sides returns Height and Width values of 100px when shown on a display with a 200% Windows scaling option.</para>
+      </summary>
+      <value>A Rectangle that stores location and size of a related element.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs.Button">
+      <summary>
+        <para>Returns the clicked mouse button.</para>
+      </summary>
+      <value>The clicked mouse button.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs.Clicks">
+      <summary>
+        <para>Returns the number of clicks.</para>
+      </summary>
+      <value>The number of returned clicks.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs.HitInfo">
+      <summary>
+        <para>Returns information about a clicked element.</para>
+      </summary>
+      <value>Stores information about a clicked element.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs.MouseArgs">
+      <summary>
+        <para>Returns information about a mouse pointer.</para>
+      </summary>
+      <value>Stores information about a mouse pointer.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs.X">
+      <summary>
+        <para>Returns the X coordinate of a mouse pointer.</para>
+      </summary>
+      <value>The X coordinate of a mouse pointer.</value>
+    </member>
+    <member name="P:DevExpress.Utils.Html.DxHtmlElementMouseEventArgs.Y">
+      <summary>
+        <para>Returns the Y coordinate of a mouse pointer.</para>
+      </summary>
+      <value>The Y coordinate of a mouse pointer.</value>
+    </member>
+    <member name="N:DevExpress.Xpf.Core">
+      <summary>
+        <para>Contains common utility classes used by WPF controls and components from DevExpress.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Xpf.Core.ApplicationThemeHelper">
+      <summary>
+        <para>An abstract class that provides access to an application’s theme settings.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.ApplicationThemeHelper.ApplicationThemeName">
+      <summary>
+        <para>Gets or sets the name of the theme applied to the entire application.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> value that specifies the theme name.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.ApplicationThemeHelper.ConfigurationUserLevel">
+      <summary>
+        <para>Gets or sets where to save the application theme name.</para>
+      </summary>
+      <value>A path to the application configuration file.</value>
+    </member>
+    <member name="M:DevExpress.Xpf.Core.ApplicationThemeHelper.Preload(DevExpress.Xpf.Core.PreloadCategories[])">
+      <summary>
+        <para>Preloads theme resources for the specified controls.</para>
+      </summary>
+      <param name="preloadCategories">A collection of DevExpress WPF controls.</param>
+    </member>
+    <member name="M:DevExpress.Xpf.Core.ApplicationThemeHelper.Preload(System.Func{System.Windows.Controls.UserControl})">
+      <summary>
+        <para>Preloads theme resources for the view specified by the <see cref="T:System.Windows.Controls.UserControl"/> and allows you to initialize this view before the preload.</para>
+      </summary>
+      <param name="createAction">A function that initializes the preloaded <see cref="T:System.Windows.Controls.UserControl"/>.</param>
+    </member>
+    <member name="M:DevExpress.Xpf.Core.ApplicationThemeHelper.Preload``1(System.Boolean)">
+      <summary>
+        <para>Preloads theme resources for the view specified by the <see cref="T:System.Windows.Controls.UserControl"/>.</para>
+      </summary>
+      <param name="runTypeInitializers">true to invoke static constructors; otherwise, false.</param>
+      <typeparam name="T">A <see cref="T:System.Windows.Controls.UserControl"/> or its descendant.</typeparam>
+    </member>
+    <member name="M:DevExpress.Xpf.Core.ApplicationThemeHelper.PreloadAsync(DevExpress.Xpf.Core.PreloadCategories[])">
+      <summary>
+        <para>Asynchronously preloads theme resources for the specified controls.</para>
+      </summary>
+      <param name="preloadCategories">A collection of DevExpress WPF controls.</param>
+      <returns>A task that allows you to asynchronously preload theme resources.</returns>
+    </member>
+    <member name="M:DevExpress.Xpf.Core.ApplicationThemeHelper.PreloadAsync(System.Func{System.Windows.Controls.UserControl})">
+      <summary>
+        <para>Asynchronously preloads theme resources for the view specified by the <see cref="T:System.Windows.Controls.UserControl"/> and allows you to initialize this view before the preload.</para>
+      </summary>
+      <param name="createAction">A function that initializes the preloaded <see cref="T:System.Windows.Controls.UserControl"/>.</param>
+      <returns>A task that allows you to asynchronously preload theme resources.</returns>
+    </member>
+    <member name="M:DevExpress.Xpf.Core.ApplicationThemeHelper.PreloadAsync``1">
+      <summary>
+        <para>Asynchronously preloads theme resources for the view specified by the <see cref="T:System.Windows.Controls.UserControl"/>.</para>
+      </summary>
+      <typeparam name="T">A <see cref="T:System.Windows.Controls.UserControl"/> or its descendant.</typeparam>
+      <returns>A task that allows you to asynchronously preload theme resources.</returns>
+    </member>
+    <member name="M:DevExpress.Xpf.Core.ApplicationThemeHelper.SaveApplicationThemeName">
+      <summary>
+        <para>Saves the current theme name to the application configuration file.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Xpf.Core.ApplicationThemeHelper.UpdateApplicationThemeName">
+      <summary>
+        <para>Loads the theme name from the application configuration file.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.ApplicationThemeHelper.UseDefaultSvgImages">
+      <summary>
+        <para>Gets or sets whether to display vector or bitmap icons within WPF controls.</para>
+      </summary>
+      <value>true to display vector icons; false to display bitmap icons.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.ApplicationThemeHelper.UseLegacyDefaultTheme">
+      <summary>
+        <para>Specifies whether the application should use the legacy default theme (“DeepBlue”).</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Xpf.Core.CompatibilityMode">
+      <summary>
+        <para>Lists the values that specify the compatibility settings version.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.Latest">
+      <summary>
+        <para>The DevExpress WPF controls function like in the latest version.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.v17_2">
+      <summary>
+        <para>The DevExpress WPF controls function like in v17.2.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.v18_1">
+      <summary>
+        <para>The DevExpress WPF controls function like in v18.1.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.v18_2">
+      <summary>
+        <para>The DevExpress WPF controls function like in v18.2.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.v19_1">
+      <summary>
+        <para>The DevExpress WPF controls function like in v19.1.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.v19_2">
+      <summary>
+        <para>The DevExpress WPF controls function like in v19.2.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.v20_1">
+      <summary>
+        <para>The DevExpress WPF controls function like in v20.1.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.v20_2">
+      <summary>
+        <para>The DevExpress WPF controls function like in v20.2.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.v21_1">
+      <summary>
+        <para>The DevExpress WPF controls function like in v21.1.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.v21_2">
+      <summary>
+        <para>The DevExpress WPF controls function like in v21.2.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.CompatibilityMode.v22_1">
+      <summary>
+        <para>The DevExpress WPF controls function like in v22.1.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Xpf.Core.CompatibilitySettings">
+      <summary>
+        <para>Provides access to compatibility settings.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.AllowAccessibilityAlerts">
+      <summary>
+        <para>Gets or sets whether to enable <see href="https://docs.devexpress.com/WPF/403061/common-concepts/accessibility-support">UI Automation-based accessibility alerts</see> for validation errors.</para>
+      </summary>
+      <value>true to enable <see href="https://docs.devexpress.com/WPF/403061/common-concepts/accessibility-support">UI Automation-based accessibility alerts</see> for validation errors; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.AllowEditTextExpressionInFormatRule">
+      <summary>
+        <para>Gets or sets whether users can edit a <see cref="T:DevExpress.Xpf.Grid.FormatCondition">format condition</see>’s expression text.</para>
+      </summary>
+      <value>true to allow users to edit a <see cref="T:DevExpress.Xpf.Grid.FormatCondition">format condition</see>’s expression text; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.AllowEditValueBindingInInplaceEditors">
+      <summary>
+        <para>Gets or sets whether the GridControl’s logic of getting/setting the editor’s value is enabled.</para>
+      </summary>
+      <value>true, if the GridControl’s logic of getting/setting the editor’s value is enabled; otherwise, false.The default value is true.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.AllowGlyphRunRenderingInInplaceEditors">
+      <summary>
+        <para>Gets or sets whether to use the GlyphRun engine to render text in cell editors.</para>
+      </summary>
+      <value>true to use the GlyphRun engine; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.AllowLookupGridFiltering">
+      <summary>
+        <para>Gets or sets whether to allow users to filter grid values in the <see href="https://docs.devexpress.com/WPF/6133/controls-and-libraries/data-grid/filtering-and-searching/drop-down-filter">Drop-down Filter</see> and <see href="https://docs.devexpress.com/WPF/7788/controls-and-libraries/data-grid/filtering-and-searching/filter-editor">Filter Editor</see> when the <see cref="T:DevExpress.Xpf.Grid.GridControl"/> is in the <see cref="T:DevExpress.Xpf.Grid.LookUp.LookUpEdit"/>.</para>
+      </summary>
+      <value>true to allow users to filter grid values in the <see href="https://docs.devexpress.com/WPF/6133/controls-and-libraries/data-grid/filtering-and-searching/drop-down-filter">Drop-down Filter</see> and <see href="https://docs.devexpress.com/WPF/7788/controls-and-libraries/data-grid/filtering-and-searching/filter-editor">Filter Editor</see> when the <see cref="T:DevExpress.Xpf.Grid.GridControl"/> is in the <see cref="T:DevExpress.Xpf.Grid.LookUp.LookUpEdit"/>; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.AllowRecyclingRibbonItems">
+      <summary>
+        <para>Gets or sets whether ribbon controls should attempt to re-use existing link control (LightweightBarItemLinkControl, BarButtonItemLinkControl, BarCheckItemLinkControl, and so on) objects to enhance merging performance.</para>
+      </summary>
+      <value>true, to re-use an existing link control; otherwise false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.AllowThemePreload">
+      <summary>
+        <para>Gets or sets whether to enable the legacy <see href="https://docs.devexpress.com/WPF/403439/common-concepts/themes/preload-theme-resources">Theme Preload</see>.</para>
+      </summary>
+      <value>true to enable the legacy <see href="https://docs.devexpress.com/WPF/403439/common-concepts/themes/preload-theme-resources">Theme Preload</see>; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.AlwaysUseLegacyColumnChooser">
+      <summary>
+        <para>Gets or sets whether to display the <see href="https://docs.devexpress.com/WPF/6217/controls-and-libraries/data-grid/visual-elements/common-elements/column-band-chooser">Column Chooser</see> in the legacy window.</para>
+      </summary>
+      <value>true to display the <see href="https://docs.devexpress.com/WPF/6217/controls-and-libraries/data-grid/visual-elements/common-elements/column-band-chooser">Column Chooser</see> in the legacy window; false to use this legacy window only if the <see cref="T:DevExpress.Xpf.Grid.GridControl"/> is in a pop-up window.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.AlwaysUseLegacySummaryEditor">
+      <summary>
+        <para>Gets or sets whether to display the <see href="https://docs.devexpress.com/WPF/6594/controls-and-libraries/data-grid/data-summaries/runtime-summary-editor">Runtime Summary Editor</see> in the legacy window.</para>
+      </summary>
+      <value>true to display the <see href="https://docs.devexpress.com/WPF/6594/controls-and-libraries/data-grid/data-summaries/runtime-summary-editor">Runtime Summary Editor</see> in the legacy window; false to use this legacy window only if the <see cref="T:DevExpress.Xpf.Grid.GridControl"/> is in a pop-up window.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.CompatibilityMode">
+      <summary>
+        <para>Gets or sets the controls’ compatibility mode.</para>
+      </summary>
+      <value>A compatibility mode.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.ConvertOccurrenceToNormalWhenDragBetweenResources">
+      <summary>
+        <para>Specifies whether a recurring appointment is converted to a normal appointment when an end-user drags and drops it to another resource.</para>
+      </summary>
+      <value>True, if a recurring appointment is converted to normal after a drag-and-drop operation to another resource; otherwise, false. Default is false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.DXBindingResolvingMode">
+      <summary>
+        <para>Gets or sets a value that specifies how the <see href="https://docs.devexpress.com/WPF/115770/mvvm-framework/dxbinding">DXBinding</see> (DXEvent, DXCommand) markup extensions resolve input expressions.</para>
+      </summary>
+      <value>Any of the <see cref="T:DevExpress.Xpf.Core.DXBindingResolvingMode"/> enumeration values.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.EnableDPICorrection">
+      <summary>
+        <para>Gets or sets whether to enable DPI correction to improve layout rendering.</para>
+      </summary>
+      <value>true, to enable DPI correction; otherwise false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.HideCalendarButtonInDateNavigationPanel">
+      <summary>
+        <para>Gets or sets whether to hide the Calendar Button from the <see href="https://docs.devexpress.com/WPF/400588/controls-and-libraries/scheduler/visual-elements/date-navigation-panel">Date Navigation Panel</see>.</para>
+      </summary>
+      <value>true to hide the Calendar Button from the <see href="https://docs.devexpress.com/WPF/400588/controls-and-libraries/scheduler/visual-elements/date-navigation-panel">Date Navigation Panel</see>; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.HideInsignificantPartsOnlyInTimeSpanMask">
+      <summary>
+        <para>Gets or sets whether TimeSpan masks should hide optional segments.</para>
+      </summary>
+      <value>false to hide optional segments in TimeSpan masks; otherwise true.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.LegacyDefaultTheme">
+      <summary>
+        <para>Specifies a legacy default theme which the application should use.</para>
+      </summary>
+      <value>A legacy default theme.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.MakeGetWindowReturnActualFloatPanelWindow">
+      <summary>
+        <para>Gets or sets whether the Window.GetWindow() method should return the floating window’s position in relation to the main window’s position (where the DockLayoutManager manager is placed).</para>
+      </summary>
+      <value>true to return a floating window’s related prosition; otherwise false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.MaskUpdateSelectionOnMouseUp">
+      <summary>
+        <para>Gets or sets whether editors should automatically update their selection to highlight a selected mask part that a user can edit.</para>
+      </summary>
+      <value>true, to update editor selection to highlight a selected mask part that a user can edit; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.PivotGridDisableBatchUpdate">
+      <summary>
+        <para>Specifies whether to update the <see cref="T:DevExpress.Xpf.PivotGrid.PivotGridControl"/> in a single batch during the data source synchronization.</para>
+      </summary>
+      <value>true, to restore the legacy (slower) behavior; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.PrioritizeIListSourceInDiagramDataBinding">
+      <summary>
+        <para>Specifies whether the DiagramControl’s data binding engine prioritizes the IListSource interface over the IEnumerable.</para>
+      </summary>
+      <value>true, to prioritize the IListSource interface; false, to prioritize the IEnumerable interface.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.RenderPDFPageContentWithDirectX">
+      <summary>
+        <para>Gets or sets whether to render page content with DirectX.</para>
+      </summary>
+      <value>true, to enable DirectX page content rendering; false, to render page content with GDI/GDI+. The default is true.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.SchedulerAppearanceStyle">
+      <summary>
+        <para>Gets or sets the <see cref="T:DevExpress.Xpf.Scheduling.SchedulerControl">SchedulerControl</see> UI style.</para>
+      </summary>
+      <value>By default, Outlook2019.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.ShowSchedulerDateNavigationPanel">
+      <summary>
+        <para>Specifies whether to display the <see href="https://docs.devexpress.com/WPF/400588/controls-and-libraries/scheduler/visual-elements/date-navigation-panel">Date Navigation Panel</see> by default.</para>
+      </summary>
+      <value>true, to display the WPF Scheduler’s Date Navigation Panel by default, otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.TrackBarEditIsMoveToPointEnabled">
+      <summary>
+        <para>Gets or sets whether TrackBarEdit should increment or decrement its value when a user clicked a line next to the thumb.</para>
+      </summary>
+      <value>true to increment or decrement TrackBarEdit value when a user clicks a line next to the thumb; otherwise false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseDateNavigatorInDateEdit">
+      <summary>
+        <para>Specifies whether to use the <see cref="T:DevExpress.Xpf.Editors.DateNavigator.DateNavigator"/> control to render the <see cref="T:DevExpress.Xpf.Editors.DateEdit"/>‘s dropdown window.</para>
+      </summary>
+      <value>true to use the DateNavigator in the DateEdit‘s dropdown; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseFriendlyDateRangePresentation">
+      <summary>
+        <para>Gets or sets whether the Between Dates and On Dates date operators are used.</para>
+      </summary>
+      <value>true, to use the Between Dates and On Dates date operators; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacyCalendarInDateNavigator">
+      <summary>
+        <para>Gets or sets whether the legacy calendar is used in the <see cref="T:DevExpress.Xpf.Editors.DateNavigator.DateNavigator"/>.</para>
+      </summary>
+      <value>true, to use the legacy calendar; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacyColumnFilterPopup">
+      <summary>
+        <para>Gets or sets whether the legacy drop-down filter is used.</para>
+      </summary>
+      <value>true, to use the legacy drop-down filter; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacyDeleteButtonInButtonEdit">
+      <summary>
+        <para>Gets or sets whether to use the legacy Null Value button in the <see cref="T:DevExpress.Xpf.Editors.ButtonEdit">ButtonEdit</see> editor and its descendants.</para>
+      </summary>
+      <value>true, to use the legacy Null Value button; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacyDXMessageBox">
+      <summary>
+        <para>Gets or sets whether DevExpress WPF Controls display their messages in the legacy message box.</para>
+      </summary>
+      <value>true if DevExpress WPF Controls display their messages in the legacy message box; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacyFilterEditor">
+      <summary>
+        <para>Gets or sets whether the legacy filter editor is used.</para>
+      </summary>
+      <value>true, to use the legacy filter editor; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacyFilterPanel">
+      <summary>
+        <para>Gets or sets whether to use the legacy filter panel.</para>
+      </summary>
+      <value>true, to use the legacy filter panel; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacyQueryIntervalCalculation">
+      <summary>
+        <para>Specifies whether to calculate <see cref="P:DevExpress.Xpf.Scheduling.SchedulerItemBase.QueryStart"/> and <see cref="P:DevExpress.Xpf.Scheduling.SchedulerItemBase.QueryEnd"/> individually for each <see cref="T:DevExpress.Xpf.Scheduling.SchedulerControl"/>‘s <see href="https://docs.devexpress.com/WPF/119213/controls-and-libraries/scheduler/appointments/recurrence">occurrence</see>.</para>
+      </summary>
+      <value>true, to calculate QueryStart and QueryEnd individually for each occurrence; false, to use the pattern’s QueryStart and QueryEnd for changed and deleted occurrences.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacySchedulerCellDecoration">
+      <summary>
+        <para>Specifies whether to use decoration panels to draw the <see cref="T:DevExpress.Xpf.Scheduling.SchedulerControl"/>‘s elements.</para>
+      </summary>
+      <value>true to use the legacy mechanism affected by the CellControl’s customization properties; false to use decoration panels.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacySchedulerTimelineViewMode">
+      <summary>
+        <para>Specifies whether to revert to the legacy <see href="https://docs.devexpress.com/WPF/119586/controls-and-libraries/scheduler/views/timeline-view">Timeline view</see>.</para>
+      </summary>
+      <value>true, to revert to the legacy Timeline view; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacyWindowForRibbonCustomization">
+      <summary>
+        <para>Gets or sets whether to display the <see href="https://docs.devexpress.com/WPF/10626/controls-and-libraries/ribbon-bars-and-menu/ribbon/runtime-customization">Ribbon Customization Options</see> in the legacy window.</para>
+      </summary>
+      <value>true to display the <see href="https://docs.devexpress.com/WPF/10626/controls-and-libraries/ribbon-bars-and-menu/ribbon/runtime-customization">Ribbon Customization Options</see> in the legacy window; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLightweightBarItems">
+      <summary>
+        <para>Gets or sets whether optimized mode should be enabled for all items. This property should be set at the application’s startup before loading bar components.</para>
+      </summary>
+      <value>true to enable optimized mode for all items; otherwise false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLightweightTemplatesInStandardButtons">
+      <summary>
+        <para>Gets or sets whether the dx:ButtonThemeKey resource containing the Button template should use the ResourceKey=ButtonControlTemplate.</para>
+      </summary>
+      <value>true, to use ResourceKey=ButtonControlTemplate in the dx:ButtonThemeKey resource; otherwise false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLightweightThemes">
+      <summary>
+        <para>Gets or sets whether to use lightweight themes within the application.</para>
+      </summary>
+      <value>true to use lightweight themes within the application; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseMiddleMouseScrolling">
+      <summary>
+        <para>Gets or sets whether to enable the middle-click to scroll functionality.</para>
+      </summary>
+      <value>true to enable the middle-click to scroll functionality; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseRibbonDeferredPageMerging">
+      <summary>
+        <para>Gets or sets whether to enable a ribbon’s deferred page merging.</para>
+      </summary>
+      <value>true to merge ribbon’s page content only when a user opens the page; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseThemedMessageBoxInServices">
+      <summary>
+        <para>Gets or sets whether to use the ThemedMessageBox instead of  DXMessageBox in WindowService, DialogService, and WindowedDocumentUIService.</para>
+      </summary>
+      <value>true, to use the ThemedMessageBox; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseThemedWaitIndicatorInSplashScreen">
+      <summary>
+        <para>Specifies whether to revert to the Wait Indicator control that uses the theme resources.</para>
+      </summary>
+      <value>true, to revert to the Wait Indicator control that uses the theme resources; otherwise, false. The default value is false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseThemedWindowInServices">
+      <summary>
+        <para>Gets or sets whether to use the <see cref="T:DevExpress.Xpf.Core.ThemedWindow"/> instead of <see cref="T:DevExpress.Xpf.Core.DXWindow"/> in WindowService, DialogService, and WindowedDocumentUIService.</para>
+      </summary>
+      <value>true, to use the <see cref="T:DevExpress.Xpf.Core.ThemedWindow"/>; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.ValueAfterDeleteInNumericMask">
+      <summary>
+        <para>Specifies whether editors set the 0 (zero) or null value after the last digit is removed.</para>
+      </summary>
+      <value>A mode that specifies whether editors set the 0 (zero) or null value after the last digit is removed.</value>
+    </member>
+    <member name="T:DevExpress.Xpf.Core.DXBindingResolvingMode">
+      <summary>
+        <para>Lists values that specify how the DXBinding (DXEvent, DXCommand) markup extensions resolve input expressions.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.DXBindingResolvingMode.DynamicTyping">
+      <summary>
+        <para>The DXBinding, DXCommand and DXEvent markup extensions interpret their expressions that allows them using dynamic typization, so you do no need to cast values.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.DXBindingResolvingMode.LegacyStaticTyping">
+      <summary>
+        <para>The DXBinding, DXCommand and DXEvent markup extensions compile their expressions thus using static typization, so you do need to cast values.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Xpf.Core.LegacyDefaultTheme">
+      <summary>
+        <para>Lists legacy default themes.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.LegacyDefaultTheme.DeepBlue">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/7407/common-concepts/themes/theme-list#other-themes">DeepBlue</see> legacy default theme. The theme was default in the  v16.1 WPF Controls and prior.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.LegacyDefaultTheme.Office2016White">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/7407/common-concepts/themes/theme-list#office-2016-themes">Office2016White</see> legacy default theme. The theme was default in the v20.1 WPF Controls and prior.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Xpf.Core.PreloadCategories">
+      <summary>
+        <para>Lists values that correspond to <see href="https://docs.devexpress.com/WPF/7561/controls-and-libraries">DevExpress WPF controls</see>.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Accordion">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/118347/controls-and-libraries/navigation-controls/accordion-control">Accordion Control</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Charts">
+      <summary>
+        <para><see href="https://docs.devexpress.com/WPF/115092/controls-and-libraries/charts-suite">Chart Controls</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Controls">
+      <summary>
+        <para>All controls from the DevExpress.Xpf.Controls assembly</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Core">
+      <summary>
+        <para>All controls from the DevExpress.Xpf.Core assembly (<see href="https://docs.devexpress.com/WPF/6190/controls-and-libraries/data-editors">Data Editors</see>, <see href="https://docs.devexpress.com/WPF/6194/controls-and-libraries/ribbon-bars-and-menu/bars">Bars</see>, etc.)</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Dashboard">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/Dashboard/119813/wpf-dashboard-viewer">WPF Dashboard Viewer</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Diagram">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/115046/controls-and-libraries/diagram-control">Diagram Control</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Dialogs">
+      <summary>
+        <para><see href="https://docs.devexpress.com/WPF/115524/controls-and-libraries/dialogs-notifications-and-panels#openfile-savefile-and-folderbrowser-dialogs">File Dialogs</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Docking">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/6191/controls-and-libraries/layout-management/dock-windows">Dock and Layout Manager</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.ExpressionEditor">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/7554/common-concepts/expressions/expression-editor">Expression Editor</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Gantt">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/400329/controls-and-libraries/gantt-control">Gantt Control</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Gauges">
+      <summary>
+        <para><see href="https://docs.devexpress.com/WPF/115093/controls-and-libraries/gauge-controls">Gauge Controls</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Grid">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/6084/controls-and-libraries/data-grid">Data Grid Control</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.LayoutControl">
+      <summary>
+        <para><see href="https://docs.devexpress.com/WPF/8085/controls-and-libraries/layout-management/tile-and-layout">Layout Controls</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Map">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/115085/controls-and-libraries/map-control">Map Control</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.PdfViewer">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/16420/controls-and-libraries/pdf-viewer">PDF Viewer for WPF</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.PivotGrid">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/7228/controls-and-libraries/pivot-grid">Pivot Grid Control</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Printing">
+      <summary>
+        <para>The <see cref="T:DevExpress.Xpf.Printing.DocumentPreviewControl"/></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.PropertyGrid">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/15640/controls-and-libraries/property-grid">Property Grid Control</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.ReportDesigner">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/XtraReports/114104/desktop-reporting/wpf-reporting/end-user-report-designer-for-wpf">End-User Report Designer for WPF</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Ribbon">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/7895/controls-and-libraries/ribbon-bars-and-menu/ribbon">Ribbon Control</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.RichEdit">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/8651/controls-and-libraries/rich-text-editor">WPF Rich Text Editor</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Scheduling">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/114881/controls-and-libraries/scheduler">Scheduler Control</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.Spreadsheet">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/16118/controls-and-libraries/spreadsheet">WPF Spreadsheet Control</see></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.PreloadCategories.TreeMap">
+      <summary>
+        <para>The <see href="https://docs.devexpress.com/WPF/114684/controls-and-libraries/treemap-control">TreeMap Control</see></para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Xpf.Core.ValueAfterDeleteMode">
+      <summary>
+        <para>Lists the values that specify the <see cref="P:DevExpress.Xpf.Editors.NumericMaskOptions.ValueAfterDelete">NumericMaskOptions.ValueAfterDelete</see> property.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.ValueAfterDeleteMode.Null">
+      <summary>
+        <para>When a user removes the last digit, the editor value becomes null.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Xpf.Core.ValueAfterDeleteMode.ZeroThenNull">
+      <summary>
+        <para>When a user removes the last digit, the editor value becomes 0 (zero). If a user presses the Backspace or Delete key to remove this zero, the editor value becomes null.</para>
+      </summary>
+    </member>
+  </members>
+</doc>

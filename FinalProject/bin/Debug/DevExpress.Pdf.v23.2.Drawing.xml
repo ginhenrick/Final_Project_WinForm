@@ -1,0 +1,1801 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DevExpress.Pdf.v23.2.Drawing</name>
+  </assembly>
+  <members>
+    <member name="N:DevExpress.Pdf">
+      <summary>
+        <para>Contains classes and enumerations that are used to implement the main functionality of WinForms and WPF PDF Viewers, and the PDF Document API.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Pdf.IPdfViewerAnnotation">
+      <summary>
+        <para>Implements options used to obtain information common for annotation types.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotation.Bounds">
+      <summary>
+        <para>Gets the annotation’s bounds on the page.</para>
+      </summary>
+      <value>Annotation bounds <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">in the page coordinate system</see>.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotation.Color">
+      <summary>
+        <para>Gets the annotation color.</para>
+      </summary>
+      <value>The annotation color.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotation.Name">
+      <summary>
+        <para>Gets the annotation’s name.</para>
+      </summary>
+      <value>The annotation name.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotation.PageNumber">
+      <summary>
+        <para>Gets the page number where the annotation is located.</para>
+      </summary>
+      <value>The page number.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotation.Type">
+      <summary>
+        <para>Gets the annotation’s type.</para>
+      </summary>
+      <value>One of enumeration values that indicates the annotation type.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.IPdfViewerAnnotationBase">
+      <summary>
+        <para>Implements options used to obtain information common for annotation types.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBase.Author">
+      <summary>
+        <para>Gets the markup annotation’s author.</para>
+      </summary>
+      <value>The annotation author.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBase.Contents">
+      <summary>
+        <para>Gets the annotation contents.</para>
+      </summary>
+      <value>The annotation contents.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBase.ModificationDate">
+      <summary>
+        <para>Gets the date and time of the annotation’s last modification.</para>
+      </summary>
+      <value>The date and time of the annotation’s last modification.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBase.Replies">
+      <summary>
+        <para>Obtains the annotation comments.</para>
+      </summary>
+      <value>A list of comments added to the annotation.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBase.Reviews">
+      <summary>
+        <para>Obtains the annotation reviews.</para>
+      </summary>
+      <value>A collection of reviews applied to the annotation.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.IPdfViewerAnnotationBuilder">
+      <summary>
+        <para>Implements options used to build all annotation types.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBuilder.AnnotationType">
+      <summary>
+        <para>Gets the annotation’s type.</para>
+      </summary>
+      <value>An enumeration value that indicates the annotation type.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBuilder.Bounds">
+      <summary>
+        <para>Gets the annotation’s bounds on a page.</para>
+      </summary>
+      <value>Annotation bounds <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">in the page coordinate system</see>.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBuilder.Color">
+      <summary>
+        <para>Specifies the annotation’s color.</para>
+      </summary>
+      <value>The markup annotation color.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBuilder.Contents">
+      <summary>
+        <para>Specifies the annotation contents.</para>
+      </summary>
+      <value>The annotation contents.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBuilder.IsSelected">
+      <summary>
+        <para>Specifies whether or not to select the annotation.</para>
+      </summary>
+      <value>true, to select the annotation; otherwise, false (the default value).</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBuilder.ModificationDate">
+      <summary>
+        <para>Specifies the date and time of the annotation’s last modification.</para>
+      </summary>
+      <value>The date and time when the annotation was last modified.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBuilder.Name">
+      <summary>
+        <para>Specifies the annotation name.</para>
+      </summary>
+      <value>The name of the annotation.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerAnnotationBuilder.PageNumber">
+      <summary>
+        <para>Gets the number of the page on which the annotation is located.</para>
+      </summary>
+      <value>The page number.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.IPdfViewerMarkupAnnotation">
+      <summary>
+        <para>Implements properties used to return information about markup annotations.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerMarkupAnnotation.CreationDate">
+      <summary>
+        <para>Gets the date and time when the markup annotation was created.</para>
+      </summary>
+      <value>The date and time of the markup annotation’s creation.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerMarkupAnnotation.Opacity">
+      <summary>
+        <para>Gets the markup annotation opacity.</para>
+      </summary>
+      <value>The markup annotation opacity (from 0 to 1).</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerMarkupAnnotation.Subject">
+      <summary>
+        <para>Gets the markup annotation’s subject.</para>
+      </summary>
+      <value>A short description of the subject.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.IPdfViewerMarkupAnnotationBuilder">
+      <summary>
+        <para>Implements properties used to build markup annotations.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerMarkupAnnotationBuilder.Author">
+      <summary>
+        <para>Gets or sets the author of a markup annotation’s author.</para>
+      </summary>
+      <value>The author’s name.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerMarkupAnnotationBuilder.CreationDate">
+      <summary>
+        <para>Specifies the date and time when the markup annotation was created.</para>
+      </summary>
+      <value>The annotation’s creation date.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerMarkupAnnotationBuilder.Opacity">
+      <summary>
+        <para>Specifies the markup annotation opacity.</para>
+      </summary>
+      <value>Markup annotation opacity (from 0 to 1).</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerMarkupAnnotationBuilder.Subject">
+      <summary>
+        <para>Gets or sets a subject the markup annotation addresses.’</para>
+      </summary>
+      <value>A short description of the subject.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.IPdfViewerTextAnnotation">
+      <summary>
+        <para>Contains properties used to return information about text annotations.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerTextAnnotation.IconName">
+      <summary>
+        <para>Gets the name of the annotation’s icon.</para>
+      </summary>
+      <value>The annotation icon’s name.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.IPdfViewerTextAnnotationBuilder">
+      <summary>
+        <para>Contains options used to build text annotations.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerTextAnnotationBuilder.IconName">
+      <summary>
+        <para>Gets the name of the annotation’s icon.</para>
+      </summary>
+      <value>The icon name.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.IPdfViewerTextMarkupAnnotation">
+      <summary>
+        <para>Contains properties used to return information about text markup annotations.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerTextMarkupAnnotation.Quads">
+      <summary>
+        <para>Gets a collection of quadrilateral points that encompass the annotation area.</para>
+      </summary>
+      <value>A list of quadrilateral points.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerTextMarkupAnnotation.Style">
+      <summary>
+        <para>Gets the style of a text markup annotation.</para>
+      </summary>
+      <value>An enumeration value that indicates the text markup style.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.IPdfViewerTextMarkupAnnotationBuilder">
+      <summary>
+        <para>Implements options used to build text markup annotations.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerTextMarkupAnnotationBuilder.Quads">
+      <summary>
+        <para>Gets a collection of quadrilateral points that encompass the annotation area.</para>
+      </summary>
+      <value>A list of the quadrilateral points.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerTextMarkupAnnotationBuilder.SelectedText">
+      <summary>
+        <para>Gets a selected text for which a markup annotation is created.</para>
+      </summary>
+      <value>The selected text.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.IPdfViewerTextMarkupAnnotationBuilder.Style">
+      <summary>
+        <para>Gets or sets the style of a text markup annotation.</para>
+      </summary>
+      <value>The enumeration value that specifies the annotation style.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfCommentFilter">
+      <summary>
+        <para>Contains filters that can be applied to annotations.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfCommentFilter.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfCommentFilter"/> class.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfCommentFilter.Authors">
+      <summary>
+        <para>Retrieves a list of authors whose annotations should be displayed.</para>
+      </summary>
+      <value>A list of annotation authors.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfCommentFilter.Checked">
+      <summary>
+        <para>Specifies whether to show checked annotations.</para>
+      </summary>
+      <value>true to apply this filter; otherwise, false.</value>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfCommentFilter.Clear">
+      <summary>
+        <para>Clears all applied filters.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfCommentFilter.ClearWithoutNotification">
+      <summary>
+        <para>Clears all applied filters without notification.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.Pdf.PdfCommentFilter.FilterChanged">
+      <summary>
+        <para>Fires when the filter has been changed.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfCommentFilter.HideAll">
+      <summary>
+        <para>Specifies whether to hide all annotations and comments.</para>
+      </summary>
+      <value>true to hide all annotations; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfCommentFilter.NoneStatus">
+      <summary>
+        <para>Specifies whether to show annotations whose review status is None.</para>
+      </summary>
+      <value>true to apply this filter; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfCommentFilter.SearchText">
+      <summary>
+        <para>Gets or sets the text used to filter annotations.</para>
+      </summary>
+      <value>The text that annotations should contain.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfCommentFilter.Statuses">
+      <summary>
+        <para>Retrieves a list of statuses by which to filter the annotations.</para>
+      </summary>
+      <value>A list of statuses.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfCommentFilter.Types">
+      <summary>
+        <para>Retrieves a list of types by which to filter the annotations.</para>
+      </summary>
+      <value>A list of types.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfCommentSortMode">
+      <summary>
+        <para>Lists values used to specify the annotation’s sort mode in the Comments pane.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfCommentSortMode.Author">
+      <summary>
+        <para>Annotations are sorted by author.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfCommentSortMode.Checked">
+      <summary>
+        <para>Annotations are sorted by checkmark status (checked or unchecked).</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfCommentSortMode.Date">
+      <summary>
+        <para>Annotations are sorted by date.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfCommentSortMode.Page">
+      <summary>
+        <para>Annotations are sorted by page.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfCommentSortMode.Type">
+      <summary>
+        <para>Annotations are sorted by type.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphics">
+      <summary>
+        <para>Allows you to draw graphics content on a PDF page.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.AddFormField(DevExpress.Pdf.PdfGraphicsAcroFormField)">
+      <summary>
+        <para>Adds an interactive form field as graphics content.</para>
+      </summary>
+      <param name="field">An interactive form field that should be added.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.AddLinkToPage(System.Drawing.RectangleF,System.Int32,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Adds a link that refers to the document page with the specified number. Allows you to set the page point positioned at the top left corner of the document window, and zoom factor.</para>
+      </summary>
+      <param name="linkArea">A page area (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can add a link.</param>
+      <param name="pageNumber">The page number.</param>
+      <param name="destinationX">The horizontal coordinate of a page point (in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) positioned at the top left corner of the document window.</param>
+      <param name="destinationY">The vertical coordinate of a page point (in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) positioned at the top left corner of the document window.</param>
+      <param name="zoom">The zoom factor by which the document is scaled after you click a link.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.AddLinkToPage(System.Drawing.RectangleF,System.Int32,System.Single,System.Single)">
+      <summary>
+        <para>Adds a link that refers to the document page with the specified number. Allows you to set a page point positioned at the top left corner of the document window.</para>
+      </summary>
+      <param name="linkArea">A page area (in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can add a link.</param>
+      <param name="pageNumber">The page number.</param>
+      <param name="destinationX">The horizontal coordinate of a target page point (in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) that is positioned at the top left corner of the document window.</param>
+      <param name="destinationY">The vertical coordinate of a target page point (in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) that is positioned at the top left corner of the document window.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.AddLinkToPage(System.Drawing.RectangleF,System.Int32,System.Single)">
+      <summary>
+        <para>Adds a link that refers to the document page with the specified number and zoom factor.</para>
+      </summary>
+      <param name="linkArea">A page area (in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can add a link.</param>
+      <param name="pageNumber">The target page number.</param>
+      <param name="zoom">A zoom factor by which the document is scaled after you click a link.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.AddLinkToPage(System.Drawing.RectangleF,System.Int32)">
+      <summary>
+        <para>Adds a link that refers to the document page with the specified number.</para>
+      </summary>
+      <param name="linkArea">A page area (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can add a link.</param>
+      <param name="pageNumber">The page number.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.AddLinkToUri(System.Drawing.RectangleF,System.Uri)">
+      <summary>
+        <para>Adds a link to a URI at the specified page rectangle.</para>
+      </summary>
+      <param name="linkArea">A page area (in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can add a link.</param>
+      <param name="uri">A <see cref="T:System.Uri"/> object that is the link URI.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.AddToPageBackground(DevExpress.Pdf.PdfPage,System.Single,System.Single)">
+      <summary>
+        <para>Adds graphics to a PDF page background with the specified horizontal and vertical resolutions.</para>
+      </summary>
+      <param name="page">A <see cref="T:DevExpress.Pdf.PdfPage"/> object that is the page where graphics are drawn (measured in points - 1/72 of an inch).</param>
+      <param name="dpiX">A <see cref="T:System.Single"/> object that represents the value, in dots per inch, for the horizontal resolution.</param>
+      <param name="dpiY">A <see cref="T:System.Single"/> object that represents the value, in dots per inch, for the vertical resolution.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.AddToPageBackground(DevExpress.Pdf.PdfPage)">
+      <summary>
+        <para>Adds graphics to a PDF page background.</para>
+      </summary>
+      <param name="page">A <see cref="T:DevExpress.Pdf.PdfPage"/> object that is the page in the document where graphics are drawn (measured in points - 1/72 of an inch).</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.AddToPageForeground(DevExpress.Pdf.PdfPage,System.Single,System.Single)">
+      <summary>
+        <para>Adds graphics to a PDF page foreground with the specified horizontal and vertical resolutions.</para>
+      </summary>
+      <param name="page">A <see cref="T:DevExpress.Pdf.PdfPage"/> object that is the page in the document where graphics are drawn (measured in points - 1/72 of an inch).</param>
+      <param name="dpiX">A <see cref="T:System.Single"/> object that represents the value, in dots per inch, for the horizontal resolution.</param>
+      <param name="dpiY">A <see cref="T:System.Single"/> object that represents the value, in dots per inch, for the vertical resolution.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.AddToPageForeground(DevExpress.Pdf.PdfPage)">
+      <summary>
+        <para>Adds graphics to a PDF page foreground.</para>
+      </summary>
+      <param name="page">A <see cref="T:DevExpress.Pdf.PdfPage"/> object that is the page in the document where graphics are drawn (measured in points - 1/72 of an inch).</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.ClearFormFields">
+      <summary>
+        <para>Clears all interactive form fields that were previously added to PDF graphics.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphics.ConvertImagesToJpeg">
+      <summary>
+        <para>Specifies whether to convert bitmap images into JPEG to reduce the size of the resulting PDF file.</para>
+      </summary>
+      <value>true, to convert bitmap images to the Jpeg format; otherwise, false.</value>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfGraphics.DefaultDpi">
+      <summary>
+        <para>The default DPI of a page that is the default size to display text and other content on the page.</para>
+      </summary>
+      <value>A DPI value.</value>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawBezier(DevExpress.Drawing.DXPen,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+      <summary>
+        <para>Draws a Bezier curve specified by four points (in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>).</para>
+      </summary>
+      <param name="pen">A <see cref="T:DevExpress.Drawing.DXPen"/> object that specifies the color, width, and style of the curve.</param>
+      <param name="pt1">A <see cref="T:System.Drawing.Point"/> structure that specifies the start point of the curve.</param>
+      <param name="pt2">A <see cref="T:System.Drawing.Point"/> structure that specifies the first control point of the curve.</param>
+      <param name="pt3">A <see cref="T:System.Drawing.Point"/> structure that specifies the second control point of the curve.</param>
+      <param name="pt4">A <see cref="T:System.Drawing.Point"/> structure that specifies the end point of the curve.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawBezier(System.Drawing.Pen,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)">
+      <summary>
+        <para>Draws a Bezier curve specified by four points (in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>).</para>
+      </summary>
+      <param name="pen">A <see cref="T:System.Drawing.Pen"/> object that specifies the color, width, and style of the curve.</param>
+      <param name="pt1">A <see cref="T:System.Drawing.Point"/> structure that specifies the start point of the curve.</param>
+      <param name="pt2">A <see cref="T:System.Drawing.Point"/> structure that specifies the first control point of the curve.</param>
+      <param name="pt3">A <see cref="T:System.Drawing.Point"/> structure that specifies the second control point of the curve.</param>
+      <param name="pt4">A <see cref="T:System.Drawing.Point"/> structure that specifies the end point of the curve.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawBeziers(DevExpress.Drawing.DXPen,System.Drawing.PointF[])">
+      <summary>
+        <para>Draws a Bezier curve specified by four points (in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>).</para>
+      </summary>
+      <param name="pen">A <see cref="T:DevExpress.Drawing.DXPen"/> object that specifies the color, width, and style of the curve.</param>
+      <param name="points">An array of <see cref="T:System.Drawing.PointF"/> structures that specifies points (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) by which you can draw a series of Bezier curves.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawBeziers(System.Drawing.Pen,System.Drawing.PointF[])">
+      <summary>
+        <para>Draws a series of Bezier curves by points from the specified array.</para>
+      </summary>
+      <param name="pen">A <see cref="T:System.Drawing.Pen"/> object that specifies the color, width, and style of the curve.</param>
+      <param name="points">An array of <see cref="T:System.Drawing.PointF"/> structures that specifies points (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) by which you can draw a series of Bezier curves.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawEllipse(DevExpress.Drawing.DXPen,System.Drawing.RectangleF)">
+      <summary>
+        <para>Draws an ellipse in the specified page rectangle.</para>
+      </summary>
+      <param name="pen">A <see cref="T:DevExpress.Drawing.DXPen"/> structure that specifies the color, width, and style of the ellipse.</param>
+      <param name="rect">A <see cref="T:System.Drawing.RectangleF"/> structure that specifies a page area (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can draw an ellipse.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawEllipse(System.Drawing.Pen,System.Drawing.RectangleF)">
+      <summary>
+        <para>Draws an ellipse in the specified page rectangle.</para>
+      </summary>
+      <param name="pen">A <see cref="T:System.Drawing.Pen"/> structure that specifies the color, width, and style of the ellipse.</param>
+      <param name="rect">A <see cref="T:System.Drawing.RectangleF"/> structure that specifies a page area (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can draw an ellipse.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawImage(DevExpress.Drawing.DXImage,System.Drawing.PointF)">
+      <summary>
+        <para>Draws the specified image in its original size at the specified page point.</para>
+      </summary>
+      <param name="image">An image to draw.</param>
+      <param name="location">A point in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can position an image.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawImage(DevExpress.Drawing.DXImage,System.Drawing.RectangleF,System.Drawing.RectangleF,DevExpress.Drawing.DXGraphicsUnit)">
+      <summary>
+        <para>Draws the specified image part in a page rectangle.</para>
+      </summary>
+      <param name="image">An image to draw.</param>
+      <param name="destRect">A page rectangle in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw an image. The image portion is scaled to fit the rectangle.</param>
+      <param name="srcRect">A portion of the image to draw.</param>
+      <param name="srcUnit">Indicates the measurement units used by the srcRect parameter.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawImage(DevExpress.Drawing.DXImage,System.Drawing.RectangleF)">
+      <summary>
+        <para>Draws an image in the specified page rectangle. The image is scaled to fit this rectangle.</para>
+      </summary>
+      <param name="image">An image to draw.</param>
+      <param name="bounds">A page area in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you want to draw an image.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawImage(System.Byte[],System.Drawing.PointF)">
+      <summary>
+        <para>Draws the specified image data at the specified point.</para>
+      </summary>
+      <param name="data">An array of bytes with image data.</param>
+      <param name="location">A point in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw an image.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawImage(System.Byte[],System.Drawing.RectangleF)">
+      <summary>
+        <para>Draws an image data in the specified page rectangle. The image is scaled to fit the rectangle.</para>
+      </summary>
+      <param name="data">An image to draw.</param>
+      <param name="bounds">A page area in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw an image.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawImage(System.Drawing.Image,System.Drawing.RectangleF,System.Drawing.RectangleF,System.Drawing.GraphicsUnit)">
+      <summary>
+        <para>Draws the specified image part in a page rectangle.</para>
+      </summary>
+      <param name="image">An image to draw.</param>
+      <param name="destRect">A page rectangle in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw an image. The image portion is scaled to fit the rectangle.</param>
+      <param name="srcRect">A portion of the image to draw.</param>
+      <param name="srcUnit">Indicates the measurement units used by the srcRect parameter.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawImage(System.IO.Stream,System.Drawing.PointF)">
+      <summary>
+        <para>Draws an image from a stream at the specified page point.</para>
+      </summary>
+      <param name="data">A stream with image data.</param>
+      <param name="location">A point on the page in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw an image.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawImage(System.IO.Stream,System.Drawing.RectangleF)">
+      <summary>
+        <para>Draws an image from a stream in the specified page rectangle. The image is scaled to fit the rectangle.</para>
+      </summary>
+      <param name="data">A stream with image data.</param>
+      <param name="bounds">A page area in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw an image.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawLine(DevExpress.Drawing.DXPen,System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Draws a line that connects two points with specified coordinates.</para>
+      </summary>
+      <param name="pen">A <see cref="T:DevExpress.Drawing.DXPen"/> object that specifies the color, width, and style of the line.</param>
+      <param name="x1">A <see cref="T:System.Single"/> object that specifies the x-coordinate of the first point.</param>
+      <param name="y1">A <see cref="T:System.Single"/> object that specifies the y-coordinate of the first point.</param>
+      <param name="x2">A <see cref="T:System.Single"/> object that specifies the x-coordinate of the second point.</param>
+      <param name="y2">A <see cref="T:System.Single"/> object that specifies the y-coordinate of the second point.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawLine(System.Drawing.Pen,System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+        <para>Draws a line that connects two points with specified coordinates.</para>
+      </summary>
+      <param name="pen">A <see cref="T:System.Drawing.Pen"/> object that specifies the color, width, and style of the line.</param>
+      <param name="x1">A <see cref="T:System.Single"/> object that specifies the x-coordinate of the first point.</param>
+      <param name="y1">A <see cref="T:System.Single"/> object that specifies the y-coordinate of the first point.</param>
+      <param name="x2">A <see cref="T:System.Single"/> object that specifies the x-coordinate of the second point.</param>
+      <param name="y2">A <see cref="T:System.Single"/> object that specifies the y-coordinate of the second point.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawLines(DevExpress.Drawing.DXPen,System.Drawing.PointF[])">
+      <summary>
+        <para>Draws a series of lines that connect points from the specified array.</para>
+      </summary>
+      <param name="pen">A <see cref="T:DevExpress.Drawing.DXPen"/> object that specifies the color, width, and style of the lines.</param>
+      <param name="points">An array of <see cref="T:System.Drawing.PointF"/> structures that specifies points to connect (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>).</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawLines(System.Drawing.Pen,System.Drawing.PointF[])">
+      <summary>
+        <para>Draws a series of lines that connect points from the specified array.</para>
+      </summary>
+      <param name="pen">A <see cref="T:System.Drawing.Pen"/> object that specifies the color, width, and style of the lines.</param>
+      <param name="points">An array of <see cref="T:System.Drawing.PointF"/> structures that specifies points to connect (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>).</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawPageContent(DevExpress.Pdf.PdfPage)">
+      <summary>
+        <para>Draws the specified page content.</para>
+      </summary>
+      <param name="source">The source page from which content is drawn.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawPath(DevExpress.Drawing.DXPen,DevExpress.Drawing.DXGraphicsPath)">
+      <summary>
+        <para>Draws the specified <see cref="T:System.Drawing.Drawing2D.GraphicsPath">path</see> on a page.</para>
+      </summary>
+      <param name="pen">A <see cref="T:DevExpress.Drawing.DXPen"/> object that specifies the color, width, and style of the path.</param>
+      <param name="path">A <see cref="T:DevExpress.Drawing.DXGraphicsPath"/> object in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawPath(System.Drawing.Pen,System.Drawing.Drawing2D.GraphicsPath)">
+      <summary>
+        <para>Draws the specified <see cref="T:System.Drawing.Drawing2D.GraphicsPath">path</see> on a page.</para>
+      </summary>
+      <param name="pen">A <see cref="T:System.Drawing.Pen"/> object that specifies the color, width, and style of the path.</param>
+      <param name="path">A <see cref="T:System.Drawing.Drawing2D.GraphicsPath"/> object in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawPolygon(DevExpress.Drawing.DXPen,System.Drawing.PointF[])">
+      <summary>
+        <para>Draws a polygon by points from the specified array.</para>
+      </summary>
+      <param name="pen">A <see cref="T:DevExpress.Drawing.DXPen"/> object that specifies the color, width, and style of the polygon.</param>
+      <param name="points">An array of <see cref="T:System.Drawing.PointF"/> structures that specify the polygon vertices (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>).</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawPolygon(System.Drawing.Pen,System.Drawing.PointF[])">
+      <summary>
+        <para>Draws a polygon by points from the specified array.</para>
+      </summary>
+      <param name="pen">A <see cref="T:System.Drawing.Pen"/> object that specifies the color, width, and style of the polygon.</param>
+      <param name="points">An array of <see cref="T:System.Drawing.PointF"/> structures that specify the polygon vertices (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>).</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawRectangle(DevExpress.Drawing.DXPen,System.Drawing.RectangleF)">
+      <summary>
+        <para>Draws a rectangle in the specified page area.</para>
+      </summary>
+      <param name="pen">A <see cref="T:DevExpress.Drawing.DXPen"/> object that specifies the color, width, and style of the rectangle.</param>
+      <param name="bounds">A <see cref="T:System.Drawing.RectangleF"/> structure that specifies a page area (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can draw a rectangle.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawRectangle(System.Drawing.Pen,System.Drawing.RectangleF)">
+      <summary>
+        <para>Draws a rectangle in the specified page area.</para>
+      </summary>
+      <param name="pen">A <see cref="T:System.Drawing.Pen"/> object that specifies the color, width, and style of the rectangle.</param>
+      <param name="bounds">A <see cref="T:System.Drawing.RectangleF"/> structure that specifies a page area (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can draw a rectangle.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,DevExpress.Drawing.DXFont,DevExpress.Drawing.DXSolidBrush,System.Drawing.PointF,DevExpress.Pdf.PdfStringFormat)">
+      <summary>
+        <para>Draws text at the specified point. Allows you to specify brush, font, and string parameters.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">An object that defines font options.</param>
+      <param name="brush">An object that determines the color and texture of the drawn text.</param>
+      <param name="point">A point in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can position text.</param>
+      <param name="format">An object that specifies text formatting attributes.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,DevExpress.Drawing.DXFont,DevExpress.Drawing.DXSolidBrush,System.Drawing.PointF)">
+      <summary>
+        <para>Draws text with the specified brush and font parameters at the specified page point.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">An object that defines font options.</param>
+      <param name="brush">An object that determines the color and texture of the drawn text.</param>
+      <param name="point">A point in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can position text.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,DevExpress.Drawing.DXFont,DevExpress.Drawing.DXSolidBrush,System.Drawing.RectangleF,DevExpress.Pdf.PdfStringFormat)">
+      <summary>
+        <para>Draws text in the specified page rectangle. Allows you to specify brush, font, and string parameters.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">An object that defines text font options.</param>
+      <param name="brush">An object that determines the color and texture of the drawn text.</param>
+      <param name="layout">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw text.</param>
+      <param name="format">An object that specifies text formatting attributes.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,DevExpress.Drawing.DXFont,DevExpress.Drawing.DXSolidBrush,System.Drawing.RectangleF)">
+      <summary>
+        <para>Draws text with the specified brush and font parameters in the specified page rectangle.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">A <see cref="T:DevExpress.Drawing.DXFont"/> object that defines the text format of the string.</param>
+      <param name="brush">A <see cref="T:DevExpress.Drawing.DXSolidBrush"/> object that determines the color and texture of the drawn text.</param>
+      <param name="layout">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw text.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,DevExpress.Drawing.DXFont,DevExpress.Drawing.DXSolidBrush,System.Single,System.Single,DevExpress.Pdf.PdfStringFormat)">
+      <summary>
+        <para>Draws text at the specified page point. Allows you to specify brush, font, and string parameters.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">An object that defines font options.</param>
+      <param name="brush">An object that determines the color and texture of the drawn text.</param>
+      <param name="x">The x-coordinate in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> of a point where you can draw text.</param>
+      <param name="y">The y-coordinate in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> of a point where you can draw text.</param>
+      <param name="format">An object that specifies text formatting attributes.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,DevExpress.Drawing.DXFont,DevExpress.Drawing.DXSolidBrush,System.Single,System.Single)">
+      <summary>
+        <para>Draws text with the specified brush and font parameters at the specified point on a page.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">A <see cref="T:DevExpress.Drawing.DXFont"/> object that defines the text format.</param>
+      <param name="brush">A <see cref="T:DevExpress.Drawing.DXSolidBrush"/> object that determines the color and texture of the drawn text.</param>
+      <param name="x">The x-coordinate in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> of a point where you can draw text.</param>
+      <param name="y">The y-coordinate in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> of a point where you can draw text.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,System.Drawing.Font,System.Drawing.SolidBrush,System.Drawing.PointF,DevExpress.Pdf.PdfStringFormat)">
+      <summary>
+        <para>Draws text at the specified point. Allows you to specify brush, font, and string parameters.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">An object that defines font options.</param>
+      <param name="brush">An object that determines the color and texture of the drawn text.</param>
+      <param name="point">A point in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can position text.</param>
+      <param name="format">An object that specifies text formatting attributes.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,System.Drawing.Font,System.Drawing.SolidBrush,System.Drawing.PointF)">
+      <summary>
+        <para>Draws text with the specified brush and font parameters at the specified page point.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">An object that defines font options.</param>
+      <param name="brush">An object that determines the color and texture of the drawn text.</param>
+      <param name="point">A point in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can position text.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,System.Drawing.Font,System.Drawing.SolidBrush,System.Drawing.RectangleF,DevExpress.Pdf.PdfStringFormat)">
+      <summary>
+        <para>Draws text in the specified page rectangle. Allows you to specify brush, font, and string parameters.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">An object that defines text font options.</param>
+      <param name="brush">An object that determines the color and texture of the drawn text.</param>
+      <param name="layout">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw text.</param>
+      <param name="format">An object that specifies text formatting attributes.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,System.Drawing.Font,System.Drawing.SolidBrush,System.Drawing.RectangleF)">
+      <summary>
+        <para>Draws text with the specified brush and font parameters in the specified page rectangle.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">A <see cref="T:System.Drawing.Font"/> object that defines the text format of the string.</param>
+      <param name="brush">A <see cref="T:System.Drawing.SolidBrush"/> object that determines the color and texture of the drawn text.</param>
+      <param name="layout">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw text.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,System.Drawing.Font,System.Drawing.SolidBrush,System.Single,System.Single,DevExpress.Pdf.PdfStringFormat)">
+      <summary>
+        <para>Draws text at the specified page point. Allows you to specify brush, font, and string parameters.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">An object that defines font options.</param>
+      <param name="brush">An object that determines the color and texture of the drawn text.</param>
+      <param name="x">The x-coordinate in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> of a point where you can draw text.</param>
+      <param name="y">The y-coordinate in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> of a point where you can draw text.</param>
+      <param name="format">An object that specifies text formatting attributes.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.DrawString(System.String,System.Drawing.Font,System.Drawing.SolidBrush,System.Single,System.Single)">
+      <summary>
+        <para>Draws text with the specified brush and font parameters at the specified point on a page.</para>
+      </summary>
+      <param name="text">A text to draw.</param>
+      <param name="font">A <see cref="T:System.Drawing.Font"/> object that defines the text format.</param>
+      <param name="brush">A <see cref="T:System.Drawing.SolidBrush"/> object that determines the color and texture of the drawn text.</param>
+      <param name="x">The x-coordinate in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> of a point where you can draw text.</param>
+      <param name="y">The y-coordinate in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> of a point where you can draw text.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.FillEllipse(DevExpress.Drawing.DXBrush,System.Drawing.RectangleF)">
+      <summary>
+        <para>Fills the interior of an ellipse located in the specified page rectangle.</para>
+      </summary>
+      <param name="brush">A <see cref="T:DevExpress.Drawing.DXBrush"/> object that specifies the brush used to fill the ellipse.</param>
+      <param name="rect">A <see cref="T:System.Drawing.RectangleF"/> structure that specifies a page area (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can draw an ellipse.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.FillEllipse(System.Drawing.Brush,System.Drawing.RectangleF)">
+      <summary>
+        <para>Fills the interior of an ellipse located in the specified page rectangle.</para>
+      </summary>
+      <param name="brush">A <see cref="T:System.Drawing.Brush"/> object that specifies the brush used to fill the ellipse.</param>
+      <param name="rect">A <see cref="T:System.Drawing.RectangleF"/> structure that specifies a page area (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can draw an ellipse.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.FillPath(DevExpress.Drawing.DXBrush,DevExpress.Drawing.DXGraphicsPath)">
+      <summary>
+        <para>Fills the interior of the specified path.</para>
+      </summary>
+      <param name="brush">A <see cref="T:DevExpress.Drawing.DXBrush"/> object that specifies the brush used to fill the path.</param>
+      <param name="path">A <see cref="T:DevExpress.Drawing.DXGraphicsPath"/> object in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.FillPath(System.Drawing.Brush,System.Drawing.Drawing2D.GraphicsPath)">
+      <summary>
+        <para>Fills the interior of the specified path.</para>
+      </summary>
+      <param name="brush">A <see cref="T:System.Drawing.Brush"/> object that specifies the brush used to fill the path.</param>
+      <param name="path">A <see cref="T:System.Drawing.Drawing2D.GraphicsPath"/> object in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.FillPolygon(DevExpress.Drawing.DXBrush,System.Drawing.PointF[])">
+      <summary>
+        <para>Fills the interior of a polygon specified by array points.</para>
+      </summary>
+      <param name="brush">A <see cref="T:DevExpress.Drawing.DXBrush"/> object that specifies the brush used to fill the polygon.</param>
+      <param name="points">An array of <see cref="T:System.Drawing.PointF"/> structures that specify the polygon vertices (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>).</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.FillPolygon(System.Drawing.Brush,System.Drawing.PointF[])">
+      <summary>
+        <para>Fills the interior of a polygon specified by array points.</para>
+      </summary>
+      <param name="brush">A <see cref="T:System.Drawing.Brush"/> object that specifies the brush used to fill the polygon.</param>
+      <param name="points">An array of <see cref="T:System.Drawing.PointF"/> structures that specify the polygon vertices (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>).</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.FillRectangle(DevExpress.Drawing.DXBrush,System.Drawing.RectangleF)">
+      <summary>
+        <para>Fills the interior of a rectangle located in the specified page area.</para>
+      </summary>
+      <param name="brush">A <see cref="T:DevExpress.Drawing.DXBrush"/> object that specifies the brush used to fill the rectangle.</param>
+      <param name="bounds">A <see cref="T:System.Drawing.RectangleF"/> structure that specifies a page area (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can draw a rectangle.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.FillRectangle(System.Drawing.Brush,System.Drawing.RectangleF)">
+      <summary>
+        <para>Fills the interior of a rectangle located in the specified page area.</para>
+      </summary>
+      <param name="brush">A <see cref="T:System.Drawing.Brush"/> object that specifies the brush used to fill the rectangle.</param>
+      <param name="bounds">A <see cref="T:System.Drawing.RectangleF"/> structure that specifies a page area (in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems">world coordinate system</see>) where you can draw a rectangle.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.IntersectClip(System.Drawing.RectangleF)">
+      <summary>
+        <para>Assigns the clip region of the <see cref="T:DevExpress.Pdf.PdfGraphics"/> object to the intersection of the current clip region and the specified page region.</para>
+      </summary>
+      <param name="rect">A <see cref="T:System.Drawing.RectangleF"/> structure that intersects the current clip region of the <see cref="T:DevExpress.Pdf.PdfGraphics"/> object (defined in <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see>).</param>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphics.JpegImageQuality">
+      <summary>
+        <para>Gets or sets the quality of JPEG images in the resulting PDF file.</para>
+      </summary>
+      <value>Specifies the quality of images in the resulting PDF file.</value>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,DevExpress.Drawing.DXFont,DevExpress.Pdf.PdfStringFormat,System.Single,System.Single)">
+      <summary>
+        <para>Measures the specified string when drawn with the specified font and format parameters, horizontal and vertical resolutions.</para>
+      </summary>
+      <param name="text">A text to measure.</param>
+      <param name="font">An object that defines font settings.</param>
+      <param name="format">An object that specifies text formatting parameters.</param>
+      <param name="dpiX">The horizontal resolution, in dots per inch. The default value is 96.</param>
+      <param name="dpiY">The vertical resolution, in dots per inch. The default value is 96.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,DevExpress.Drawing.DXFont,DevExpress.Pdf.PdfStringFormat)">
+      <summary>
+        <para>Measures the specified string when drawn with the specified font and text formatting parameters.</para>
+      </summary>
+      <param name="text">A text to measure.</param>
+      <param name="font">An object that contains font parameters.</param>
+      <param name="format">An object that contains text formatting parameters.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,DevExpress.Drawing.DXFont,System.Drawing.SizeF,DevExpress.Pdf.PdfStringFormat,System.Single,System.Single,System.Int32@,System.Int32@)">
+      <summary>
+        <para>Measures a string when it is drawn with the specific font and text formatting settings.</para>
+      </summary>
+      <param name="text">A string to measure.</param>
+      <param name="font">An object that contains font parameters.</param>
+      <param name="layoutSize">Specifies the maximum layout area for the text.</param>
+      <param name="format">An object that contains text formatting parameters.</param>
+      <param name="dpiX">The horizontal resolution (in dots per inch). The default value is 96.</param>
+      <param name="dpiY">The vertical resolution (in dots per inch). The default value is 96.</param>
+      <param name="charactersFitted">The number of characters in the string.</param>
+      <param name="linesFilled">The number of lines in the string.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,DevExpress.Drawing.DXFont,System.Drawing.SizeF,DevExpress.Pdf.PdfStringFormat,System.Single,System.Single)">
+      <summary>
+        <para>Measures the specified string when drawn with specified font and text formatting parameters. Allows you to specify text layout size, and horizontal and vertical resolutions.</para>
+      </summary>
+      <param name="text">A text to measure.</param>
+      <param name="font">An object that defines font parameters.</param>
+      <param name="layoutSize">The maximum layout area for the text.</param>
+      <param name="format">An object that defines text formatting parameters.</param>
+      <param name="dpiX">The horizontal resolution, in dots per inch. The default value is 96.</param>
+      <param name="dpiY">The vertical resolution, in dots per inch. The default value is 96.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,DevExpress.Drawing.DXFont,System.Drawing.SizeF,DevExpress.Pdf.PdfStringFormat)">
+      <summary>
+        <para>Measures the specified string when drawn with the specified font, text layout size, and format.</para>
+      </summary>
+      <param name="text">A <see cref="T:System.String"/> to measure.</param>
+      <param name="font">An object that contains font parameters.</param>
+      <param name="layoutSize">Specifies the maximum layout area for the text.</param>
+      <param name="format">An object that contains text formatting parameters.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,DevExpress.Drawing.DXFont,System.Drawing.SizeF)">
+      <summary>
+        <para>Measures the specified string when drawn with the specified font settings.</para>
+      </summary>
+      <param name="text">A text to measure.</param>
+      <param name="font">An object that contains font parameters.</param>
+      <param name="layoutSize">The maximum layout area for the text.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,DevExpress.Drawing.DXFont)">
+      <summary>
+        <para>Measures the specified string when drawn with specified font parameters.</para>
+      </summary>
+      <param name="text">A text to measure.</param>
+      <param name="font">An object that defines font parameters.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,System.Drawing.Font,DevExpress.Pdf.PdfStringFormat,System.Single,System.Single)">
+      <summary>
+        <para>Measures the specified string when drawn with the specified font and format parameters, horizontal and vertical resolutions.</para>
+      </summary>
+      <param name="text">A text to measure.</param>
+      <param name="font">An object that defines font settings.</param>
+      <param name="format">An object that specifies text formatting parameters.</param>
+      <param name="dpiX">The horizontal resolution, in dots per inch. The default value is 96.</param>
+      <param name="dpiY">The vertical resolution, in dots per inch. The default value is 96.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,System.Drawing.Font,DevExpress.Pdf.PdfStringFormat)">
+      <summary>
+        <para>Measures the specified string when drawn with the specified font and text formatting parameters.</para>
+      </summary>
+      <param name="text">A text to measure.</param>
+      <param name="font">An object that contains font parameters.</param>
+      <param name="format">An object that contains text formatting parameters.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,System.Drawing.Font,System.Drawing.SizeF,DevExpress.Pdf.PdfStringFormat,System.Single,System.Single,System.Int32@,System.Int32@)">
+      <summary>
+        <para>Measures a string when it is drawn with the specific font and text formatting settings.</para>
+      </summary>
+      <param name="text">A string to measure.</param>
+      <param name="font">An object that contains font parameters.</param>
+      <param name="layoutSize">Specifies the maximum layout area for the text.</param>
+      <param name="format">An object that contains text formatting parameters.</param>
+      <param name="dpiX">The horizontal resolution (in dots per inch). The default value is 96.</param>
+      <param name="dpiY">The vertical resolution (in dots per inch). The default value is 96.</param>
+      <param name="charactersFitted">The number of characters in the string.</param>
+      <param name="linesFilled">The number of lines in the string.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,System.Drawing.Font,System.Drawing.SizeF,DevExpress.Pdf.PdfStringFormat,System.Single,System.Single)">
+      <summary>
+        <para>Measures the specified string when drawn with specified font and text formatting parameters. Allows you to specify text layout size, and horizontal and vertical resolutions.</para>
+      </summary>
+      <param name="text">A text to measure.</param>
+      <param name="font">An object that defines font parameters.</param>
+      <param name="layoutSize">The maximum layout area for the text.</param>
+      <param name="format">An object that defines text formatting parameters.</param>
+      <param name="dpiX">The horizontal resolution, in dots per inch. The default value is 96.</param>
+      <param name="dpiY">The vertical resolution, in dots per inch. The default value is 96.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,System.Drawing.Font,System.Drawing.SizeF,DevExpress.Pdf.PdfStringFormat)">
+      <summary>
+        <para>Measures the specified string when drawn with the specified font, text layout size, and format.</para>
+      </summary>
+      <param name="text">A <see cref="T:System.String"/> to measure.</param>
+      <param name="font">An object that contains font parameters.</param>
+      <param name="layoutSize">Specifies the maximum layout area for the text.</param>
+      <param name="format">An object that contains text formatting parameters.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,System.Drawing.Font,System.Drawing.SizeF)">
+      <summary>
+        <para>Measures the specified string when drawn with the specified font settings.</para>
+      </summary>
+      <param name="text">A text to measure.</param>
+      <param name="font">An object that contains font parameters.</param>
+      <param name="layoutSize">The maximum layout area for the text.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.MeasureString(System.String,System.Drawing.Font)">
+      <summary>
+        <para>Measures the specified string when drawn with specified font parameters.</para>
+      </summary>
+      <param name="text">A text to measure.</param>
+      <param name="font">An object that defines font parameters.</param>
+      <returns>The string’s measured size.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.RestoreGraphicsState">
+      <summary>
+        <para>Restores the saved <see cref="T:DevExpress.Pdf.PdfGraphics">graphics state</see>.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.RotateTransform(System.Single)">
+      <summary>
+        <para>Rotates the coordinate system clockwise to the specified angle relative to its origin.</para>
+      </summary>
+      <param name="degree">Angle of rotation in degrees.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.SaveGraphicsState">
+      <summary>
+        <para>Saves the current <see cref="T:DevExpress.Pdf.PdfGraphics">graphics state</see> to the stack.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.ScaleTransform(System.Single,System.Single)">
+      <summary>
+        <para>Scales the coordinate system by the specified scale factor.</para>
+      </summary>
+      <param name="sx">Scale factor in the x direction.</param>
+      <param name="sy">Scale factor in the y direction.</param>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphics.TextOrigin">
+      <summary>
+        <para>Specifies how to interpret a point passed to the PdfGraphics.DrawString method as a parameter.</para>
+      </summary>
+      <value>Indicates the point location relative to the drawn text.</value>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphics.TranslateTransform(System.Single,System.Single)">
+      <summary>
+        <para>Translates the coordinate system origin to the specified point.</para>
+      </summary>
+      <param name="x">The x-coordinate of the translation.</param>
+      <param name="y">The y-coordinate of the translation.</param>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphics.UseKerning">
+      <summary>
+        <para>Gets or sets a value which indicates whether to use kerning when drawing characters.</para>
+      </summary>
+      <value>true to use kerning; otherwise, false.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormBorderAppearance">
+      <summary>
+        <para>Contains border appearance settings of an interactive form field.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormBorderAppearance.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfGraphicsAcroFormBorderAppearance"/> class with the default settings.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormBorderAppearance.Color">
+      <summary>
+        <para>Specifies a color of an interactive form field border.</para>
+      </summary>
+      <value>The border color.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormBorderAppearance.Style">
+      <summary>
+        <para>Specifies a style of an interactive form field border.</para>
+      </summary>
+      <value>An enumeration value that indicates the border style.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormBorderAppearance.Width">
+      <summary>
+        <para>Specifies the width of the interactive form field border.</para>
+      </summary>
+      <value>The border width.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormCheckBoxField">
+      <summary>
+        <para>A check box field in PDF Graphics API.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormCheckBoxField.#ctor(System.String,System.Drawing.RectangleF)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfGraphicsAcroFormCheckBoxField"/> class with the specified parameters.</para>
+      </summary>
+      <param name="name">A name of a check box field.</param>
+      <param name="rectangle">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw a check box field.</param>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormCheckBoxField.ButtonStyle">
+      <summary>
+        <para>Specifies the shape of the marker that appears inside a check box when a user selects it.</para>
+      </summary>
+      <value>An enumeration value that indicates the check box marker shape.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormCheckBoxField.ExportValue">
+      <summary>
+        <para>Specifies an export value of a check box field.</para>
+      </summary>
+      <value>An export value of a check box field.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormCheckBoxField.IsChecked">
+      <summary>
+        <para>Gets or sets whether a check box is checked.</para>
+      </summary>
+      <value>true if the check box is checked; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormCheckBoxField.ShouldGeneratePressedAppearance">
+      <summary>
+        <para>Specifies whether to generate a down appearance that appears in a check box when the mouse button is pressed within the check box area.</para>
+      </summary>
+      <value>true to generate a down appearance in the check box area; otherwise, false.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormChoiceField">
+      <summary>
+        <para>A base class for combo box and list box fields in PDF Graphics API.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormChoiceField.AddValue(System.String,System.String)">
+      <summary>
+        <para>Adds an item with the specified display and export values to a combo box or a list box field.</para>
+      </summary>
+      <param name="displayValue">A value to be added to a combo box and list box.</param>
+      <param name="exportValue">An export value.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormChoiceField.AddValue(System.String)">
+      <summary>
+        <para>Adds an item with the specified display value to a combo box or a list box field.</para>
+      </summary>
+      <param name="displayValue">A <see cref="T:System.String"/> that is a value to be added to combo box and list box.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormChoiceField.ClearSelection">
+      <summary>
+        <para>Clears the combo box or list box selection.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormChoiceField.ClearValues">
+      <summary>
+        <para>Removes all values to be added to a list box or combo box field.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormChoiceField.SelectValue(System.String)">
+      <summary>
+        <para>Selects an item in a combo box or a list box by its export value.</para>
+      </summary>
+      <param name="exportValue">The item’s export value.</param>
+      <returns>true, if the combo box or list box item was successfully selected; otherwise, false.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormChoiceField.SetSelected(System.Int32,System.Boolean)">
+      <summary>
+        <para>Selects or unselects an item in a combo box of a list box field by its index.</para>
+      </summary>
+      <param name="index">The zero-based index of the item that should be selected or unselected.</param>
+      <param name="value">true, to select the item; false to unselect the item.</param>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormComboBoxField">
+      <summary>
+        <para>A combo box field in PDF Graphics API.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormComboBoxField.#ctor(System.String,System.Drawing.RectangleF)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfGraphicsAcroFormComboBoxField"/> class with the specified parameters.</para>
+      </summary>
+      <param name="name">The name of a combo box field.</param>
+      <param name="rectangle">A page area in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw a combo box.</param>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormComboBoxField.Editable">
+      <summary>
+        <para>Specifies whether to include an editable text box in the combo box.</para>
+      </summary>
+      <value>true to include an editable text box; otherwise, false to include only a drop-down list.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormComboBoxField.ValueFormat">
+      <summary>
+        <para>Obtains value format options of a field.</para>
+      </summary>
+      <value>An object that allows you to specify the value format.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormCommonField">
+      <summary>
+        <para>A base class for common form field types (text box, check box, list box, combo box, and signature) in PDF Graphics API.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormCommonField.Rectangle">
+      <summary>
+        <para>Specifies a page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where the form field is located on a page.</para>
+      </summary>
+      <value>A form field rectangle.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormCommonField.TextAlignment">
+      <summary>
+        <para>Specifies the horizontal alignment of the form field’s text.</para>
+      </summary>
+      <value>An enumeration value that indicates the text alignment type.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormField">
+      <summary>
+        <para>A base class for all interactive form fields in PDF Graphics API.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormField.Appearance">
+      <summary>
+        <para>Obtains appearance settings of a form field.</para>
+      </summary>
+      <value>An object that specifies appearance options.</value>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormField.CreateComboBox(System.String,System.Drawing.RectangleF)">
+      <summary>
+        <para>Creates a combo box with the specified name in the target page area.</para>
+      </summary>
+      <param name="name">A name of a combo box field.</param>
+      <param name="rect">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">word coordinate system</see> where you can draw a form field.</param>
+      <returns>The created combo box field.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormField.CreateListBox(System.String,System.Drawing.RectangleF)">
+      <summary>
+        <para>Creates a list box field with the specified name in the target page area.</para>
+      </summary>
+      <param name="name">A name of a list box field.</param>
+      <param name="rect">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">word coordinate system</see> where you can draw a form field.</param>
+      <returns>The created list box field.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormField.CreateRadioGroup(System.String)">
+      <summary>
+        <para>Creates a radio group field with the specified name.</para>
+      </summary>
+      <param name="name">A name of a radio group field.</param>
+      <returns>The created radio group field.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormField.CreateSignature(System.String,System.Drawing.RectangleF)">
+      <summary>
+        <para>Creates a signature field with the specified name in the target page area.</para>
+      </summary>
+      <param name="name">A name of a signature field.</param>
+      <param name="rect">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">word coordinate system</see> where you can draw a form field.</param>
+      <returns>The created signature field.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormField.CreateTextBox(System.String,System.Drawing.RectangleF)">
+      <summary>
+        <para>Creates a text box with the specified name in the target page area.</para>
+      </summary>
+      <param name="name">A <see cref="T:System.String"/> that specifies the name of a text box field.</param>
+      <param name="rect">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">word coordinate system</see> where you can draw a form field.</param>
+      <returns>The created text box field.</returns>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormField.Name">
+      <summary>
+        <para>Specifies form field’s name.</para>
+      </summary>
+      <value>The field name.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormField.Print">
+      <summary>
+        <para>Specifies whether a form field is printable.</para>
+      </summary>
+      <value>true, if a form field can be printed on a page, otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormField.ReadOnly">
+      <summary>
+        <para>Gets or sets whether the interactive form field is read-only.</para>
+      </summary>
+      <value>true if the field is read-only; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormField.Required">
+      <summary>
+        <para>Gets or sets whether to force users to complete a form field.</para>
+      </summary>
+      <value>true to mark the form field as required; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormField.Rotation">
+      <summary>
+        <para>Specifies a form field’s rotation angle.</para>
+      </summary>
+      <value>An enumeration value that indicates a rotation degree (counterclockwise relative to a page).</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormField.ToolTip">
+      <summary>
+        <para>Specifies a form field’s tooltip text.</para>
+      </summary>
+      <value>A text displayed in the form field’s tooltip.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormField.Visible">
+      <summary>
+        <para>Specifies whether a form field is visible on a page.</para>
+      </summary>
+      <value>true if a form field is visible; otherwise, false.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormFieldAppearance">
+      <summary>
+        <para>Contains appearance settings of an interactive form field.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormFieldAppearance.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfGraphicsAcroFormFieldAppearance"/> class with the default settings.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormFieldAppearance.BackgroundColor">
+      <summary>
+        <para>Specifies the form field’s background color.</para>
+      </summary>
+      <value>A <see cref="T:System.Drawing.Color"/> value that specifies the interactive form field’s background color.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormFieldAppearance.BorderAppearance">
+      <summary>
+        <para>Specifies the border appearance settings for an interactive form field.</para>
+      </summary>
+      <value>An object that contains border appearance parameters.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormFieldAppearance.FontFamily">
+      <summary>
+        <para>Specifies a font family name for an interactive form field.</para>
+      </summary>
+      <value>A font family name.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormFieldAppearance.FontSize">
+      <summary>
+        <para>Specifies the font size of the interactive form field.</para>
+      </summary>
+      <value>Font size.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormFieldAppearance.FontStyle">
+      <summary>
+        <para>Specifies the font style of the form field.</para>
+      </summary>
+      <value>Font style.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormFieldAppearance.ForeColor">
+      <summary>
+        <para>Specifies the foreground color of the interactive form field.</para>
+      </summary>
+      <value>Foreground color.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormListBoxField">
+      <summary>
+        <para>A list box field in PDF Graphics API.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormListBoxField.#ctor(System.String,System.Drawing.RectangleF)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfGraphicsAcroFormListBoxField"/> class with the specified parameters.</para>
+      </summary>
+      <param name="name">The name of a list box field.</param>
+      <param name="rectangle">A page area in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw a list box.</param>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormListBoxField.MultiSelect">
+      <summary>
+        <para>Gets or sets whether to enable users to select multiple items in the list box.</para>
+      </summary>
+      <value>true to enable multiple selection; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormListBoxField.TopIndex">
+      <summary>
+        <para>Specifies the index of the first visible item in the list box field.</para>
+      </summary>
+      <value>A zero-based index of the first visible item in the list box.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormRadioGroupField">
+      <summary>
+        <para>A radio group field in PDF Graphics API.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormRadioGroupField.#ctor(System.String)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfGraphicsAcroFormRadioGroupField"/> class with the specified radio group field name.</para>
+      </summary>
+      <param name="name">A name of a radio group field.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormRadioGroupField.AddButton(System.String,System.Drawing.RectangleF)">
+      <summary>
+        <para>Adds a radio button with the specified name to the radio group field and places it in the specified page area.</para>
+      </summary>
+      <param name="name">A name of a radio button.</param>
+      <param name="rect">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw the radio button.</param>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormRadioGroupField.ButtonStyle">
+      <summary>
+        <para>Gets or sets the radio button style.</para>
+      </summary>
+      <value>An enumeration value that determines the style of a radio button in a radio group.</value>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormRadioGroupField.ClearButtons">
+      <summary>
+        <para>Removes all radio buttons from the radio group field.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormRadioGroupField.RadioButtonCount">
+      <summary>
+        <para>Gets the number of radio buttons in the radio group field.</para>
+      </summary>
+      <value>The number of radio buttons in the radio group field.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormRadioGroupField.SelectedIndex">
+      <summary>
+        <para>Specifies index of the selected item in radio group field.</para>
+      </summary>
+      <value>The zero-based index of the radio group’s selected item.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormRadioGroupField.ShouldGeneratePressedAppearance">
+      <summary>
+        <para>Specifies whether to generate a down appearance that appears when the mouse button is pressed within the radio button area.</para>
+      </summary>
+      <value>true, if a down appearance is generated within the radio button area; otherwise, false. Default value is true.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormSignatureField">
+      <summary>
+        <para>A signature form field in PDF Graphics API.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormSignatureField.#ctor(System.String,System.Drawing.RectangleF)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfGraphicsAcroFormSignatureField"/> class with the specified parameters.</para>
+      </summary>
+      <param name="name">A name of a signature form field.</param>
+      <param name="rectangle">A page rectangle in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw a form field.</param>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormSignatureField.ContentDXImage">
+      <summary>
+        <para>Specifies an image displayed in the signature form field.</para>
+      </summary>
+      <value>An image displayed in the signature form field.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormSignatureField.ContentImage">
+      <summary>
+        <para>Specifies an image displayed in the signature form field.</para>
+      </summary>
+      <value>A <see cref="T:System.Drawing.Image"/> object that is an image displayed in the signature form field.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormSignatureField.LineAlignment">
+      <summary>
+        <para>Specifies the vertical alignment of the string in the signature field.</para>
+      </summary>
+      <value>An enumeration value that indicates the vertical line alignment.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormSignatureField.StretchContentImage">
+      <summary>
+        <para>Specifies whether to stretch an image to fill the signature field rectangle.</para>
+      </summary>
+      <value>true to stretch an image to fill the field rectangle; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormSignatureField.Text">
+      <summary>
+        <para>Specifies the text displayed in a signature field.</para>
+      </summary>
+      <value>The text displayed in the signature field.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsAcroFormTextBoxField">
+      <summary>
+        <para>A text box field in PDF Graphics API.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfGraphicsAcroFormTextBoxField.#ctor(System.String,System.Drawing.RectangleF)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfGraphicsAcroFormTextBoxField"/> class with the specified parameters.</para>
+      </summary>
+      <param name="name">A name of a text box field.</param>
+      <param name="rectangle">A page area in the <see href="https://docs.devexpress.com/OfficeFileAPI/120032/pdf-document-api/coordinate-systems#world-coordinate-system">world coordinate system</see> where you can draw a text box field.</param>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormTextBoxField.MaxLength">
+      <summary>
+        <para>Specifies the maximum text length for a text box field.</para>
+      </summary>
+      <value>A positive integer that is the maximum number of characters allowed in a text box field. The value 0 indicates an unlimited number of characters.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormTextBoxField.Multiline">
+      <summary>
+        <para>Specifies whether the text box field can contain multiple lines.</para>
+      </summary>
+      <value>true, if the text box field can contain multiple lines of text; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormTextBoxField.Scrollable">
+      <summary>
+        <para>Gets or sets whether to scroll the text field when the text does not fit the field rectangle.</para>
+      </summary>
+      <value>true to allow scrolling; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormTextBoxField.SpellCheck">
+      <summary>
+        <para>Gets or sets whether to check spelling in the text form field.</para>
+      </summary>
+      <value>true to enable spell check; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormTextBoxField.Text">
+      <summary>
+        <para>Specifies text of the text box field.</para>
+      </summary>
+      <value>Text displayed in the text box field.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormTextBoxField.Type">
+      <summary>
+        <para>Specifies the text form field input type.</para>
+      </summary>
+      <value>An enumeration value that indicates the input type.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfGraphicsAcroFormTextBoxField.ValueFormat">
+      <summary>
+        <para>Obtains value format options of a form field.</para>
+      </summary>
+      <value>An object that allows you to specify the value format.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfGraphicsJpegImageQuality">
+      <summary>
+        <para>Specifies how images are exported to PDF format.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfGraphicsJpegImageQuality.High">
+      <summary>
+        <para>The resulting Jpeg image quality is high.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfGraphicsJpegImageQuality.Highest">
+      <summary>
+        <para>The resulting Jpeg image quality is the highest.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfGraphicsJpegImageQuality.Low">
+      <summary>
+        <para>The resulting Jpeg image quality is low.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfGraphicsJpegImageQuality.Lowest">
+      <summary>
+        <para>The resulting Jpeg image quality is the lowest.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfGraphicsJpegImageQuality.Medium">
+      <summary>
+        <para>The resulting Jpeg image quality is medium.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfPageRenderingParameters">
+      <summary>
+        <para>Contains rendering parameters used to export a PDF page to a Bitmap image.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPageRenderingParameters.Create(System.Int32)">
+      <summary>
+        <para>Creates a new PdfPageRenderingParameters instance with the specified image’s largest dimension length.</para>
+      </summary>
+      <param name="largestEdgeLength">The largest dimension length, in pixels.</param>
+      <returns>A new PdfPageRenderingParameters instance with the specified LargestEdgeLength property.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPageRenderingParameters.CreateWithResolution(System.Single)">
+      <summary>
+        <para>Creates a new PdfPageRenderingParameters instance with the specified image DPI.</para>
+      </summary>
+      <param name="dpi">An image DPI.</param>
+      <returns>A new PdfPageRenderingParameters instance with the specified Dpi property.</returns>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPageRenderingParameters.Dpi">
+      <summary>
+        <para>Obtains the predefined resolution of a converted page.</para>
+      </summary>
+      <value>An image DPI.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPageRenderingParameters.LargestEdgeLength">
+      <summary>
+        <para>Gets the length of an image’s largest dimension.</para>
+      </summary>
+      <value>The largest dimension length, in pixels.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfPrinterSettings">
+      <summary>
+        <para>Provides the additional printer settings to a PDF Viewer.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPrinterSettings.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfPrinterSettings"/> class with the default settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPrinterSettings.#ctor(System.Drawing.Printing.PrinterSettings)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfPrinterSettings"/> class with the specified settings.</para>
+      </summary>
+      <param name="settings">A <see cref="T:System.Drawing.Printing.PrinterSettings"/> object.</param>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrinterSettings.EnableLegacyPrinting">
+      <summary>
+        <para>Gets or sets whether to enable the legacy printing engine.</para>
+      </summary>
+      <value>true to use the old printing engine; otherwise - false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrinterSettings.PageNumbers">
+      <summary>
+        <para>Specifies the PDF document page numbers to be printed.</para>
+      </summary>
+      <value>An array of integer values that correspond to page numbers.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrinterSettings.PageOrientation">
+      <summary>
+        <para>Specifies the orientation of pages to be printed.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Pdf.PdfPrintPageOrientation"/> value. The default value is <see cref="F:DevExpress.Pdf.PdfPrintPageOrientation.Auto">PdfPrintPageOrientation.Auto</see>.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrinterSettings.PrintingDpi">
+      <summary>
+        <para>Specifies the dpi value used to print the PDF document.</para>
+      </summary>
+      <value>A <see cref="T:System.Int32"/> value which represents the printing dpi.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrinterSettings.PrintInGrayscale">
+      <summary>
+        <para>Gets or sets a value which indicates whether to print the document content in grayscale.</para>
+      </summary>
+      <value>true to print a document content in grayscale; false the current printer settings are used.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrinterSettings.PrintStickyNotes">
+      <summary>
+        <para>Gets or sets whether to print text markup annotations (sticky notes).</para>
+      </summary>
+      <value>true to print sticky notes; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrinterSettings.PrintTextAsOutlines">
+      <summary>
+        <para>Gets or sets whether to print text as character outlines in the DirectX printing engine.</para>
+      </summary>
+      <value>true to print text as outlines; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrinterSettings.Scale">
+      <summary>
+        <para>Specifies the percentage scale factor of the document page to be printed.</para>
+      </summary>
+      <value>A <see cref="T:System.Single"/> value which represents the scale factor of the document page (the scale is measured as a percentage).</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrinterSettings.ScaleMode">
+      <summary>
+        <para>Specifies the page scale mode when a document is printing.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Pdf.PdfPrintScaleMode"/> value.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrinterSettings.Settings">
+      <summary>
+        <para>Provides access to the standard .NET Framework printer settings.</para>
+      </summary>
+      <value>A <see cref="T:System.Drawing.Printing.PrinterSettings"/> object containing the standard .NET Framework printer settings.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfPrintPageEventArgs">
+      <summary>
+        <para>Provides data for the <see cref="E:DevExpress.XtraPdfViewer.PdfViewer.PrintPage">PdfViewer.PrintPage</see> and <see cref="E:DevExpress.Pdf.PdfDocumentProcessor.PrintPage">PdfDocumentProcessor.PrintPage</see> events.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrintPageEventArgs.PageCount">
+      <summary>
+        <para>Returns the total number of pages which were sent to the printer.</para>
+      </summary>
+      <value>An integer value which represents the total number of pages which were sent to the printer.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfPrintPageEventArgs.PageNumber">
+      <summary>
+        <para>Returns the page number of the currently printed page.</para>
+      </summary>
+      <value>An integer value that is the page number.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfPrintPageEventHandler">
+      <summary>
+        <para>A method that will handle the <see cref="E:DevExpress.XtraPdfViewer.PdfViewer.PrintPage">PdfViewer.PrintPage</see> and <see cref="E:DevExpress.Pdf.PdfDocumentProcessor.PrintPage">PdfDocumentProcessor.PrintPage</see> events.</para>
+      </summary>
+      <param name="sender">The event source. This parameter identifies either the <see cref="T:DevExpress.Pdf.PdfDocumentProcessor"/> or <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> which raised the event.</param>
+      <param name="e">A <see cref="T:DevExpress.Pdf.PdfPrintPageEventArgs"/> object that contains event data.</param>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfPrintPageOrientation">
+      <summary>
+        <para>Lists the available document orientation modes.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfPrintPageOrientation.Auto">
+      <summary>
+        <para>The orientation is defined automatically to fit the page content to the specific paper type.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfPrintPageOrientation.Landscape">
+      <summary>
+        <para>Orientation of the document pages is landscape.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfPrintPageOrientation.Portrait">
+      <summary>
+        <para>Orientation of the document pages is portrait.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfPrintScaleMode">
+      <summary>
+        <para>Lists the available document scale modes.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfPrintScaleMode.ActualSize">
+      <summary>
+        <para>A printed page is not scaled.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfPrintScaleMode.CustomScale">
+      <summary>
+        <para>A printed page is scaled by a specified percentage scale factor.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfPrintScaleMode.Fit">
+      <summary>
+        <para>A printed page is scaled to fit a specific paper size.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfQueryPageSettingsEventArgs">
+      <summary>
+        <para>Provides data for the <see cref="E:DevExpress.XtraPdfViewer.PdfViewer.QueryPageSettings">PdfViewer.QueryPageSettings</see>  and <see cref="E:DevExpress.Pdf.PdfDocumentProcessor.QueryPageSettings">PdfDocumentProcessor.QueryPageSettings</see> events.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfQueryPageSettingsEventArgs.PageNumber">
+      <summary>
+        <para>Gets the page number in a document.</para>
+      </summary>
+      <value>An integer value, specifying the page number.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfQueryPageSettingsEventArgs.PageSize">
+      <summary>
+        <para>Gets the size of the current page.</para>
+      </summary>
+      <value>A <see cref="T:System.Drawing.SizeF"/> value.</value>
+    </member>
+    <member name="P:DevExpress.Pdf.PdfQueryPageSettingsEventArgs.PrintInGrayscale">
+      <summary>
+        <para>Gets or sets a value which indicates whether to print the document content in grayscale.</para>
+      </summary>
+      <value>true to print a document content in grayscale; false the current printer settings are used.</value>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfQueryPageSettingsEventHandler">
+      <summary>
+        <para>A method that will handle the <see cref="E:DevExpress.Pdf.PdfDocumentProcessor.QueryPageSettings">PdfDocumentProcessor.QueryPageSettings</see> and <see cref="E:DevExpress.XtraPdfViewer.PdfViewer.QueryPageSettings">PdfViewer.QueryPageSettings</see> events.</para>
+      </summary>
+      <param name="sender">The event source. This parameter identifies either the <see cref="T:DevExpress.Pdf.PdfDocumentProcessor"/> or <see cref="T:DevExpress.XtraPdfViewer.PdfViewer"/> which raised the event.</param>
+      <param name="e">A <see cref="T:DevExpress.Pdf.PdfQueryPageSettingsEventArgs"/> object that contains event data.</param>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfRenderingEngine">
+      <summary>
+        <para>Lists values used to specify the rendering engine.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfRenderingEngine.Default">
+      <summary>
+        <para>Default rendering engine.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfRenderingEngine.DirectX">
+      <summary>
+        <para>DirectX hardware rendering engine.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfRenderingEngine.DirectXSoftware">
+      <summary>
+        <para>DirectX software rendering engine.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfRenderingEngine.GdiPlus">
+      <summary>
+        <para>GDI/GDI+ rendering engine.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Pdf.PdfRenderingEngine.Skia">
+      <summary>
+        <para>Skia graphics engine.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfViewerAnnotationBuilderExtensions">
+      <summary>
+        <para>Defines extension methods for the <see cref="T:DevExpress.Pdf.IPdfViewerAnnotationBuilder">IPdfViewerAnnotationBuilder</see> interface.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfViewerAnnotationBuilderExtensions.AsMarkupAnnotationBuilder(DevExpress.Pdf.IPdfViewerAnnotationBuilder)">
+      <summary>
+        <para>Casts the IPdfViewerAnnotationBuilder object to the IPdfViewerMarkupAnnotationBuilder object.</para>
+      </summary>
+      <param name="builder">Current IPdfViewerAnnotationBuilder object.</param>
+      <returns>The object that contain information about the markup annotation.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfViewerAnnotationBuilderExtensions.AsTextAnnotationBuilder(DevExpress.Pdf.IPdfViewerAnnotationBuilder)">
+      <summary>
+        <para>Casts the IPdfViewerAnnotationBuilder object to the IPdfViewerTextAnnotationBuilder object.</para>
+      </summary>
+      <param name="builder">Current IPdfViewerAnnotationBuilder object.</param>
+      <returns>The IPdfViewerTextAnnotationBuilder object that contains text annotation parameters.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfViewerAnnotationBuilderExtensions.AsTextAnnotationBuilder(DevExpress.Pdf.IPdfViewerMarkupAnnotationBuilder)">
+      <summary>
+        <para>Casts the IPdfViewerMarkupAnnotationBuilder object to the IPdfViewerTextAnnotationBuilder object.</para>
+      </summary>
+      <param name="builder">Current IPdfViewerMarkupAnnotationBuilder object.</param>
+      <returns>The IPdfViewerTextAnnotationBuilder object that contains text annotation parameters.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfViewerAnnotationBuilderExtensions.AsTextMarkupAnnotationBuilder(DevExpress.Pdf.IPdfViewerAnnotationBuilder)">
+      <summary>
+        <para>Casts the IPdfViewerAnnotationBuilder object to the IPdfViewerTextMarkupAnnotationBuilder object.</para>
+      </summary>
+      <param name="builder">Current IPdfViewerAnnotationBuilder object.</param>
+      <returns>The IPdfViewerTextMarkupAnnotationBuilder object that contains text markup annotation parameters.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfViewerAnnotationBuilderExtensions.AsTextMarkupAnnotationBuilder(DevExpress.Pdf.IPdfViewerMarkupAnnotationBuilder)">
+      <summary>
+        <para>Casts the IPdfViewerMarkupAnnotationBuilder object to the IPdfViewerTextMarkupAnnotationBuilder object.</para>
+      </summary>
+      <param name="builder">Current IPdfViewerMarkupAnnotationBuilder object.</param>
+      <returns>The IPdfViewerTextMarkupAnnotationBuilder object that contains text markup annotation parameters.</returns>
+    </member>
+    <member name="T:DevExpress.Pdf.PdfViewerAnnotationExtensions">
+      <summary>
+        <para>Defines extension methods for the <see cref="T:DevExpress.Pdf.IPdfViewerAnnotation">IPdfViewerAnnotation</see> interface.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfViewerAnnotationExtensions.AsMarkupAnnotation(DevExpress.Pdf.IPdfViewerAnnotation)">
+      <summary>
+        <para>Casts the IPdfViewerAnnotation object to the IPdfViewerMarkupAnnotation object</para>
+      </summary>
+      <param name="annotation">Current IPdfViewerAnnotation object.</param>
+      <returns>The IPdfViewerMarkupAnnotation object that contains markup annotation parameters.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfViewerAnnotationExtensions.AsTextAnnotation(DevExpress.Pdf.IPdfViewerAnnotation)">
+      <summary>
+        <para>Casts the IPdfViewerAnnotation object to the IPdfViewerTextAnnotation object.</para>
+      </summary>
+      <param name="annotation">Current IPdfViewerAnnotation instance.</param>
+      <returns>The IPdfViewerTextAnnotation object that contains text annotation parameters.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfViewerAnnotationExtensions.AsTextAnnotation(DevExpress.Pdf.IPdfViewerMarkupAnnotation)">
+      <summary>
+        <para>Casts the IPdfViewerMarkupAnnotation object to the IPdfViewerTextAnnotation object.</para>
+      </summary>
+      <param name="annotation">Current IPdfViewerMarkupAnnotation instance.</param>
+      <returns>The IPdfViewerTextAnnotation object that contains text annotation parameters.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfViewerAnnotationExtensions.AsTextMarkupAnnotation(DevExpress.Pdf.IPdfViewerAnnotation)">
+      <summary>
+        <para>Casts the IPdfViewerAnnotation object to the IPdfViewerTextMarkupAnnotation object.</para>
+      </summary>
+      <param name="annotation">Current IPdfViewerAnnotation object.</param>
+      <returns>The IPdfViewerTextMarkupAnnotation object that contains text markup annotation parameters.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfViewerAnnotationExtensions.AsTextMarkupAnnotation(DevExpress.Pdf.IPdfViewerMarkupAnnotation)">
+      <summary>
+        <para>Casts the IPdfViewerMarkupAnnotation object to the IPdfViewerTextMarkupAnnotation object.</para>
+      </summary>
+      <param name="annotation">Current IPdfViewerMarkupAnnotation instance.</param>
+      <returns>The IPdfViewerTextMarkupAnnotation object that contains text markup annotation parameters.</returns>
+    </member>
+  </members>
+</doc>

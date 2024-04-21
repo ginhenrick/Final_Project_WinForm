@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DevExpress.XtraTreeMap.v23.2.UI</name>
+  </assembly>
+  <members>
+    <member name="N:DevExpress.XtraTreeMap">
+      <summary>
+        <para>Contains all required classes for the functioning of the <see cref="T:DevExpress.XtraTreeMap.TreeMapControl"/> and <see cref="T:DevExpress.XtraTreeMap.SunburstControl"/>.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.XtraTreeMap.HierarchicalChartControlBase">
+      <summary>
+        <para>The base class for the <see cref="T:DevExpress.XtraTreeMap.TreeMapControl"/> and <see cref="T:DevExpress.XtraTreeMap.SunburstControl"/>.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraTreeMap.HierarchicalChartControlBase"/> class with the default settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.About">
+      <summary>
+        <para>Invokes the tree map or sunburst’s About dialog box.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.BackColor">
+      <summary>
+        <para>Gets or sets the TreeMap or Sunburst control background color.</para>
+      </summary>
+      <value>A <see cref="T:System.Drawing.Color"/> value which specifies the control background color.</value>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.BeginInit">
+      <summary>
+        <para>Starts the control’s initialization. Initialization occurs at runtime.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.BorderOptions">
+      <summary>
+        <para>Gets the TreeMap and Sunburst controls’ border style.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.XtraTreeMap.InsideRectangularBorder"/> object which specifies the border style.</value>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.EndInit">
+      <summary>
+        <para>Ends the <see cref="T:DevExpress.XtraTreeMap.HierarchicalChartControlBase"/> descendant’s initialization.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToDocx(System.IO.Stream,DevExpress.XtraPrinting.DocxExportOptions)">
+      <summary>
+        <para>Exports the control in the Office Open XML file format (DOCX file) and sends it to the specified stream.</para>
+      </summary>
+      <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created document is exported.</param>
+      <param name="options">A <see cref="T:DevExpress.XtraPrinting.DocxExportOptions"/> object that contains the options for the resulting DOCX file.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToDocx(System.String,DevExpress.XtraPrinting.DocxExportOptions)">
+      <summary>
+        <para>Exports the control in the Office Open XML file format and saves it to the specified DOCX file.</para>
+      </summary>
+      <param name="filePath">A file path that includes the file name and extension.</param>
+      <param name="options">A <see cref="T:DevExpress.XtraPrinting.DocxExportOptions"/> object that contains the options for the resulting DOCX file.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToHtml(System.IO.Stream,DevExpress.XtraPrinting.HtmlExportOptions)">
+      <summary>
+        <para>Exports the control to the specified stream in HTML format.</para>
+      </summary>
+      <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created document is exported.</param>
+      <param name="options">Contains settings that are applied to the exported document.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToHtml(System.String,DevExpress.XtraPrinting.HtmlExportOptions)">
+      <summary>
+        <para>Exports the control to the specified file in HTML format.</para>
+      </summary>
+      <param name="filePath">A file path that includes the file name and extension.</param>
+      <param name="options">Contains settings that are applied to the exported document.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToMht(System.IO.Stream,DevExpress.XtraPrinting.MhtExportOptions)">
+      <summary>
+        <para>Exports the control to the specified stream in the MHT format (Web archive, single file).</para>
+      </summary>
+      <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created document is exported.</param>
+      <param name="options">Contains settings that are applied to the exported document.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToMht(System.String,DevExpress.XtraPrinting.MhtExportOptions)">
+      <summary>
+        <para>Exports the control to an MHT file.</para>
+      </summary>
+      <param name="filePath">A file path that includes the file name and extension.</param>
+      <param name="options">Contains settings that are applied to the exported document.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToPdf(System.IO.Stream,DevExpress.XtraPrinting.PdfExportOptions)">
+      <summary>
+        <para>Exports a treemap/sunburst to the specified stream in the PDF format using the specified export options.</para>
+      </summary>
+      <param name="stream">A <see cref="T:System.IO.Stream"/> descendant class object to which the created PDF file should be sent.</param>
+      <param name="options">The object that stores options for export to the PDF format.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToPdf(System.String,DevExpress.XtraPrinting.PdfExportOptions)">
+      <summary>
+        <para>Exports a treemap or sunburst to the specified file in the PDF format using the specified export options.</para>
+      </summary>
+      <param name="filePath">The full path (including the file name and extension) where the PDF file will be created.</param>
+      <param name="options">The object that stores options for export to the PDF format.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToRtf(System.IO.Stream,DevExpress.XtraPrinting.RtfExportOptions)">
+      <summary>
+        <para>Exports the control to a stream in RTF format.</para>
+      </summary>
+      <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created document is exported.</param>
+      <param name="options">A <see cref="T:DevExpress.XtraPrinting.RtfExportOptions"/> object that contains the options for the resulting RTF file.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToRtf(System.String,DevExpress.XtraPrinting.RtfExportOptions)">
+      <summary>
+        <para>Exports the control to an RTF document with the given path.</para>
+      </summary>
+      <param name="filePath">A file path that includes the file name and extension.</param>
+      <param name="options">A <see cref="T:DevExpress.XtraPrinting.RtfExportOptions"/> object that contains the options for the resulting RTF file.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToXls(System.IO.Stream,DevExpress.XtraPrinting.XlsExportOptions)">
+      <summary>
+        <para>Creates an XLS document with the control inserted as an image and sends it to a stream.</para>
+      </summary>
+      <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created document is exported.</param>
+      <param name="options">Contains settings that are applied to the exported document.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToXls(System.String,DevExpress.XtraPrinting.XlsExportOptions)">
+      <summary>
+        <para>Exports the control to an XLS file.</para>
+      </summary>
+      <param name="filePath">A file path that includes the file name and extension.</param>
+      <param name="options">Contains settings that are applied to the exported document.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToXlsx(System.IO.Stream,DevExpress.XtraPrinting.XlsxExportOptions)">
+      <summary>
+        <para>Creates an XLSX document with the control inserted as an image and sends it to a stream.</para>
+      </summary>
+      <param name="stream">A <see cref="T:System.IO.Stream"/> object to which the created document is exported.</param>
+      <param name="options">Contains settings that are applied to the exported document.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ExportToXlsx(System.String,DevExpress.XtraPrinting.XlsxExportOptions)">
+      <summary>
+        <para>Exports the control to an XLSX file.</para>
+      </summary>
+      <param name="filePath">A file path that includes the file name and extension.</param>
+      <param name="options">Contains settings that are applied to the exported document.</param>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.Groups">
+      <summary>
+        <para>Returns the collection of groups that a TreeMap or Sunburst control generates.</para>
+      </summary>
+      <value>The collection of <see cref="T:DevExpress.XtraTreeMap.GroupInfo"/> objects that provide information about groups which the TreeMap or Sunburst control generates.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.Legend">
+      <summary>
+        <para>Gets or sets a treemap/sunburst legend.</para>
+      </summary>
+      <value>An object of a class derived from <see cref="T:DevExpress.XtraTreeMap.LegendBase"/>.</value>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.LoadFromFile(System.String)">
+      <summary>
+        <para>Restores the TreeMap or Sunburst’s layout from the specified file.</para>
+      </summary>
+      <param name="path">A <see cref="T:System.String"/> value which specifies the path to the file that contains the layout to be loaded. If the string is null (Nothing in Visual Basic) or empty, an exception is raised.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.LoadFromStream(System.IO.Stream)">
+      <summary>
+        <para>Restores the HierarchicalChartControlBase descendant’s layout from the specified stream.</para>
+      </summary>
+      <param name="stream">A <see cref="T:System.IO.Stream"/> descendant from which settings should be read.</param>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.LookAndFeel">
+      <summary>
+        <para>Provides access to the settings that specify the <see href="https://docs.devexpress.com/WindowsForms/2397/common-features/application-appearance-and-skin-colors/look-and-feel-and-skinning">look and feel</see> of the TreeMap and Sunburst controls.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object whose properties specify the TreeMap and Sunburst controls’ look and feel.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.MaxVisibleLevel">
+      <summary>
+        <para>Gets or sets the maximum number of levels the treemap/sunburst displays.</para>
+      </summary>
+      <value>The number of visible treemap/sunburst levels.</value>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.Print">
+      <summary>
+        <para>Immediately prints the treemap or sunburst on the default printer.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.PrintOptions">
+      <summary>
+        <para>Returns the Control’s print settings.</para>
+      </summary>
+      <value>The Control’’s print settings storage.</value>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.SaveToFile(System.String)">
+      <summary>
+        <para>Saves the HierarchicalChartControlBase descendant’s layout to the specified file.</para>
+      </summary>
+      <param name="path">A <see cref="T:System.String"/> value, which specifies the path to the file where the layout should be stored. If the string is null (Nothing in Visual Basic) or empty, an exception is raised.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.SaveToStream(System.IO.Stream)">
+      <summary>
+        <para>Saves the TreeMap and Sunburst’s layout to the specified stream.</para>
+      </summary>
+      <param name="stream">A <see cref="T:System.IO.Stream"/> descendant to which the layout should be written.</param>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.SelectedGroups">
+      <summary>
+        <para>Returns information about groups that are currently selected in the TreeMap or Sunburst control.</para>
+      </summary>
+      <value>The collection of selected groups’ paths.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.SelectedItems">
+      <summary>
+        <para>Gets or sets the list of the TreeMap or Sunburst Control’s selected items.</para>
+      </summary>
+      <value>A list of selected items.</value>
+    </member>
+    <member name="E:DevExpress.XtraTreeMap.HierarchicalChartControlBase.SelectionChanged">
+      <summary>
+        <para>Fires after the selection has been changed.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.SelectionMode">
+      <summary>
+        <para>Gets or sets the value that defines how an end user can select items in a treemap / sunburst.</para>
+      </summary>
+      <value>The mode that specifies selection behavior.</value>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ShowPrintDialog">
+      <summary>
+        <para>Invokes the system Print dialog and prints the current treemap or sunburst.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ShowPrintPreview">
+      <summary>
+        <para>Creates a print document from a treemap/sunburst and displays the document using the <see href="https://docs.devexpress.com/WindowsForms/105/controls-and-libraries/printing-exporting/concepts/print-preview/document-viewer">Print Preview</see> window.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ShowRibbonPrintPreview">
+      <summary>
+        <para>Creates a print document from a treemap/sunburst and displays the document using the <see href="https://docs.devexpress.com/WindowsForms/105/controls-and-libraries/printing-exporting/concepts/print-preview/document-viewer">Print Preview</see> window with the Ribbon bar.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ShowToolTips">
+      <summary>
+        <para>Gets or sets the value that indicates whether or not tooltips are shown for tree map and sunburst items.</para>
+      </summary>
+      <value>true, to show tooltips; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.Text">
+      <summary>
+        <para>Overrides the <see cref="P:System.Windows.Forms.Control.Text"/> property.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> value. Always returns <see cref="F:System.String.Empty"/>.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.Titles">
+      <summary>
+        <para>Returns the collection of <see cref="T:DevExpress.XtraTreeMap.TreeMapControl">treemap</see> or <see cref="T:DevExpress.XtraTreeMap.SunburstControl">sunburst</see> titles.</para>
+      </summary>
+      <value>A collection that stores titles.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.HierarchicalChartControlBase.ToolTipController">
+      <summary>
+        <para>Specifies the tooltip controller component that controls the appearance, position and other settings of tooltips displayed for the TreeMap and Sunburst controls.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Utils.ToolTipController"/> object.</value>
+    </member>
+    <member name="T:DevExpress.XtraTreeMap.SunburstControl">
+      <summary>
+        <para>Displays an interactive <see href="https://docs.devexpress.com/WindowsForms/120619/controls-and-libraries/sunburst-control">Sunburst</see> chart.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.SunburstControl.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraTreeMap.SunburstControl"/> class with the default settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.SunburstControl.CalcHitInfo(System.Drawing.Point)">
+      <summary>
+        <para>Returns information about the sunburst’s item under the test point.</para>
+      </summary>
+      <param name="point">A <see cref="T:System.Drawing.Point"/> structure value that specifies the hit point coordinates relative to the Sunburst control’s top-left corner.</param>
+      <returns>The information about the item in the test point.</returns>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.CenterLabel">
+      <summary>
+        <para>Returns the center label to modify its settings.</para>
+      </summary>
+      <value>The center label options’ storage.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.Colorizer">
+      <summary>
+        <para>Gets or sets the <see href="https://docs.devexpress.com/WindowsForms/120628/controls-and-libraries/sunburst-control/colorizers">colorizer</see> used to color the Sunburst’s segments.</para>
+      </summary>
+      <value>The object that implements the <see cref="T:DevExpress.XtraTreeMap.ISunburstColorizer"/> interface.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.DataAdapter">
+      <summary>
+        <para>Gets or sets the data adapter for a Sunburst control.</para>
+      </summary>
+      <value>An object of a class that implements the <see cref="T:DevExpress.XtraTreeMap.ISunburstDataAdapter"/> interface.</value>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.SunburstControl.GetItemPath(DevExpress.TreeMap.ISunburstItem)">
+      <summary>
+        <para>Returns the path to the specified Sunburst item.</para>
+      </summary>
+      <param name="item">The Sunburst item for which a path is obtained.</param>
+      <returns>The collection of Sunburst items that form the path from the top level item to the current item.</returns>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.HighlightMode">
+      <summary>
+        <para>Gets or sets the value that specifies how to highlight sunburst items.</para>
+      </summary>
+      <value>The value that specifies how to highlight sunburst items.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.HoleRadiusPercent">
+      <summary>
+        <para>Gets or sets the sunburst inner circle radius.</para>
+      </summary>
+      <value>An integer value that represents the percentage of the inner radius to the outer radius.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.ItemStyle">
+      <summary>
+        <para>Returns the sunburst item appearance settings.</para>
+      </summary>
+      <value>The sunburst item appearance settings.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.Label">
+      <summary>
+        <para>Returns the sunburst item label settings.</para>
+      </summary>
+      <value>The settings of sunburst item labels.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.LabelTextPattern">
+      <summary>
+        <para>Gets or sets the pattern that formats the Sunburst’s label text.</para>
+      </summary>
+      <value>The format string that configures the Sunburst’s label text.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.ShowCenterLabel">
+      <summary>
+        <para>Gets or sets the value that specifies whether to show the center label within the sunburst.</para>
+      </summary>
+      <value>true if the center label is visible; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.StartAngle">
+      <summary>
+        <para>Gets or sets the first sunburst item position.</para>
+      </summary>
+      <value>The value that specifies how the first sunburst item should be rotated. This value is measured in degrees.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.SweepDirection">
+      <summary>
+        <para>Gets or sets the sunburst’s sweep direction (counterclockwise or clockwise).</para>
+      </summary>
+      <value>The value that defines whether to position sunburst items counterclockwise or clockwise.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.SunburstControl.ToolTipTextPattern">
+      <summary>
+        <para>Gets or sets the format string that forms text that the sunburst item tooltip shows.</para>
+      </summary>
+      <value>The format string that configures the sunburst item’s tooltip text.</value>
+    </member>
+    <member name="T:DevExpress.XtraTreeMap.TreeMapControl">
+      <summary>
+        <para>Displays flat and hierarchical data by using nested rectangles. See <see href="https://docs.devexpress.com/WPF/114684/controls-and-libraries/treemap-control">TreeMap Control</see>.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.TreeMapControl.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraTreeMap.TreeMapControl"/> class with default settings.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.Appearance">
+      <summary>
+        <para>Provides access to the TreeMap Control’s appearance settings.</para>
+      </summary>
+      <value>An object that specifies the treemap appearance settings.</value>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.TreeMapControl.CalcHitInfo(System.Drawing.Point)">
+      <summary>
+        <para>Returns information about tree map items located at the specified point.</para>
+      </summary>
+      <param name="point">A <see cref="T:System.Drawing.Point"/> structure which specifies the hit point coordinates relative to the TreeMap’s top-left corner.</param>
+      <returns>A <see cref="T:DevExpress.XtraTreeMap.TreeMapHitInfo"/> object, which contains information about the tree map elements located at the hit point.</returns>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.Colorizer">
+      <summary>
+        <para>Gets or sets the <see href="https://docs.devexpress.com/WPF/114694/controls-and-libraries/treemap-control/colorizers">colorizer</see> used to colorize TreeMap items.</para>
+      </summary>
+      <value>An object of a class implementing the <see cref="T:DevExpress.XtraTreeMap.ITreeMapColorizer"/> interface.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.DataAdapter">
+      <summary>
+        <para>Gets or sets the data adapter for a TreeMap control.</para>
+      </summary>
+      <value>An object of a class implementing the <see cref="T:DevExpress.XtraTreeMap.ITreeMapDataAdapter"/> interface.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.EnableHighlighting">
+      <summary>
+        <para>Gets or sets the value indicating whether or not tree map item highlighting enabled.</para>
+      </summary>
+      <value>true if highlighting is enabled; otherwise false.</value>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.TreeMapControl.GetItemBounds(DevExpress.TreeMap.ITreeMapItem)">
+      <summary>
+        <para>Returns a Rectangle object that defines the location of an item passed as a parameter.</para>
+      </summary>
+      <param name="item">A TreeMap item whose location is returned.</param>
+      <returns>A Rectangle object that defines the TreeMap item’s location.</returns>
+    </member>
+    <member name="M:DevExpress.XtraTreeMap.TreeMapControl.GetItemPath(DevExpress.TreeMap.ITreeMapItem)">
+      <summary>
+        <para>Returns the path to the specified TreeMap item.</para>
+      </summary>
+      <param name="item">The TreeMap item for which a path is obtained.</param>
+      <returns>The collection of TreeMap items that form the path from the top level item to the current item.</returns>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.GroupBorderVisible">
+      <summary>
+        <para>Gets or sets the value indicating whether a <see href="https://docs.devexpress.com/WindowsForms/115744/controls-and-libraries/treemap/visual-elements/group">group item</see>‘s border is visible.</para>
+      </summary>
+      <value>Default - the current theme specifies whether the border is visible;True - the border is visible;False - the border is hidden.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.GroupHeaderTextPattern">
+      <summary>
+        <para>Gets or sets the text pattern used to form the text for tree map <see href="https://docs.devexpress.com/WindowsForms/115744/controls-and-libraries/treemap/visual-elements/group">groups</see>.</para>
+      </summary>
+      <value>A <see cref="T:System.String"/> value, specifying the pattern.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.GroupStyle">
+      <summary>
+        <para>Returns the style of tree map group items.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.XtraTreeMap.TreeMapItemGroupStyle"/> object.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.LayoutAlgorithm">
+      <summary>
+        <para>Gets or sets a layout algorithm for arranging TreeMap items.</para>
+      </summary>
+      <value>An object of a class implementing the <see cref="T:DevExpress.XtraTreeMap.ITreeMapLayoutAlgorithm"/> interface.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.LeafBorderVisible">
+      <summary>
+        <para>Gets or sets the value that indicates whether a <see href="https://docs.devexpress.com/WindowsForms/115745/controls-and-libraries/treemap/visual-elements/leaf">leaf item</see>‘s border is visible.</para>
+      </summary>
+      <value>Default - the current theme specifies whether the border is visible;True - the border is visible;False - the border is hidden.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.LeafStyle">
+      <summary>
+        <para>Returns the style of leaf tree map items.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.XtraTreeMap.TreeMapItemLeafStyle"/> object.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.LeafTextPattern">
+      <summary>
+        <para>Gets or sets the text pattern that the TreeMap control uses to generate the text for the tree map <see href="https://docs.devexpress.com/WindowsForms/115745/controls-and-libraries/treemap/visual-elements/leaf">leafs</see>.</para>
+      </summary>
+      <value>The text pattern that the TreeMap control uses to generate the text for the tree map <see href="https://docs.devexpress.com/WindowsForms/115745/controls-and-libraries/treemap/visual-elements/leaf">leafs</see>.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.ToolTipGroupPattern">
+      <summary>
+        <para>Gets or sets the text pattern that the TreeMap Control uses to generate the tooltip text for the tree map <see href="https://docs.devexpress.com/WindowsForms/115744/controls-and-libraries/treemap/visual-elements/group">groups</see>.</para>
+      </summary>
+      <value>The text pattern that the TreeMap Control uses to generate the tooltip text for the tree map <see href="https://docs.devexpress.com/WindowsForms/115744/controls-and-libraries/treemap/visual-elements/group">groups</see>.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeMap.TreeMapControl.ToolTipLeafPattern">
+      <summary>
+        <para>Gets or sets the text pattern that the TreeMap Control uses to generate the tooltip text for the tree map <see href="https://docs.devexpress.com/WindowsForms/115745/controls-and-libraries/treemap/visual-elements/leaf">leafs</see>.</para>
+      </summary>
+      <value>The text pattern that the TreeMap Control uses to generate the tooltip text for the tree map <see href="https://docs.devexpress.com/WindowsForms/115745/controls-and-libraries/treemap/visual-elements/leaf">leafs</see>.</value>
+    </member>
+  </members>
+</doc>
