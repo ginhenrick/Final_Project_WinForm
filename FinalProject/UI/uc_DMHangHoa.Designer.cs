@@ -57,49 +57,41 @@
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
-            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
-            this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.bar4 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
-            this.bmDMHangHoa = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar5 = new DevExpress.XtraBars.Bar();
-            this.btnBoQua = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTimKiem = new DevExpress.XtraBars.BarButtonItem();
-            this.btnHienThiDS = new DevExpress.XtraBars.BarButtonItem();
-            this.bar6 = new DevExpress.XtraBars.Bar();
-            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoaHangHoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBoQua = new DevExpress.XtraBars.BarButtonItem();
+            this.bar5 = new DevExpress.XtraBars.Bar();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
-            this.pbxAnhHangHoa = new DevExpress.XtraEditors.PictureEdit();
-            this.btnOpenAnh = new DevExpress.XtraEditors.SimpleButton();
-            this.txtGhiChu = new DevExpress.XtraEditors.TextEdit();
-            this.txtDGBan = new DevExpress.XtraEditors.TextEdit();
-            this.txtDGNhap = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtAnh = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTenHang = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtMaHang = new DevExpress.XtraEditors.TextEdit();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.btnXoaAnh = new DevExpress.XtraEditors.SimpleButton();
+            this.txtGiaBanRa = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.gcHangHoa = new DevExpress.XtraGrid.GridControl();
-            this.gvDanhSachHH = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cbxTenChatLieu = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbxMaChatLieu = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTenSanPham = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
+            this.ptxAnhHangHoa = new DevExpress.XtraEditors.PictureEdit();
+            this.btnOpenAnh = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.gridControlHangHoa = new DevExpress.XtraGrid.GridControl();
+            this.gridViewHangHoa = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
@@ -109,23 +101,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bmDMHangHoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
             this.splitContainerControl1.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGiaBanRa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxTenChatLieu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxMaChatLieu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenSanPham.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAnhHangHoa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDGBan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDGNhap.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAnh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaHang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcHangHoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachHH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptxAnhHangHoa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlHangHoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewHangHoa)).BeginInit();
             this.SuspendLayout();
             // 
             // barButtonItem12
@@ -373,41 +367,340 @@
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl1.Location = new System.Drawing.Point(1150, 30);
+            this.barDockControl1.Location = new System.Drawing.Point(1285, 30);
             this.barDockControl1.Manager = null;
             this.barDockControl1.Size = new System.Drawing.Size(0, 698);
             // 
-            // btnThoat
+            // bar4
             // 
-            this.btnThoat.Caption = "Thoát";
-            this.btnThoat.Id = 7;
-            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
-            this.btnThoat.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.btnThoat.Name = "btnThoat";
+            this.bar4.BarName = "Main menu";
+            this.bar4.DockCol = 0;
+            this.bar4.DockRow = 0;
+            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar4.FloatLocation = new System.Drawing.Point(313, 243);
+            this.bar4.OptionsBar.MultiLine = true;
+            this.bar4.OptionsBar.UseWholeRow = true;
+            this.bar4.Text = "Main menu";
             // 
-            // btnLuu
+            // barDockControl3
             // 
-            this.btnLuu.Caption = "Lưu";
-            this.btnLuu.Id = 5;
-            this.btnLuu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLuu.ImageOptions.SvgImage")));
-            this.btnLuu.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.btnLuu.Name = "btnLuu";
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl3.Location = new System.Drawing.Point(1285, 30);
+            this.barDockControl3.Manager = null;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 698);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1,
+            this.bar5});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControl2);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem13,
+            this.btnSua,
+            this.btnXoaHangHoa,
+            this.btnLuu,
+            this.btnBoQua});
+            this.barManager1.MaxItemId = 5;
+            this.barManager1.StatusBar = this.bar5;
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoaHangHoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnLuu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnBoQua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar1.Text = "Tools";
             // 
             // btnSua
             // 
             this.btnSua.Caption = "Sửa";
-            this.btnSua.Id = 4;
+            this.btnSua.Id = 1;
             this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
-            this.btnSua.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick_1);
             // 
-            // btnXoa
+            // btnXoaHangHoa
             // 
-            this.btnXoa.Caption = "Xóa";
-            this.btnXoa.Id = 3;
-            this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
-            this.btnXoa.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.btnXoa.Name = "btnXoa";
+            this.btnXoaHangHoa.Caption = "Xóa";
+            this.btnXoaHangHoa.Id = 2;
+            this.btnXoaHangHoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoaHangHoa.ImageOptions.SvgImage")));
+            this.btnXoaHangHoa.Name = "btnXoaHangHoa";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Caption = "Lưu";
+            this.btnLuu.Id = 3;
+            this.btnLuu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLuu.ImageOptions.SvgImage")));
+            this.btnLuu.Name = "btnLuu";
+            // 
+            // btnBoQua
+            // 
+            this.btnBoQua.Caption = "Bỏ qua";
+            this.btnBoQua.Id = 4;
+            this.btnBoQua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBoQua.ImageOptions.SvgImage")));
+            this.btnBoQua.Name = "btnBoQua";
+            // 
+            // bar5
+            // 
+            this.bar5.BarName = "Status bar";
+            this.bar5.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar5.DockCol = 0;
+            this.bar5.DockRow = 0;
+            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar5.OptionsBar.AllowQuickCustomization = false;
+            this.bar5.OptionsBar.DrawDragBorder = false;
+            this.bar5.OptionsBar.UseWholeRow = true;
+            this.bar5.Text = "Status bar";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1285, 30);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 728);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1285, 20);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 698);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl2.Location = new System.Drawing.Point(1285, 30);
+            this.barDockControl2.Manager = this.barManager1;
+            this.barDockControl2.Size = new System.Drawing.Size(0, 698);
+            // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "barButtonItem13";
+            this.barButtonItem13.Id = 0;
+            this.barButtonItem13.Name = "barButtonItem13";
+            // 
+            // splitContainerControl1
+            // 
+            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl1.Horizontal = false;
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            // 
+            // splitContainerControl1.Panel1
+            // 
+            this.splitContainerControl1.Panel1.Controls.Add(this.groupControl3);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl1.Panel2
+            // 
+            this.splitContainerControl1.Panel2.Controls.Add(this.groupControl4);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(1285, 698);
+            this.splitContainerControl1.SplitterPosition = 302;
+            this.splitContainerControl1.TabIndex = 26;
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.btnXoaAnh);
+            this.groupControl3.Controls.Add(this.txtGiaBanRa);
+            this.groupControl3.Controls.Add(this.labelControl8);
+            this.groupControl3.Controls.Add(this.cbxTenChatLieu);
+            this.groupControl3.Controls.Add(this.cbxMaChatLieu);
+            this.groupControl3.Controls.Add(this.labelControl3);
+            this.groupControl3.Controls.Add(this.txtTenSanPham);
+            this.groupControl3.Controls.Add(this.labelControl9);
+            this.groupControl3.Controls.Add(this.nudSoLuong);
+            this.groupControl3.Controls.Add(this.ptxAnhHangHoa);
+            this.groupControl3.Controls.Add(this.btnOpenAnh);
+            this.groupControl3.Controls.Add(this.labelControl11);
+            this.groupControl3.Controls.Add(this.labelControl6);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(0, 0);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(1285, 302);
+            this.groupControl3.TabIndex = 0;
+            this.groupControl3.Text = "DANH MỤC HÀNG HÓA";
+            // 
+            // btnXoaAnh
+            // 
+            this.btnXoaAnh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoaAnh.ImageOptions.SvgImage")));
+            this.btnXoaAnh.Location = new System.Drawing.Point(800, 81);
+            this.btnXoaAnh.Name = "btnXoaAnh";
+            this.btnXoaAnh.Size = new System.Drawing.Size(112, 41);
+            this.btnXoaAnh.TabIndex = 88;
+            this.btnXoaAnh.Text = "Xóa ảnh";
+            // 
+            // txtGiaBanRa
+            // 
+            this.txtGiaBanRa.Location = new System.Drawing.Point(149, 191);
+            this.txtGiaBanRa.Name = "txtGiaBanRa";
+            this.txtGiaBanRa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaBanRa.Properties.Appearance.Options.UseFont = true;
+            this.txtGiaBanRa.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtGiaBanRa.Size = new System.Drawing.Size(242, 28);
+            this.txtGiaBanRa.TabIndex = 87;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(27, 194);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(88, 21);
+            this.labelControl8.TabIndex = 86;
+            this.labelControl8.Text = "Giá Bán Ra:";
+            // 
+            // cbxTenChatLieu
+            // 
+            this.cbxTenChatLieu.Location = new System.Drawing.Point(149, 157);
+            this.cbxTenChatLieu.Name = "cbxTenChatLieu";
+            this.cbxTenChatLieu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTenChatLieu.Properties.Appearance.Options.UseFont = true;
+            this.cbxTenChatLieu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxTenChatLieu.Size = new System.Drawing.Size(242, 28);
+            this.cbxTenChatLieu.TabIndex = 85;
+            this.cbxTenChatLieu.SelectedIndexChanged += new System.EventHandler(this.cbxTenChatLieu_SelectedIndexChanged);
+            // 
+            // cbxMaChatLieu
+            // 
+            this.cbxMaChatLieu.Location = new System.Drawing.Point(149, 120);
+            this.cbxMaChatLieu.Name = "cbxMaChatLieu";
+            this.cbxMaChatLieu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxMaChatLieu.Properties.Appearance.Options.UseFont = true;
+            this.cbxMaChatLieu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxMaChatLieu.Size = new System.Drawing.Size(242, 28);
+            this.cbxMaChatLieu.TabIndex = 84;
+            this.cbxMaChatLieu.SelectedIndexChanged += new System.EventHandler(this.cbxMaChatLieu_SelectedIndexChanged);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(27, 160);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(108, 21);
+            this.labelControl3.TabIndex = 83;
+            this.labelControl3.Text = "Tên Chất Liệu:";
+            // 
+            // txtTenSanPham
+            // 
+            this.txtTenSanPham.Location = new System.Drawing.Point(149, 46);
+            this.txtTenSanPham.Name = "txtTenSanPham";
+            this.txtTenSanPham.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSanPham.Properties.Appearance.Options.UseFont = true;
+            this.txtTenSanPham.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtTenSanPham.Size = new System.Drawing.Size(619, 28);
+            this.txtTenSanPham.TabIndex = 82;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(27, 123);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(102, 21);
+            this.labelControl9.TabIndex = 81;
+            this.labelControl9.Text = "Mã Chất Liệu:";
+            // 
+            // nudSoLuong
+            // 
+            this.nudSoLuong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSoLuong.Location = new System.Drawing.Point(149, 80);
+            this.nudSoLuong.Name = "nudSoLuong";
+            this.nudSoLuong.Size = new System.Drawing.Size(91, 28);
+            this.nudSoLuong.TabIndex = 80;
+            // 
+            // ptxAnhHangHoa
+            // 
+            this.ptxAnhHangHoa.Location = new System.Drawing.Point(918, 34);
+            this.ptxAnhHangHoa.Name = "ptxAnhHangHoa";
+            this.ptxAnhHangHoa.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.ptxAnhHangHoa.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.ptxAnhHangHoa.Size = new System.Drawing.Size(307, 250);
+            this.ptxAnhHangHoa.TabIndex = 79;
+            // 
+            // btnOpenAnh
+            // 
+            this.btnOpenAnh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnOpenAnh.ImageOptions.SvgImage")));
+            this.btnOpenAnh.Location = new System.Drawing.Point(800, 34);
+            this.btnOpenAnh.Name = "btnOpenAnh";
+            this.btnOpenAnh.Size = new System.Drawing.Size(112, 41);
+            this.btnOpenAnh.TabIndex = 78;
+            this.btnOpenAnh.Text = "Chọn ảnh";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(27, 87);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(74, 21);
+            this.labelControl11.TabIndex = 73;
+            this.labelControl11.Text = "Số Lượng:";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(27, 49);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(112, 21);
+            this.labelControl6.TabIndex = 70;
+            this.labelControl6.Text = "Tên Sản Phẩm:";
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.gridControlHangHoa);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl4.Location = new System.Drawing.Point(0, 0);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(1285, 384);
+            this.groupControl4.TabIndex = 0;
+            this.groupControl4.Text = "Dữ liệu hàng hóa";
+            // 
+            // gridControlHangHoa
+            // 
+            this.gridControlHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlHangHoa.Location = new System.Drawing.Point(2, 28);
+            this.gridControlHangHoa.MainView = this.gridViewHangHoa;
+            this.gridControlHangHoa.Name = "gridControlHangHoa";
+            this.gridControlHangHoa.Size = new System.Drawing.Size(1281, 354);
+            this.gridControlHangHoa.TabIndex = 69;
+            this.gridControlHangHoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewHangHoa});
+            // 
+            // gridViewHangHoa
+            // 
+            this.gridViewHangHoa.GridControl = this.gridControlHangHoa;
+            this.gridViewHangHoa.Name = "gridViewHangHoa";
             // 
             // btnThem
             // 
@@ -417,412 +710,13 @@
             this.btnThem.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
             this.btnThem.Name = "btnThem";
             // 
-            // bar4
-            // 
-            this.bar4.BarName = "Main menu";
-            this.bar4.DockCol = 0;
-            this.bar4.DockRow = 0;
-            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar4.FloatLocation = new System.Drawing.Point(313, 243);
-            this.bar4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem18, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem19, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem20, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem21, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem22, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem23, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.bar4.OptionsBar.MultiLine = true;
-            this.bar4.OptionsBar.UseWholeRow = true;
-            this.bar4.Text = "Main menu";
-            // 
-            // barButtonItem18
-            // 
-            this.barButtonItem18.Caption = "Thêm";
-            this.barButtonItem18.Id = 0;
-            this.barButtonItem18.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem18.ImageOptions.SvgImage")));
-            this.barButtonItem18.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.barButtonItem18.Name = "barButtonItem18";
-            // 
-            // barButtonItem19
-            // 
-            this.barButtonItem19.Caption = "Xóa";
-            this.barButtonItem19.Id = 1;
-            this.barButtonItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem19.ImageOptions.SvgImage")));
-            this.barButtonItem19.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.barButtonItem19.Name = "barButtonItem19";
-            // 
-            // barButtonItem20
-            // 
-            this.barButtonItem20.Caption = "Sửa";
-            this.barButtonItem20.Id = 2;
-            this.barButtonItem20.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem20.ImageOptions.SvgImage")));
-            this.barButtonItem20.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.barButtonItem20.Name = "barButtonItem20";
-            this.barButtonItem20.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
-            // 
-            // barButtonItem21
-            // 
-            this.barButtonItem21.Caption = "Lưu";
-            this.barButtonItem21.Id = 3;
-            this.barButtonItem21.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem21.ImageOptions.SvgImage")));
-            this.barButtonItem21.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.barButtonItem21.Name = "barButtonItem21";
-            // 
-            // barButtonItem22
-            // 
-            this.barButtonItem22.Caption = "Bỏ qua";
-            this.barButtonItem22.Id = 4;
-            this.barButtonItem22.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem22.ImageOptions.SvgImage")));
-            this.barButtonItem22.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.barButtonItem22.Name = "barButtonItem22";
-            // 
-            // barButtonItem23
-            // 
-            this.barButtonItem23.Caption = "Đóng";
-            this.barButtonItem23.Id = 5;
-            this.barButtonItem23.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem23.ImageOptions.SvgImage")));
-            this.barButtonItem23.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.barButtonItem23.Name = "barButtonItem23";
-            // 
-            // bmDMHangHoa
-            // 
-            this.bmDMHangHoa.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar5,
-            this.bar6});
-            this.bmDMHangHoa.DockControls.Add(this.barDockControl4);
-            this.bmDMHangHoa.DockControls.Add(this.barDockControl5);
-            this.bmDMHangHoa.DockControls.Add(this.barDockControl6);
-            this.bmDMHangHoa.DockControls.Add(this.barDockControl7);
-            this.bmDMHangHoa.Form = this;
-            this.bmDMHangHoa.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem18,
-            this.barButtonItem19,
-            this.barButtonItem20,
-            this.barButtonItem21,
-            this.barButtonItem22,
-            this.barButtonItem23,
-            this.btnThem,
-            this.btnXoa,
-            this.btnSua,
-            this.btnLuu,
-            this.btnBoQua,
-            this.btnThoat,
-            this.btnTimKiem,
-            this.btnHienThiDS});
-            this.bmDMHangHoa.MaxItemId = 10;
-            // 
-            // bar5
-            // 
-            this.bar5.BarName = "Tools";
-            this.bar5.DockCol = 0;
-            this.bar5.DockRow = 0;
-            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnLuu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnBoQua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTimKiem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHienThiDS, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.bar5.Text = "Tools";
-            // 
-            // btnBoQua
-            // 
-            this.btnBoQua.Caption = "Bỏ qua";
-            this.btnBoQua.Id = 6;
-            this.btnBoQua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBoQua.ImageOptions.SvgImage")));
-            this.btnBoQua.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.btnBoQua.Name = "btnBoQua";
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Caption = "Tìm Kiếm";
-            this.btnTimKiem.Id = 8;
-            this.btnTimKiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTimKiem.ImageOptions.SvgImage")));
-            this.btnTimKiem.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.btnTimKiem.Name = "btnTimKiem";
-            // 
-            // btnHienThiDS
-            // 
-            this.btnHienThiDS.Caption = "Hiển thị DS";
-            this.btnHienThiDS.Id = 9;
-            this.btnHienThiDS.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHienThiDS.ImageOptions.SvgImage")));
-            this.btnHienThiDS.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.btnHienThiDS.Name = "btnHienThiDS";
-            // 
-            // bar6
-            // 
-            this.bar6.BarName = "Status bar";
-            this.bar6.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar6.DockCol = 0;
-            this.bar6.DockRow = 0;
-            this.bar6.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar6.OptionsBar.AllowQuickCustomization = false;
-            this.bar6.OptionsBar.DrawDragBorder = false;
-            this.bar6.OptionsBar.UseWholeRow = true;
-            this.bar6.Text = "Status bar";
-            // 
-            // barDockControl4
-            // 
-            this.barDockControl4.CausesValidation = false;
-            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl4.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl4.Manager = this.bmDMHangHoa;
-            this.barDockControl4.Size = new System.Drawing.Size(1150, 30);
-            // 
-            // barDockControl5
-            // 
-            this.barDockControl5.CausesValidation = false;
-            this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl5.Location = new System.Drawing.Point(0, 728);
-            this.barDockControl5.Manager = this.bmDMHangHoa;
-            this.barDockControl5.Size = new System.Drawing.Size(1150, 20);
-            // 
-            // barDockControl6
-            // 
-            this.barDockControl6.CausesValidation = false;
-            this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl6.Location = new System.Drawing.Point(0, 30);
-            this.barDockControl6.Manager = this.bmDMHangHoa;
-            this.barDockControl6.Size = new System.Drawing.Size(0, 698);
-            // 
-            // barDockControl7
-            // 
-            this.barDockControl7.CausesValidation = false;
-            this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl7.Location = new System.Drawing.Point(1150, 30);
-            this.barDockControl7.Manager = this.bmDMHangHoa;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 698);
-            // 
-            // barDockControl3
-            // 
-            this.barDockControl3.CausesValidation = false;
-            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl3.Location = new System.Drawing.Point(1150, 30);
-            this.barDockControl3.Manager = this.bmDMHangHoa;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 698);
-            // 
-            // splitContainerControl1
-            // 
-            this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 30);
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            // 
-            // splitContainerControl1.Panel1
-            // 
-            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl13);
-            this.splitContainerControl1.Panel1.Controls.Add(this.nudSoLuong);
-            this.splitContainerControl1.Panel1.Controls.Add(this.pbxAnhHangHoa);
-            this.splitContainerControl1.Panel1.Controls.Add(this.btnOpenAnh);
-            this.splitContainerControl1.Panel1.Controls.Add(this.txtGhiChu);
-            this.splitContainerControl1.Panel1.Controls.Add(this.txtDGBan);
-            this.splitContainerControl1.Panel1.Controls.Add(this.txtDGNhap);
-            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl12);
-            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl10);
-            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl11);
-            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl1);
-            this.splitContainerControl1.Panel1.Controls.Add(this.txtAnh);
-            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl3);
-            this.splitContainerControl1.Panel1.Controls.Add(this.txtTenHang);
-            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl6);
-            this.splitContainerControl1.Panel1.Controls.Add(this.txtMaHang);
-            this.splitContainerControl1.Panel1.Controls.Add(this.labelControl8);
-            this.splitContainerControl1.Panel1.Text = "Panel1";
-            // 
-            // splitContainerControl1.Panel2
-            // 
-            this.splitContainerControl1.Panel2.Controls.Add(this.gcHangHoa);
-            this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1150, 698);
-            this.splitContainerControl1.SplitterPosition = 225;
-            this.splitContainerControl1.TabIndex = 19;
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(25, 11);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(317, 34);
-            this.labelControl13.TabIndex = 45;
-            this.labelControl13.Text = "DANH MỤC HÀNG HÓA";
-            // 
-            // nudSoLuong
-            // 
-            this.nudSoLuong.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudSoLuong.Location = new System.Drawing.Point(190, 126);
-            this.nudSoLuong.Name = "nudSoLuong";
-            this.nudSoLuong.Size = new System.Drawing.Size(91, 28);
-            this.nudSoLuong.TabIndex = 44;
-            // 
-            // pbxAnhHangHoa
-            // 
-            this.pbxAnhHangHoa.EditValue = ((object)(resources.GetObject("pbxAnhHangHoa.EditValue")));
-            this.pbxAnhHangHoa.Location = new System.Drawing.Point(812, 13);
-            this.pbxAnhHangHoa.MenuManager = this.bmDMHangHoa;
-            this.pbxAnhHangHoa.Name = "pbxAnhHangHoa";
-            this.pbxAnhHangHoa.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pbxAnhHangHoa.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pbxAnhHangHoa.Size = new System.Drawing.Size(269, 222);
-            this.pbxAnhHangHoa.TabIndex = 43;
-            // 
-            // btnOpenAnh
-            // 
-            this.btnOpenAnh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnOpenAnh.ImageOptions.SvgImage")));
-            this.btnOpenAnh.Location = new System.Drawing.Point(694, 91);
-            this.btnOpenAnh.Name = "btnOpenAnh";
-            this.btnOpenAnh.Size = new System.Drawing.Size(71, 41);
-            this.btnOpenAnh.TabIndex = 42;
-            this.btnOpenAnh.Text = "Mở";
-            // 
-            // txtGhiChu
-            // 
-            this.txtGhiChu.Location = new System.Drawing.Point(462, 162);
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGhiChu.Properties.Appearance.Options.UseFont = true;
-            this.txtGhiChu.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtGhiChu.Size = new System.Drawing.Size(303, 34);
-            this.txtGhiChu.TabIndex = 41;
-            // 
-            // txtDGBan
-            // 
-            this.txtDGBan.Location = new System.Drawing.Point(190, 196);
-            this.txtDGBan.Name = "txtDGBan";
-            this.txtDGBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDGBan.Properties.Appearance.Options.UseFont = true;
-            this.txtDGBan.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtDGBan.Size = new System.Drawing.Size(242, 28);
-            this.txtDGBan.TabIndex = 33;
-            // 
-            // txtDGNhap
-            // 
-            this.txtDGNhap.Location = new System.Drawing.Point(190, 162);
-            this.txtDGNhap.Name = "txtDGNhap";
-            this.txtDGNhap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDGNhap.Properties.Appearance.Options.UseFont = true;
-            this.txtDGNhap.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtDGNhap.Size = new System.Drawing.Size(242, 28);
-            this.txtDGNhap.TabIndex = 40;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(72, 199);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(92, 21);
-            this.labelControl12.TabIndex = 39;
-            this.labelControl12.Text = "Đơn Giá Bán";
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(72, 165);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(102, 21);
-            this.labelControl10.TabIndex = 38;
-            this.labelControl10.Text = "Đơn Giá Nhập";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(72, 128);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(68, 21);
-            this.labelControl11.TabIndex = 37;
-            this.labelControl11.Text = "Số Lượng";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(462, 133);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(55, 21);
-            this.labelControl1.TabIndex = 36;
-            this.labelControl1.Text = "Ghi chú";
-            // 
-            // txtAnh
-            // 
-            this.txtAnh.Location = new System.Drawing.Point(526, 51);
-            this.txtAnh.Name = "txtAnh";
-            this.txtAnh.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnh.Properties.Appearance.Options.UseFont = true;
-            this.txtAnh.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtAnh.Size = new System.Drawing.Size(239, 28);
-            this.txtAnh.TabIndex = 35;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(462, 54);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(29, 21);
-            this.labelControl3.TabIndex = 34;
-            this.labelControl3.Text = "Ảnh";
-            // 
-            // txtTenHang
-            // 
-            this.txtTenHang.Location = new System.Drawing.Point(190, 82);
-            this.txtTenHang.Name = "txtTenHang";
-            this.txtTenHang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenHang.Properties.Appearance.Options.UseFont = true;
-            this.txtTenHang.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtTenHang.Size = new System.Drawing.Size(242, 28);
-            this.txtTenHang.TabIndex = 32;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(69, 89);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(71, 21);
-            this.labelControl6.TabIndex = 31;
-            this.labelControl6.Text = "Tên Hàng";
-            // 
-            // txtMaHang
-            // 
-            this.txtMaHang.Location = new System.Drawing.Point(190, 51);
-            this.txtMaHang.Name = "txtMaHang";
-            this.txtMaHang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHang.Properties.Appearance.Options.UseFont = true;
-            this.txtMaHang.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtMaHang.Size = new System.Drawing.Size(242, 28);
-            this.txtMaHang.TabIndex = 30;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(69, 51);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(65, 21);
-            this.labelControl8.TabIndex = 29;
-            this.labelControl8.Text = "Mã Hàng";
-            // 
-            // gcHangHoa
-            // 
-            this.gcHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcHangHoa.Location = new System.Drawing.Point(0, 0);
-            this.gcHangHoa.MainView = this.gvDanhSachHH;
-            this.gcHangHoa.MenuManager = this.bmDMHangHoa;
-            this.gcHangHoa.Name = "gcHangHoa";
-            this.gcHangHoa.Size = new System.Drawing.Size(1150, 461);
-            this.gcHangHoa.TabIndex = 0;
-            this.gcHangHoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvDanhSachHH});
-            // 
-            // gvDanhSachHH
-            // 
-            this.gvDanhSachHH.GridControl = this.gcHangHoa;
-            this.gvDanhSachHH.Name = "gvDanhSachHH";
+            // btnXoa
+            // 
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 3;
+            this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
+            this.btnXoa.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
+            this.btnXoa.Name = "btnXoa";
             // 
             // uc_DMHangHoa
             // 
@@ -831,12 +725,12 @@
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.barDockControl1);
             this.Controls.Add(this.barDockControl3);
-            this.Controls.Add(this.barDockControl6);
-            this.Controls.Add(this.barDockControl7);
-            this.Controls.Add(this.barDockControl5);
-            this.Controls.Add(this.barDockControl4);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "uc_DMHangHoa";
-            this.Size = new System.Drawing.Size(1150, 748);
+            this.Size = new System.Drawing.Size(1285, 748);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -847,24 +741,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bmDMHangHoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
             this.splitContainerControl1.Panel1.ResumeLayout(false);
-            this.splitContainerControl1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
             this.splitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGiaBanRa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxTenChatLieu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxMaChatLieu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenSanPham.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAnhHangHoa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDGBan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDGNhap.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAnh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaHang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcHangHoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachHH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptxAnhHangHoa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlHangHoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewHangHoa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -899,48 +795,40 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
-        private DevExpress.XtraBars.BarButtonItem btnThoat;
-        private DevExpress.XtraBars.BarButtonItem btnLuu;
-        private DevExpress.XtraBars.BarButtonItem btnSua;
-        private DevExpress.XtraBars.BarButtonItem btnXoa;
-        private DevExpress.XtraBars.BarButtonItem btnThem;
         private DevExpress.XtraBars.Bar bar4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem19;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem21;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem22;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem23;
-        private DevExpress.XtraBars.BarButtonItem btnBoQua;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
-        private DevExpress.XtraBars.BarManager bmDMHangHoa;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar5;
-        private DevExpress.XtraBars.Bar bar6;
-        private DevExpress.XtraBars.BarDockControl barDockControl4;
-        private DevExpress.XtraBars.BarDockControl barDockControl5;
-        private DevExpress.XtraBars.BarDockControl barDockControl6;
-        private DevExpress.XtraBars.BarDockControl barDockControl7;
-        private DevExpress.XtraBars.BarButtonItem btnTimKiem;
-        private DevExpress.XtraBars.BarButtonItem btnHienThiDS;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
-        private System.Windows.Forms.NumericUpDown nudSoLuong;
-        private DevExpress.XtraEditors.PictureEdit pbxAnhHangHoa;
-        private DevExpress.XtraEditors.SimpleButton btnOpenAnh;
-        private DevExpress.XtraEditors.TextEdit txtGhiChu;
-        private DevExpress.XtraEditors.TextEdit txtDGBan;
-        private DevExpress.XtraEditors.TextEdit txtDGNhap;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtAnh;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.ComboBoxEdit cbxTenChatLieu;
+        private DevExpress.XtraEditors.ComboBoxEdit cbxMaChatLieu;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txtTenHang;
+        private DevExpress.XtraEditors.TextEdit txtTenSanPham;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private System.Windows.Forms.NumericUpDown nudSoLuong;
+        private DevExpress.XtraEditors.PictureEdit ptxAnhHangHoa;
+        private DevExpress.XtraEditors.SimpleButton btnOpenAnh;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit txtMaHang;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DevExpress.XtraGrid.GridControl gridControlHangHoa;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewHangHoa;
+        private DevExpress.XtraBars.BarButtonItem btnThem;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
+        private DevExpress.XtraBars.BarButtonItem btnXoaHangHoa;
+        private DevExpress.XtraBars.BarButtonItem btnLuu;
+        private DevExpress.XtraBars.BarButtonItem btnBoQua;
+        private DevExpress.XtraEditors.SimpleButton btnXoaAnh;
+        private DevExpress.XtraEditors.TextEdit txtGiaBanRa;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraGrid.GridControl gcHangHoa;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSachHH;
     }
 }

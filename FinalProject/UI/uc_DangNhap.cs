@@ -22,7 +22,7 @@ namespace FinalProject.UI
         public static SqlDataAdapter ad;
         public static DataTable dt;
         public static SqlCommandBuilder bd;
-        
+
 
         public static string getNameUser(string fullname)
         {
@@ -36,6 +36,37 @@ namespace FinalProject.UI
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        public static string GetFullname(int isAdmin, string TEN)
+        {
+            string sqlGetFullname = "Select TEN from NHANVIEN where ISADMIN=" + isAdmin + " and TEN='" + TEN + "'";
+            mycon = new SqlConnection(sqlcon);
+            mycon.Open();
+            SqlCommand getFullname = new SqlCommand(sqlGetFullname, mycon);
+            string Fullname = getFullname.ExecuteScalar().ToString();
+
+            return Fullname;
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDangNhap_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void hyperlinkLabelControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDangNhap_Click_2(object sender, EventArgs e)
         {
             string sql1 = "Select count(*) from NHANVIEN where TEN='" + txtUsername.Text.Trim() + "' and PASSWORD='" + txtMatKhau.Text.Trim() + "' ";
             if (txtUsername.Text == "" || txtMatKhau.Text == "")
@@ -70,20 +101,17 @@ namespace FinalProject.UI
                     if (getRole == 0)
                     {
 
-                        MessageBox.Show("Ban dang nhap vao tai khoan Admin", "Thong bao ", MessageBoxButtons.OK);
-                        frmMain frmMain = new frmMain();             
+                        MessageBox.Show("Bạn đang đăng nhập với quyền Admin", "Thong bao ", MessageBoxButtons.OK);
+                        frmMain frmMain = new frmMain();
 
                         frmMain.lb_quyen.Text = GetFullname(0, txtUsername.Text.Trim()) + " (Quản trị)";
-
-                        
-
 
                         frmMain.Show();
                         this.Hide();
                     }
                     else
                     {
-                        MessageBox.Show("Ban dang nhap vao tai khoan Nhân Vien", "Thong bao ", MessageBoxButtons.OK);
+                        MessageBox.Show("Bạn đang đăng nhập với quyền nhân viên", "Thong bao ", MessageBoxButtons.OK);
                         frmMain frmMain = new frmMain();
                         frmMain.mnuDMNhanVien.Visible = false;
                         frmMain.mnuDMKhachHang.Visible = false;
@@ -95,17 +123,5 @@ namespace FinalProject.UI
                 }
             }
         }
-
-        public static string GetFullname(int isAdmin, string ten)
-        {
-            string sqlGetFullname = "Select TEN from NHANVIEN where ISADMIN=" + isAdmin + " and TEN='" + ten + "'";
-            mycon = new SqlConnection(sqlcon);
-            mycon.Open();
-            SqlCommand getFullname = new SqlCommand(sqlGetFullname, mycon);
-            string Fullname = getFullname.ExecuteScalar().ToString();
-
-            return Fullname;
-        }     
-      
     }
 }

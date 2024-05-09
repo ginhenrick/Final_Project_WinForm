@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using FinalProject.Form;
 using FinalProject.UI;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace FinalProject
         public frmMain()
         {
             InitializeComponent();
+            IsMdiContainer = true;
         }
 
         uc_DMNhanVien ucDMNhanVien; //UC nhân viên
-        uc_DMKhachHang ucDMKhachHang; //UC Khách Hàng
+        uc_DMThanhToan ucDMKhachHang; //UC Khách Hàng
         uc_DMHangHoa ucDMHangHoa; //UC hàng hóa
+        uc_DMChatLieu ucDMChatLieu;
         uc_HDBan ucHDBan;   //uc hóa đơn bán
         uc_FindHD ucFindHD; //uc tìm kiếm hóa đơn
         uc_BCDoanhThu ucBCDoanhThu;
@@ -30,16 +33,18 @@ namespace FinalProject
         uc_GioiThieu ucGioiThieu;
         uc_TGLienLac ucTGLienLac;
         uc_DangNhap ucDangNhap;
+        
         private void mnuDMNhanVien_Click(object sender, EventArgs e)
         {
-            if (ucDMNhanVien==null)
+            if (ucDMNhanVien == null)
             {
                 ucDMNhanVien = new uc_DMNhanVien();
                 ucDMNhanVien.Dock = DockStyle.Fill;
                 mainContainer.Controls.Add(ucDMNhanVien);
                 ucDMNhanVien.BringToFront();
 
-            } else
+            }
+            else
             {
                 ucDMNhanVien.BringToFront();
             }
@@ -49,7 +54,7 @@ namespace FinalProject
         {
             if (ucDMKhachHang == null)
             {
-                ucDMKhachHang = new uc_DMKhachHang();
+                ucDMKhachHang = new uc_DMThanhToan();
                 ucDMKhachHang.Dock = DockStyle.Fill;
                 mainContainer.Controls.Add(ucDMKhachHang);
                 ucDMKhachHang.BringToFront();
@@ -145,7 +150,7 @@ namespace FinalProject
         {
             if (MessageBox.Show("Bạn có muốn đăng xuất không ?", "Thông báo ", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                Form2 a = new Form2();
+                Form_DangNhap a = new Form_DangNhap();
                 a.Show();
                 this.Hide();
             }
@@ -160,6 +165,74 @@ namespace FinalProject
         public void mnuDMNhanVien_VisibleChanged(object sender, EventArgs e)
         {
            mnuDMNhanVien.Visible = false;
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void accordionControlElement1_Click(object sender, EventArgs e)
+        {
+            if (ucDMChatLieu == null)
+            {
+                ucDMChatLieu = new uc_DMChatLieu();
+                ucDMChatLieu.Dock = DockStyle.Fill;
+                mainContainer.Controls.Add(ucDMChatLieu);
+                ucDMChatLieu.BringToFront();
+
+            }
+            else
+            {
+                ucDMChatLieu.BringToFront();
+            }
+        }
+
+        private void mnuTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuDanhMuc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem5_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát không ?", "Thông báo ", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form_VeChungToi formVeChungToi = new Form_VeChungToi();
+            formVeChungToi.Show(); 
+            formVeChungToi.StartPosition = FormStartPosition.CenterParent;
+        }
+
+        private void about_chuongtrinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form_VeChuongTrinh formVeChuongTrinh = new Form_VeChuongTrinh();
+            formVeChuongTrinh.Show();
+            formVeChuongTrinh.StartPosition = FormStartPosition.CenterParent;
+        }
+
+        private void accordionControlElement1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

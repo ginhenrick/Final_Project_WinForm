@@ -41,7 +41,6 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.txtTenKhachHang = new DevExpress.XtraEditors.TextEdit();
-            this.btnTimLai = new DevExpress.XtraEditors.SimpleButton();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtMaKhachHang = new DevExpress.XtraEditors.TextEdit();
@@ -94,7 +93,7 @@
             // 
             this.btnThoat.Caption = "Thoát";
             this.btnThoat.Id = 0;
-            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
             // 
             // bar3
@@ -158,7 +157,6 @@
             // splitContainerControl1.Panel1
             // 
             this.splitContainerControl1.Panel1.Controls.Add(this.txtTenKhachHang);
-            this.splitContainerControl1.Panel1.Controls.Add(this.btnTimLai);
             this.splitContainerControl1.Panel1.Controls.Add(this.btnTimKiem);
             this.splitContainerControl1.Panel1.Controls.Add(this.labelControl1);
             this.splitContainerControl1.Panel1.Controls.Add(this.txtMaKhachHang);
@@ -184,23 +182,12 @@
             this.txtTenKhachHang.Size = new System.Drawing.Size(275, 28);
             this.txtTenKhachHang.TabIndex = 58;
             // 
-            // btnTimLai
-            // 
-            this.btnTimLai.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimLai.Appearance.Options.UseFont = true;
-            this.btnTimLai.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.btnTimLai.Location = new System.Drawing.Point(714, 86);
-            this.btnTimLai.Name = "btnTimLai";
-            this.btnTimLai.Size = new System.Drawing.Size(136, 45);
-            this.btnTimLai.TabIndex = 57;
-            this.btnTimLai.Text = "Tìm lại";
-            // 
             // btnTimKiem
             // 
             this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.Appearance.Options.UseFont = true;
-            this.btnTimKiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.btnTimKiem.Location = new System.Drawing.Point(714, 35);
+            this.btnTimKiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTimKiem.ImageOptions.SvgImage")));
+            this.btnTimKiem.Location = new System.Drawing.Point(801, 69);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(135, 45);
             this.btnTimKiem.TabIndex = 56;
@@ -304,7 +291,6 @@
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.TextEdit txtTenKhachHang;
-        private DevExpress.XtraEditors.SimpleButton btnTimLai;
         private DevExpress.XtraEditors.SimpleButton btnTimKiem;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtMaKhachHang;

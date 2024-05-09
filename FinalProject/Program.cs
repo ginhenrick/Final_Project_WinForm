@@ -1,5 +1,7 @@
 ﻿using DevExpress.Skins;
 using DevExpress.UserSkins;
+using FinalProject.Form;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +19,8 @@ namespace FinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2());
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Set license context 
+            Application.Run(new frmMain());
         }
     }
 }
