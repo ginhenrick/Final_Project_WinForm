@@ -6,6 +6,8 @@ using DevExpress.XtraCharts.Designer.Native;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
+using OfficeOpenXml.Style;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +21,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml.Drawing;
+using OfficeOpenXml.Table;
 
 namespace FinalProject.UI
 {
@@ -138,52 +142,46 @@ namespace FinalProject.UI
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            int maNhanVien;
-
-            // Trường hợp 1: Xóa dựa vào dòng đã chọn
+            // Lấy chỉ mục của dòng đang được chọn
             int selectedRowHandle = gridViewNhanVien.FocusedRowHandle;
+
+            // Kiểm tra xem có dòng nào được chọn hay không
             if (selectedRowHandle >= 0)
             {
-                maNhanVien = (int)gridViewNhanVien.GetRowCellValue(selectedRowHandle, "MANHANVIEN");
-            }
-            // Trường hợp 2: Xóa dựa vào mã nhập vào
-            else if (int.TryParse(cbxMaNhanVien.Text, out maNhanVien))
-            {
-                // Mã hợp lệ, tiếp tục xóa
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một nhân viên hoặc nhập mã nhân viên hợp lệ.");
-                return;
-            }
+                // Lấy mã nhân viên từ dòng đã chọn
+                int maNhanVien = (int)gridViewNhanVien.GetRowCellValue(selectedRowHandle, "MANHANVIEN");
 
-            // Xác nhận xóa
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên có mã " + maNhanVien + "?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                // Tạo câu lệnh SQL DELETE
-                string sql = "DELETE FROM NHANVIEN WHERE MANHANVIEN = @MaNhanVien";
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                // Xác nhận xóa
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên có mã " + maNhanVien + "?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@MaNhanVien", maNhanVien);
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
+                    // Tạo câu lệnh SQL DELETE
+                    string sql = "DELETE FROM NHANVIEN WHERE MANHANVIEN = @MaNhanVien";
 
-                        if (rowsAffected > 0)
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        using (SqlCommand command = new SqlCommand(sql, connection))
                         {
-                            MessageBox.Show("Xóa nhân viên thành công.");
-                            LoadDanhSachNhanVien(); // Reload data after deletion
-                            LoadMaNhanVienComboBox(); // Reload combobox if needed
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không tìm thấy nhân viên có mã " + maNhanVien);
+                            command.Parameters.AddWithValue("@MaNhanVien", maNhanVien);
+                            connection.Open();
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Xóa nhân viên thành công.");
+                                LoadDanhSachNhanVien(); // Reload data after deletion
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không tìm thấy nhân viên có mã " + maNhanVien);
+                            }
                         }
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một nhân viên để xóa.");
             }
         }
 
@@ -199,18 +197,6 @@ namespace FinalProject.UI
 
         private void dgvDanhSachNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    // Lấy dòng được chọn
-            //    DataGridViewRow row = dgvDanhSachNV.Rows[e.RowIndex];
-
-            //    // Binding dữ liệu vào các TextBox
-            //    txtHoVaTenNV.Text = row.Cells["TEN"].Value.ToString();
-            //    cbxGioiTinh.SelectedItem = row.Cells["GIOITINH"].Value.ToString();
-            //    txtDiaChi.Text = row.Cells["DIACHI"].Value.ToString();
-            //    mtbSDT.Text = row.Cells["DIENTHOAI"].Value.ToString();
-            //    dtpNgaySinh.Value = (DateTime)row.Cells["NGAYSINH"].Value;
-            //}
         }
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -343,21 +329,20 @@ namespace FinalProject.UI
 
         private void btnBoQua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // Clear dữ liệu trong các control
-            cbxMaNhanVien.SelectedItem = null;
-            txtHoVaTenNV.Text = "";
-            cbxGioiTinh.SelectedItem = null; // Hoặc gán giá trị mặc định khác
-            txtDiaChi.Text = "";
-            txtDienThoai.Text = "";
-            dtpNgaySinh.Value = DateTime.Today; // Hoặc gán giá trị mặc định khác
-            txtEmail.Text = "";
-            cbxChucVu.SelectedItem = null;
-            cbxIsAdmin.SelectedItem = null;
-            txtMatKhau.Text = "";
-            ptbAnhNhanVien.Image = null;
+            // 1. Clear dữ liệu trong các control
+            txtHoVaTenNV.Text = "";                   // Xóa nội dung textbox Họ và Tên
+            cbxGioiTinh.SelectedItem = null;          // Xóa lựa chọn trong combobox Giới tính
+            txtDiaChi.Text = "";                      // Xóa nội dung textbox Địa chỉ
+            txtDienThoai.Text = "";                    // Xóa nội dung textbox Điện thoại
+            dtpNgaySinh.Value = DateTime.Today;        // Đặt lại ngày sinh về ngày hiện tại
+            txtEmail.Text = "";                       // Xóa nội dung textbox Email
+            cbxChucVu.SelectedItem = null;             // Xóa lựa chọn trong combobox Chức vụ
+            cbxIsAdmin.SelectedItem = null;            // Xóa lựa chọn trong combobox IsAdmin
+            txtMatKhau.Text = "";                     // Xóa nội dung textbox Mật khẩu
+            ptbAnhNhanVien.Image = null;              // Xóa ảnh trong PictureBox
 
-            // Bỏ chọn dòng hiện tại trong DataGridView
-            gridViewNhanVien.ClearSelection();
+            // 2. Bỏ chọn dòng hiện tại trong GridControl
+            gridViewNhanVien.RefreshData();        // Xóa lựa chọn trên GridView
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -487,6 +472,111 @@ namespace FinalProject.UI
             else if (cbxChucVu.SelectedIndex == 1) 
             {
                 cbxIsAdmin.SelectedIndex = 1;
+            }
+        }
+
+        private void btnXoaTheoMa_Click(object sender, EventArgs e)
+        { 
+            // 1. Lấy mãnhân viên từ textbox
+            string maNhanVienText = txtMaNhanVien.Text;
+
+            // 2. Kiểm tra mã nhân viên có hợp lệ hay không
+            int maNhanVien;
+            if (!int.TryParse(maNhanVienText, out maNhanVien))
+            {
+                MessageBox.Show("Mã nhân viên không hợp lệ. Vui lòng nhập số nguyên.");
+                return;
+            }
+
+            // 3. Xác nhận xóa
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên có mã " + maNhanVien + "?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                // 4. Tạo câu lệnh SQL DELETE
+                string sql = "DELETE FROM NHANVIEN WHERE MANHANVIEN = @MaNhanVien";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        // 5. Thêm tham số cho mã nhân viên
+                        command.Parameters.AddWithValue("@MaNhanVien", maNhanVien);
+
+                        // 6. Mở kết nối và thực thi lệnh xóa
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // 7. Kiểm tra kết quả và thông báo
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Xóa nhân viên thành công.");
+                            LoadDanhSachNhanVien(); // Tải lại danh sách nhân viên
+                            LoadMaNhanVienComboBox();
+                            txtMaNhanVien.Text = ""; // Xóa nội dung textbox
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy nhân viên có mã " + maNhanVien);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            // Get data from GridControl
+            System.Data.DataTable dtNhanVien = (System.Data.DataTable)gridControlNhanVien.DataSource;
+
+            // Create ExcelPackage
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                // Create worksheet
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Danh Sách Nhân Viên");
+
+                // Load data from DataTable
+                worksheet.Cells["A1"].LoadFromDataTable(dtNhanVien, true);
+
+                // Format header
+                using (ExcelRange headerRange = worksheet.Cells[1, 1, 1, dtNhanVien.Columns.Count])
+                {
+                    headerRange.Style.Font.Bold = true;
+                    headerRange.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    headerRange.Style.Fill.BackgroundColor.SetColor(Color.LightGray);
+                }
+                // Remove image column from the Excel file
+                int imageColumnIndex = dtNhanVien.Columns.IndexOf("ANHNV");
+                if (imageColumnIndex != -1)
+                {
+                    worksheet.DeleteColumn(imageColumnIndex + 1);
+                }
+
+                // AutoFit columns
+                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+
+                // Add border around cells
+                using (ExcelRange borderRange = worksheet.Cells[1, 1, worksheet.Dimension.Rows, worksheet.Dimension.Columns])
+                {
+                    borderRange.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                    borderRange.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                    borderRange.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                    borderRange.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                }
+
+                // Create file path (Desktop)
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string fileName = $"Danh Sách Nhân Viên - {DateTime.Now:yyyyMMdd}.xlsx";
+                string filePath = Path.Combine(desktopPath, fileName);
+
+                // Save Excel file
+                FileInfo excelFile = new FileInfo(filePath);
+                excelPackage.SaveAs(excelFile);
+
+                // Ask user to open the file
+                if (MessageBox.Show("Xuất file Excel thành công! Bạn có muốn mở file?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start(filePath);
+                }
             }
         }
     }

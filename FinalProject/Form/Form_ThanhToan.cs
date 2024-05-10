@@ -24,7 +24,7 @@ namespace FinalProject.Form
 
 
         public Form_ThanhToan()
-        {
+        {   
             InitializeComponent();
 
         }
