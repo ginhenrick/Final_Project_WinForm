@@ -58,13 +58,13 @@
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.splitContainerControl4 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.cbxTenSanPham = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnSuaSanPham = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuyBill = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoaSanPham = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddInCart = new DevExpress.XtraEditors.SimpleButton();
             this.lblGiaSanPham = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.cbxTenSanPham = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbxGiamGia = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.btnTomTatDonHang = new DevExpress.XtraEditors.SimpleButton();
@@ -409,7 +409,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainerControl3);
             this.splitContainer1.Size = new System.Drawing.Size(1523, 646);
-            this.splitContainer1.SplitterDistance = 350;
+            this.splitContainer1.SplitterDistance = 348;
             this.splitContainer1.TabIndex = 14;
             // 
             // groupControl1
@@ -418,7 +418,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1523, 350);
+            this.groupControl1.Size = new System.Drawing.Size(1523, 348);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "DANH MỤC KHÁCH HÀNG";
             // 
@@ -437,7 +437,7 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl5);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1519, 320);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1519, 318);
             this.splitContainerControl1.SplitterPosition = 836;
             this.splitContainerControl1.TabIndex = 0;
             // 
@@ -457,19 +457,19 @@
             // 
             this.splitContainerControl4.Panel2.Controls.Add(this.groupControl7);
             this.splitContainerControl4.Panel2.Text = "Panel2";
-            this.splitContainerControl4.Size = new System.Drawing.Size(836, 320);
+            this.splitContainerControl4.Size = new System.Drawing.Size(836, 318);
             this.splitContainerControl4.SplitterPosition = 277;
             this.splitContainerControl4.TabIndex = 0;
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.cbxTenSanPham);
             this.groupControl3.Controls.Add(this.btnSuaSanPham);
             this.groupControl3.Controls.Add(this.btnHuyBill);
             this.groupControl3.Controls.Add(this.btnXoaSanPham);
             this.groupControl3.Controls.Add(this.btnAddInCart);
             this.groupControl3.Controls.Add(this.lblGiaSanPham);
             this.groupControl3.Controls.Add(this.labelControl18);
-            this.groupControl3.Controls.Add(this.cbxTenSanPham);
             this.groupControl3.Controls.Add(this.cbxGiamGia);
             this.groupControl3.Controls.Add(this.labelControl17);
             this.groupControl3.Controls.Add(this.btnTomTatDonHang);
@@ -487,6 +487,23 @@
             this.groupControl3.Size = new System.Drawing.Size(836, 277);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "Thông tin sản phẩm";
+            // 
+            // cbxTenSanPham
+            // 
+            this.cbxTenSanPham.Location = new System.Drawing.Point(127, 42);
+            this.cbxTenSanPham.MenuManager = this.bmDMKhachHang;
+            this.cbxTenSanPham.Name = "cbxTenSanPham";
+            this.cbxTenSanPham.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTenSanPham.Properties.Appearance.Options.UseFont = true;
+            this.cbxTenSanPham.Properties.AutoComplete = false;
+            this.cbxTenSanPham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxTenSanPham.Properties.DropDownRows = 53;
+            this.cbxTenSanPham.Properties.Items.AddRange(new object[] {
+            "Vui lòng chọn sản phẩm để thanh toán"});
+            this.cbxTenSanPham.Size = new System.Drawing.Size(537, 28);
+            this.cbxTenSanPham.TabIndex = 57;
+            this.cbxTenSanPham.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // btnSuaSanPham
             // 
@@ -551,21 +568,6 @@
             this.labelControl18.Size = new System.Drawing.Size(91, 21);
             this.labelControl18.TabIndex = 51;
             this.labelControl18.Text = "Giá tạm tính";
-            // 
-            // cbxTenSanPham
-            // 
-            this.cbxTenSanPham.Location = new System.Drawing.Point(127, 42);
-            this.cbxTenSanPham.MenuManager = this.bmDMKhachHang;
-            this.cbxTenSanPham.Name = "cbxTenSanPham";
-            this.cbxTenSanPham.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxTenSanPham.Properties.Appearance.Options.UseFont = true;
-            this.cbxTenSanPham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxTenSanPham.Properties.Items.AddRange(new object[] {
-            ""});
-            this.cbxTenSanPham.Size = new System.Drawing.Size(454, 28);
-            this.cbxTenSanPham.TabIndex = 49;
-            this.cbxTenSanPham.SelectedIndexChanged += new System.EventHandler(this.cbxTenSanPham_SelectedIndexChanged_1);
             // 
             // cbxGiamGia
             // 
@@ -733,7 +735,7 @@
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl7.Location = new System.Drawing.Point(0, 0);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(836, 31);
+            this.groupControl7.Size = new System.Drawing.Size(836, 29);
             this.groupControl7.TabIndex = 0;
             this.groupControl7.Text = "Thông tin khách hàng";
             // 
@@ -903,7 +905,7 @@
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl5.Location = new System.Drawing.Point(0, 0);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(671, 320);
+            this.groupControl5.Size = new System.Drawing.Size(671, 318);
             this.groupControl5.TabIndex = 20;
             this.groupControl5.Text = "Tóm tắt đơn hàng";
             // 
@@ -1137,7 +1139,7 @@
             // 
             this.splitContainerControl3.Panel2.Controls.Add(this.groupControl6);
             this.splitContainerControl3.Panel2.Text = "Panel2";
-            this.splitContainerControl3.Size = new System.Drawing.Size(1523, 292);
+            this.splitContainerControl3.Size = new System.Drawing.Size(1523, 294);
             this.splitContainerControl3.SplitterPosition = 835;
             this.splitContainerControl3.TabIndex = 0;
             // 
@@ -1147,7 +1149,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(835, 292);
+            this.groupControl2.Size = new System.Drawing.Size(835, 294);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Dữ liệu Hàng Hóa";
             // 
@@ -1158,7 +1160,7 @@
             this.gridControlCart.MainView = this.gridViewCart;
             this.gridControlCart.MenuManager = this.bmDMKhachHang;
             this.gridControlCart.Name = "gridControlCart";
-            this.gridControlCart.Size = new System.Drawing.Size(831, 262);
+            this.gridControlCart.Size = new System.Drawing.Size(831, 264);
             this.gridControlCart.TabIndex = 0;
             this.gridControlCart.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCart});
@@ -1174,7 +1176,7 @@
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl6.Location = new System.Drawing.Point(0, 0);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(676, 292);
+            this.groupControl6.Size = new System.Drawing.Size(676, 294);
             this.groupControl6.TabIndex = 0;
             this.groupControl6.Text = "Dữ liệu khách hàng";
             // 
@@ -1185,7 +1187,7 @@
             this.gridControlCustomer.MainView = this.gridViewCustomer;
             this.gridControlCustomer.MenuManager = this.bmDMKhachHang;
             this.gridControlCustomer.Name = "gridControlCustomer";
-            this.gridControlCustomer.Size = new System.Drawing.Size(672, 262);
+            this.gridControlCustomer.Size = new System.Drawing.Size(672, 264);
             this.gridControlCustomer.TabIndex = 0;
             this.gridControlCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCustomer});
@@ -1316,7 +1318,6 @@
         private DevExpress.XtraEditors.SimpleButton btnAddInCart;
         private DevExpress.XtraEditors.LabelControl lblGiaSanPham;
         private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraEditors.ComboBoxEdit cbxTenSanPham;
         private DevExpress.XtraEditors.ComboBoxEdit cbxGiamGia;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.SimpleButton btnTomTatDonHang;
@@ -1354,5 +1355,6 @@
         private DevExpress.XtraEditors.SimpleButton btnXoaSanPham;
         private DevExpress.XtraEditors.SimpleButton btnHuyBill;
         private DevExpress.XtraEditors.SimpleButton btnSuaSanPham;
+        private DevExpress.XtraEditors.ComboBoxEdit cbxTenSanPham;
     }
 }

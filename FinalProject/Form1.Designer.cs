@@ -36,10 +36,10 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.mnuDanhMuc = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.mnuDMNhanVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.mnuDMKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.mnuDMHangHoa = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.mnuChatLieu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.mnuDMNhanVien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.mnuHangHoaNhapKho = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -124,7 +124,9 @@
             // accordionControl1
             // 
             this.accordionControl1.Appearance.AccordionControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.accordionControl1.Appearance.AccordionControl.ForeColor = System.Drawing.Color.Black;
             this.accordionControl1.Appearance.AccordionControl.Options.UseBackColor = true;
+            this.accordionControl1.Appearance.AccordionControl.Options.UseForeColor = true;
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.mnuDanhMuc,
@@ -143,10 +145,10 @@
             // mnuDanhMuc
             // 
             this.mnuDanhMuc.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.mnuDMNhanVien,
             this.mnuDMKhachHang,
             this.mnuDMHangHoa,
             this.mnuChatLieu,
+            this.mnuDMNhanVien,
             this.accordionControlElement5});
             this.mnuDanhMuc.Expanded = true;
             this.mnuDanhMuc.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
@@ -157,15 +159,6 @@
             this.mnuDanhMuc.Name = "mnuDanhMuc";
             this.mnuDanhMuc.Text = "Danh Mục";
             this.mnuDanhMuc.Click += new System.EventHandler(this.mnuDanhMuc_Click);
-            // 
-            // mnuDMNhanVien
-            // 
-            this.mnuDMNhanVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("mnuDMNhanVien.ImageOptions.SvgImage")));
-            this.mnuDMNhanVien.Name = "mnuDMNhanVien";
-            this.mnuDMNhanVien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.mnuDMNhanVien.Text = "Nhân Viên";
-            this.mnuDMNhanVien.Click += new System.EventHandler(this.mnuDMNhanVien_Click);
-            this.mnuDMNhanVien.VisibleChanged += new System.EventHandler(this.mnuDMNhanVien_VisibleChanged);
             // 
             // mnuDMKhachHang
             // 
@@ -191,6 +184,15 @@
             this.mnuChatLieu.Text = "Chất Liệu";
             this.mnuChatLieu.Click += new System.EventHandler(this.accordionControlElement1_Click);
             // 
+            // mnuDMNhanVien
+            // 
+            this.mnuDMNhanVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("mnuDMNhanVien.ImageOptions.SvgImage")));
+            this.mnuDMNhanVien.Name = "mnuDMNhanVien";
+            this.mnuDMNhanVien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.mnuDMNhanVien.Text = "Nhân Viên";
+            this.mnuDMNhanVien.Click += new System.EventHandler(this.mnuDMNhanVien_Click);
+            this.mnuDMNhanVien.VisibleChanged += new System.EventHandler(this.mnuDMNhanVien_VisibleChanged);
+            // 
             // accordionControlElement5
             // 
             this.accordionControlElement5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement5.ImageOptions.SvgImage")));
@@ -209,7 +211,7 @@
             // 
             // mnuHangHoaNhapKho
             // 
-            this.mnuHangHoaNhapKho.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement4.ImageOptions.SvgImage")));
+            this.mnuHangHoaNhapKho.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("mnuHangHoaNhapKho.ImageOptions.SvgImage")));
             this.mnuHangHoaNhapKho.Name = "mnuHangHoaNhapKho";
             this.mnuHangHoaNhapKho.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.mnuHangHoaNhapKho.Text = "Hàng hóa nhập kho";
@@ -218,6 +220,7 @@
             // 
             this.mnuHoaDon.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.mnuHoaDonBan});
+            this.mnuHoaDon.Expanded = true;
             this.mnuHoaDon.Name = "mnuHoaDon";
             this.mnuHoaDon.Text = "Hóa Đơn";
             // 

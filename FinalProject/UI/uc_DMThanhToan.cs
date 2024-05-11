@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using Humanizer;
 using DevExpress.XtraGrid.Columns;
 using FinalProject.Form;
+using DevExpress.XtraExport.Helpers;
 
 namespace FinalProject.UI
 {
@@ -27,8 +28,10 @@ namespace FinalProject.UI
         string connectionString = "Data Source=MSITHINGF63;Initial Catalog=QLBanHang;Integrated Security=True"; 
         private System.Data.DataTable dataTableHangHoa;
         private System.Data.DataTable dataTableKhachHang;
-        private BindingList<CartItem> cartItems = new BindingList<CartItem>();
-        private BindingList<CustomerItems> customerItems = new BindingList<CustomerItems>();
+        public BindingList<CartItem> cartItems = new BindingList<CartItem>();
+        public BindingList<CustomerItems> customerItems = new BindingList<CustomerItems>();
+        internal IEnumerable<object> dtGiamGia;
+
         public class CartItem
         {
             public string TenSanPham { get; set; }
@@ -36,6 +39,7 @@ namespace FinalProject.UI
             public decimal GiamGia { get; set; }
             public decimal GiaSanPham { get; set; }
             public decimal ThanhTien { get; internal set; }
+            public string PhuongThucThanhToan { get; set; }
         }
 
         public class CustomerItems
@@ -47,6 +51,19 @@ namespace FinalProject.UI
             public string GioiTinh { get; set; }
             public string LoaiKhachHang { get; set; }
         }
+
+        public DateTime NgayMua
+        {
+            get { return dtpNgayMua.Value; }
+        }
+        public string PhuongThucThanhToan
+        {
+            get { return cbxPhuongThucThanhToan.SelectedItem?.ToString(); }
+        }
+        public string TongTienText
+        {
+            get { return lblTongTien.Text; }
+        }
         public uc_DMThanhToan()
         {
             InitializeComponent();
@@ -55,11 +72,10 @@ namespace FinalProject.UI
             adapter = new SqlDataAdapter("SELECT MAKHACH, TENKHACH, GIOITINH, DIACHI, DIENTHOAI FROM KHACH", sqlConnection);
             dataTableHangHoa = new System.Data.DataTable();
             dataTableKhachHang = new System.Data.DataTable();
-            LoadDanhSachHangHoa();
-            LoadDanhSachKhachHang();
             LoadTenSanPhamVaoComboBox();
             cbxTenSanPham.SelectedIndex = 0;
-            LoadPlaceHolderVaoPTTT();
+            UpdateTenSanPhamVaoComboBox();
+            LoadPhuongThucThanhToanVaoComboBox();
             cbxPhuongThucThanhToan.SelectedIndex = 0;
             gridControlCart.DataSource = cartItems;
             gridViewCart.Columns.Add(new GridColumn() { FieldName = "TenSanPham", Caption = "Tên Sản Phẩm" });
@@ -75,10 +91,9 @@ namespace FinalProject.UI
             gridViewCustomer.Columns.Add(new GridColumn() { FieldName = "LoaiKhachHang", Caption = "Loại khách hàng" });
         }
 
-        private void LoadPlaceHolderVaoPTTT()
+        private void LoadPhuongThucThanhToanVaoComboBox()
         {
             cbxPhuongThucThanhToan.Properties.Items.Clear();
-            cbxPhuongThucThanhToan.Properties.Items.Add("Vui lòng chọn phương thức để thanh toán"); // Add placeholder
 
             string sql = "SELECT PHUONGTHUCTHANHTOAN FROM THANHTOAN";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -97,91 +112,86 @@ namespace FinalProject.UI
             }
         }
 
-        private void LoadDanhSachHangHoa()
-        {
-            //try
-            //{
-            //    string sql = @"SELECT hh.MAHANG, hh.TENSANPHAM, hh.SOLUONG, hh.ANH, 
-            //                nh.GIANHAP, nh.GIABAN, nh.GHICHU
-            //            FROM HANGHOA hh
-            //            INNER JOIN NHAPHANGHOA nh ON hh.MAHANG = nh.MAHANG";
-            //    adapter = new SqlDataAdapter(sql, sqlConnection);
-            //    dataTableHangHoa.Clear();
-            //    adapter.Fill(dataTableHangHoa);
-            //    dgvHangHoa.DataSource = dataTableHangHoa;
-
-            //    dgvHangHoa.Columns["MAHANG"].HeaderText = "Mã Hàng";
-            //    dgvHangHoa.Columns["TENSANPHAM"].HeaderText = "Tên Sản Phẩm";
-            //    dgvHangHoa.Columns["SOLUONG"].HeaderText = "Số Lượng";
-            //    dgvHangHoa.Columns["ANH"].HeaderText = "Ảnh SP";
-            //    dgvHangHoa.Columns["GIANHAP"].HeaderText = "Đơn Giá Nhập";
-            //    dgvHangHoa.Columns["GIABAN"].HeaderText = "Đơn Giá Bán";
-            //    dgvHangHoa.Columns["GHICHU"].HeaderText = "Ghi Chú";
-
-            //    dgvHangHoa.Columns["MAHANG"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvHangHoa.Columns["TENSANPHAM"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvHangHoa.Columns["SOLUONG"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvHangHoa.Columns["GIANHAP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvHangHoa.Columns["GIABAN"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvHangHoa.Columns["GHICHU"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Lỗi khi tải danh sách hàng hóa: " + ex.Message);
-            //}
-        }
-        private void LoadDanhSachKhachHang()
-        {
-            //try
-            //{
-            //    string sql = "SELECT MAKHACH, TENKHACH, DIACHI, SODIENTHOAI, GIOITINH, LOAIKHACHHANG, NGAYSINH FROM KHACHHANG";
-            //    adapter = new SqlDataAdapter(sql, sqlConnection);
-            //    dataTableKhachHang.Clear();
-            //    adapter.Fill(dataTableKhachHang);
-            //    dgvKhachHang.DataSource = dataTableKhachHang;
-
-            //    dgvKhachHang.Columns["MAKHACH"].HeaderText = "Mã Khách";
-            //    dgvKhachHang.Columns["TENKHACH"].HeaderText = "Tên Khách";
-            //    dgvKhachHang.Columns["DIACHI"].HeaderText = "Địa chỉ";
-            //    dgvKhachHang.Columns["SODIENTHOAI"].HeaderText = "Số điện thoại";
-            //    dgvKhachHang.Columns["NGAYSINH"].HeaderText = "Ngày sinh";
-            //    dgvKhachHang.Columns["GIOITINH"].HeaderText = "Giới tính";
-            //    dgvKhachHang.Columns["LOAIKHACHHANG"].HeaderText = "Loại Khách Hàng";
-
-            //    dgvKhachHang.Columns["MAKHACH"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvKhachHang.Columns["TENKHACH"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvKhachHang.Columns["SODIENTHOAI"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvKhachHang.Columns["DIACHI"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvKhachHang.Columns["NGAYSINH"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvKhachHang.Columns["GIOITINH"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgvKhachHang.Columns["LOAIKHACHHANG"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Lỗi khi tải danh sách khách hàng: " + ex.Message);
-            //}
-        }
+        public SqlDependency dependency;
+        private SqlCommand command;
 
         private void LoadTenSanPhamVaoComboBox()
         {
-            cbxTenSanPham.Properties.Items.Clear();
-            cbxTenSanPham.Properties.Items.Add("Vui lòng chọn sản phẩm để thanh toán"); // Add placeholder
-
-            string sql = "SELECT TENSANPHAM FROM HANGHOA";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                using (SqlCommand command = new SqlCommand(sql, connection))
+                // Xóa tất cả các mục hiện có trong combobox
+                //cbxTenSanPham.Properties.Items.Clear();
+
+                // Tạo kết nối đến cơ sở dữ liệu
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+
+                    // Câu truy vấn SQL để lấy tất cả các giá trị TENSANPHAM từ bảng HANGHOANHAPKHO
+                    string sql = "SELECT TENSANPHAM FROM HANGHOANHAPKHO";
+
+                    // Tạo và thực thi đối tượng SqlCommand để thực hiện truy vấn SQL
+                    using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        while (reader.Read())
+                        this.command = command; // Lưu lại command cho SqlDependency
+                                                // Đọc dữ liệu từ truy vấn
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            cbxTenSanPham.Properties.Items.Add(reader["TENSANPHAM"]);
+                            // Kiểm tra xem có dữ liệu được trả về không
+                            if (reader.HasRows)
+                            {
+                                // Đọc từng dòng dữ liệu và thêm giá trị TENSANPHAM vào combobox
+                                while (reader.Read())
+                                {
+                                    string tenSanPham = reader["TENSANPHAM"].ToString();
+                                    cbxTenSanPham.Properties.Items.Add(tenSanPham);
+                                }
+                            }
+                        }
+
+                        // Đăng ký SqlDependency sau khi load xong dữ liệu
+                        if (dependency == null)
+                        {
+                            SqlDependency.Start(connectionString);
+                            dependency = new SqlDependency(command);
+                            dependency.OnChange += Dependency_OnChange;
                         }
                     }
                 }
+
+                // Thêm placeholder sau khi đã thêm tất cả sản phẩm
+                //cbxTenSanPham.Properties.Items.Insert(0, "Vui lòng chọn sản phẩm để thanh toán");
             }
+            catch (Exception ex)
+            {
+                // Xử lý các ngoại lệ nếu có
+                MessageBox.Show("Lỗi khi tải dữ liệu sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Dependency_OnChange(object sender, SqlNotificationEventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => UpdateTenSanPhamVaoComboBox()));
+            }
+            else
+            {
+                UpdateTenSanPhamVaoComboBox();
+            }
+        }
+
+        private void UpdateTenSanPhamVaoComboBox()
+        {
+            // Gỡ bỏ sự kiện cũ
+            if (dependency != null)
+            {
+                dependency.OnChange -= Dependency_OnChange;
+                dependency = null;
+            }
+
+            // Tải lại dữ liệu và đăng ký SqlDependency mới
+            LoadTenSanPhamVaoComboBox();
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -215,61 +225,6 @@ namespace FinalProject.UI
         private void lblKhachHang_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnTomTatDonHang_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
-       
-       
-
-            private void UpdateGiaSanPham()
-        {
-            //if (cbxTenSanPham.SelectedItem == null)
-            //{
-            //    lblGiaSanPham.Text = "N/A";
-            //    return;
-            //}
-
-            //// Lấy tên sản phẩm và giảm giá
-            //string tenSanPham = cbxTenSanPham.SelectedItem.ToString();
-            //string giamGiaText = cbxGiamGia.SelectedItem?.ToString() ?? "0";
-
-            //// Câu lệnh SQL để lấy giá bán
-            //string sql = "SELECT hh.MAHANG, nh.GIABAN FROM HANGHOA hh INNER JOIN NHAPHANGHOA nh ON hh.MAHANG = nh.MAHANG WHERE hh.TENSANPHAM = @TenSanPham";
-
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    using (SqlCommand command = new SqlCommand(sql, connection))
-            //    {
-            //        command.Parameters.AddWithValue("@TenSanPham", tenSanPham);
-            //        connection.Open();
-            //        using (SqlDataReader reader = command.ExecuteReader())
-            //        {
-            //            if (reader.Read())
-            //            {
-            //                decimal giaBan = Convert.ToDecimal(reader["GIABAN"]);
-            //                decimal giamGiaPhanTram = 0;
-
-            //                // Xử lý giảm giá
-            //                if (decimal.TryParse(giamGiaText, NumberStyles.Any, CultureInfo.InvariantCulture, out giamGiaPhanTram) && giamGiaPhanTram > 0)
-            //                {
-            //                    giaBan = giaBan * (1 - giamGiaPhanTram / 100); // Tính giá sau khi giảm
-            //                }
-
-            //                // Hiển thị giá sản phẩm
-            //                lblGiaSanPham.Text = giaBan.ToString("C", new CultureInfo("vi-VN"));
-            //            }
-            //            else
-            //            {
-            //                lblGiaSanPham.Text = "N/A";
-            //            }
-            //        }
-            //    }
-            //}
         }
 
         private void nudSoLuong_ValueChanged(object sender, EventArgs e)
@@ -419,50 +374,6 @@ namespace FinalProject.UI
         private void cbxTenSanPham_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             
-            if (cbxTenSanPham.SelectedItem == null)
-            {
-                lblGiaSanPham.Text = "N/A";
-                return;
-            }
-
-            string tenSanPham = cbxTenSanPham.SelectedItem.ToString();
-            string giamGiaText = cbxGiamGia.SelectedItem?.ToString() ?? "0";
-
-            try
-            {
-                // Sử dụng using để đảm bảo giải phóng tài nguyên
-                using (var connection = new SqlConnection(connectionString))
-                using (var command = new SqlCommand("SELECT nh.GIABAN FROM HANGHOA hh INNER JOIN NHAPHANGHOA nh ON hh.MAHANG = nh.MAHANG WHERE hh.TENSANPHAM = @TenSanPham", connection))
-                {
-                    command.Parameters.AddWithValue("@TenSanPham", tenSanPham);
-                    connection.Open();
-                    using (var reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            decimal giaBan = reader.GetDecimal(reader.GetOrdinal("GIABAN"));
-                            decimal giamGiaPhanTram;
-
-                            if (decimal.TryParse(giamGiaText.TrimEnd('%'), out giamGiaPhanTram) && giamGiaPhanTram > 0)
-                            {
-                                giaBan *= (1 - giamGiaPhanTram / 100);
-                            }
-
-                            lblGiaSanPham.Text = giaBan.ToString("C", new CultureInfo("vi-VN"));
-                        }
-                        else
-                        {
-                            lblGiaSanPham.Text = "N/A"; // Sản phẩm không tìm thấy
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Xử lý lỗi truy vấn cơ sở dữ liệu
-                MessageBox.Show("Lỗi khi truy vấn giá sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lblGiaSanPham.Text = "N/A";
-            }
         }
 
         private void nudSoLuong_ValueChanged_1(object sender, EventArgs e)
@@ -630,12 +541,36 @@ namespace FinalProject.UI
 
         public ListView.ListViewItemCollection TenSanPhamItems => lvTenSanPham.Items;
         public ListView.ListViewItemCollection SoLuongItems => lvSoLuong.Items;
-        public System.Data.DataTable HangHoaDataTable => (System.Data.DataTable)gridControlCart.DataSource; // Assuming you have a DataTable as the DataSource
+        public System.Data.DataTable HangHoaDataTable
+        {
+            get
+            {
+                // Tạo DataTable mới
+                System.Data.DataTable dtHangHoa = new System.Data.DataTable();
+                dtHangHoa.Columns.Add("TenSanPham", typeof(string));
+                dtHangHoa.Columns.Add("SoLuong", typeof(int));
+                dtHangHoa.Columns.Add("GiaSanPham", typeof(decimal));
+                dtHangHoa.Columns.Add("GiamGia", typeof(decimal));
+
+                // Sao chép dữ liệu từ BindingList sang DataTable
+                foreach (CartItem item in cartItems)
+                {
+                    DataRow row = dtHangHoa.NewRow();
+                    row["TenSanPham"] = item.TenSanPham;
+                    row["SoLuong"] = item.SoLuong;
+                    row["GiaSanPham"] = item.GiaSanPham;
+                    row["GiamGia"] = item.GiamGia;
+                    dtHangHoa.Rows.Add(row);
+                }
+
+                return dtHangHoa;
+            }
+        }
         public string GiamGia => lblGiamGia.Text;
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             // Create an instance of Form_ThanhToan
-            Form_ThanhToan thanhToanForm = new Form_ThanhToan();
+            Form_ThanhToan thanhToanForm = new Form_ThanhToan(this);
 
             // Set properties with values from uc_DMThanhToan labels
             thanhToanForm.TenKhach = lblKhachHang.Text;
@@ -647,6 +582,57 @@ namespace FinalProject.UI
 
             // Display the Form_ThanhToan (modal or modeless)
             thanhToanForm.ShowDialog(); // Or thanhToanForm.Show()
+        }
+
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbxTenSanPham.SelectedItem == null || cbxTenSanPham.SelectedItem.ToString() == "Vui lòng chọn sản phẩm để thanh toán")
+            {
+                lblGiaSanPham.Text = "N/A";
+                return;
+            }
+
+            string tenSanPham = cbxTenSanPham.SelectedItem.ToString();
+            string giamGiaText = cbxGiamGia.SelectedItem?.ToString() ?? "0";
+
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    // Sửa đổi câu truy vấn để lấy GIABAN từ HANGHOANHAPKHO
+                    string sql = "SELECT GIABAN FROM HANGHOANHAPKHO WHERE TENSANPHAM = @TenSanPham";
+                    using (var command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@TenSanPham", tenSanPham);
+                        using (var reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                decimal giaBan = reader.GetDecimal(reader.GetOrdinal("GIABAN"));
+                                decimal giamGiaPhanTram;
+
+                                if (decimal.TryParse(giamGiaText.TrimEnd('%'), out giamGiaPhanTram) && giamGiaPhanTram > 0)
+                                {
+                                    giaBan *= (1 - giamGiaPhanTram / 100);
+                                }
+
+                                lblGiaSanPham.Text = giaBan.ToString("C", new CultureInfo("vi-VN"));
+                            }
+                            else
+                            {
+                                lblGiaSanPham.Text = "N/A"; // Sản phẩm không tìm thấy
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi truy vấn giá sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblGiaSanPham.Text = "N/A";
+            }
         }
     }
 }

@@ -41,6 +41,12 @@
             this.lblTongTien = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.dgvSanPhamDaMua = new System.Windows.Forms.DataGridView();
+            this.TENSANPHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIASANPHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIAMGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOTIENDAGIAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THANHTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.lblNgayMua = new DevExpress.XtraEditors.LabelControl();
             this.lblLoaiKhachHang = new DevExpress.XtraEditors.LabelControl();
@@ -56,12 +62,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnThanhToanVaIn = new DevExpress.XtraEditors.SimpleButton();
-            this.TENSANPHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIASANPHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIAMGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOTIENDAGIAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THANHTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -147,16 +147,16 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.btnThanhToanVaIn);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(673, 721);
-            this.splitContainerControl1.SplitterPosition = 588;
+            this.splitContainerControl1.SplitterPosition = 589;
             this.splitContainerControl1.TabIndex = 4;
             // 
             // lblBangChu
             // 
-            this.lblBangChu.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBangChu.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBangChu.Appearance.Options.UseFont = true;
             this.lblBangChu.Location = new System.Drawing.Point(218, 541);
             this.lblBangChu.Name = "lblBangChu";
-            this.lblBangChu.Size = new System.Drawing.Size(33, 21);
+            this.lblBangChu.Size = new System.Drawing.Size(24, 16);
             this.lblBangChu.TabIndex = 20;
             this.lblBangChu.Text = "***";
             // 
@@ -210,6 +210,54 @@
             this.dgvSanPhamDaMua.RowTemplate.Height = 24;
             this.dgvSanPhamDaMua.Size = new System.Drawing.Size(626, 250);
             this.dgvSanPhamDaMua.TabIndex = 13;
+            // 
+            // TENSANPHAM
+            // 
+            this.TENSANPHAM.HeaderText = "Tên sản phẩm";
+            this.TENSANPHAM.MinimumWidth = 6;
+            this.TENSANPHAM.Name = "TENSANPHAM";
+            this.TENSANPHAM.ReadOnly = true;
+            this.TENSANPHAM.Width = 230;
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.MinimumWidth = 6;
+            this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.ReadOnly = true;
+            this.SOLUONG.Width = 50;
+            // 
+            // GIASANPHAM
+            // 
+            this.GIASANPHAM.HeaderText = "Giá";
+            this.GIASANPHAM.MinimumWidth = 6;
+            this.GIASANPHAM.Name = "GIASANPHAM";
+            this.GIASANPHAM.ReadOnly = true;
+            this.GIASANPHAM.Width = 80;
+            // 
+            // GIAMGIA
+            // 
+            this.GIAMGIA.HeaderText = "Giảm Giá";
+            this.GIAMGIA.MinimumWidth = 6;
+            this.GIAMGIA.Name = "GIAMGIA";
+            this.GIAMGIA.ReadOnly = true;
+            this.GIAMGIA.Width = 50;
+            // 
+            // SOTIENDAGIAM
+            // 
+            this.SOTIENDAGIAM.HeaderText = "Số tiền đã giảm";
+            this.SOTIENDAGIAM.MinimumWidth = 6;
+            this.SOTIENDAGIAM.Name = "SOTIENDAGIAM";
+            this.SOTIENDAGIAM.ReadOnly = true;
+            this.SOTIENDAGIAM.Width = 80;
+            // 
+            // THANHTIEN
+            // 
+            this.THANHTIEN.HeaderText = "Thành tiền";
+            this.THANHTIEN.MinimumWidth = 6;
+            this.THANHTIEN.Name = "THANHTIEN";
+            this.THANHTIEN.ReadOnly = true;
+            this.THANHTIEN.Width = 80;
             // 
             // labelControl13
             // 
@@ -323,68 +371,22 @@
             // btnHuy
             // 
             this.btnHuy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHuy.ImageOptions.SvgImage")));
-            this.btnHuy.Location = new System.Drawing.Point(344, 23);
+            this.btnHuy.Location = new System.Drawing.Point(345, 33);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(129, 54);
             this.btnHuy.TabIndex = 1;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThanhToanVaIn
             // 
             this.btnThanhToanVaIn.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThanhToanVaIn.ImageOptions.SvgImage")));
-            this.btnThanhToanVaIn.Location = new System.Drawing.Point(183, 23);
+            this.btnThanhToanVaIn.Location = new System.Drawing.Point(201, 33);
             this.btnThanhToanVaIn.Name = "btnThanhToanVaIn";
             this.btnThanhToanVaIn.Size = new System.Drawing.Size(138, 54);
             this.btnThanhToanVaIn.TabIndex = 0;
             this.btnThanhToanVaIn.Text = "Thanh Toán &\r\nIn Hóa Đơn";
-            // 
-            // TENSANPHAM
-            // 
-            this.TENSANPHAM.HeaderText = "Tên sản phẩm";
-            this.TENSANPHAM.MinimumWidth = 6;
-            this.TENSANPHAM.Name = "TENSANPHAM";
-            this.TENSANPHAM.ReadOnly = true;
-            this.TENSANPHAM.Width = 230;
-            // 
-            // SOLUONG
-            // 
-            this.SOLUONG.HeaderText = "Số lượng";
-            this.SOLUONG.MinimumWidth = 6;
-            this.SOLUONG.Name = "SOLUONG";
-            this.SOLUONG.ReadOnly = true;
-            this.SOLUONG.Width = 50;
-            // 
-            // GIASANPHAM
-            // 
-            this.GIASANPHAM.HeaderText = "Giá";
-            this.GIASANPHAM.MinimumWidth = 6;
-            this.GIASANPHAM.Name = "GIASANPHAM";
-            this.GIASANPHAM.ReadOnly = true;
-            this.GIASANPHAM.Width = 80;
-            // 
-            // GIAMGIA
-            // 
-            this.GIAMGIA.HeaderText = "Giảm Giá";
-            this.GIAMGIA.MinimumWidth = 6;
-            this.GIAMGIA.Name = "GIAMGIA";
-            this.GIAMGIA.ReadOnly = true;
-            this.GIAMGIA.Width = 50;
-            // 
-            // SOTIENDAGIAM
-            // 
-            this.SOTIENDAGIAM.HeaderText = "Số tiền đã giảm";
-            this.SOTIENDAGIAM.MinimumWidth = 6;
-            this.SOTIENDAGIAM.Name = "SOTIENDAGIAM";
-            this.SOTIENDAGIAM.ReadOnly = true;
-            this.SOTIENDAGIAM.Width = 80;
-            // 
-            // THANHTIEN
-            // 
-            this.THANHTIEN.HeaderText = "Thành tiền";
-            this.THANHTIEN.MinimumWidth = 6;
-            this.THANHTIEN.Name = "THANHTIEN";
-            this.THANHTIEN.ReadOnly = true;
-            this.THANHTIEN.Width = 80;
+            this.btnThanhToanVaIn.Click += new System.EventHandler(this.btnThanhToanVaIn_Click);
             // 
             // Form_ThanhToan
             // 

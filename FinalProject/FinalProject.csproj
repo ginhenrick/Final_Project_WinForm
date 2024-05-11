@@ -307,7 +307,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Class\" />
     <Folder Include="Report\" />
   </ItemGroup>
   <ItemGroup>
