@@ -13,7 +13,7 @@ namespace FinalProject
     {
 
 
-        public static string sqlcon = @"Server=MSITHINGF63; Database=QLBanHang; Integrated Security=True";
+        public static string sqlcon = @"Server=MSITHINGF63; Database=QLBanHang; Integrated Security=True; MultipleActiveResultSets=true";
         public static SqlConnection mycon = new SqlConnection();
 
         public static void taoKetNoi()

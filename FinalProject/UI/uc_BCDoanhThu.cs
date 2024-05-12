@@ -17,5 +17,12 @@ namespace FinalProject.UI
         {
             InitializeComponent();
         }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
     }
 }

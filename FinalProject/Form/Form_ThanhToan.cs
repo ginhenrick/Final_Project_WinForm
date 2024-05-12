@@ -20,7 +20,7 @@ namespace FinalProject.Form
 {
     public partial class Form_ThanhToan : DevExpress.XtraEditors.XtraForm
     {
-        string connectionString = "Data Source=MSITHINGF63;Initial Catalog=QLBanHang;Integrated Security=True";
+        string connectionString = "Data Source=MSITHINGF63;Initial Catalog=QLBanHang;Integrated Security=True; MultipleActiveResultSets=true";
         private uc_DMThanhToan ucDMThanhToan;
 
         public string TenKhach { get; set; }
@@ -51,6 +51,8 @@ namespace FinalProject.Form
 
         private void Form_ThanhToan_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hoaDonDataSet.HANGHOANHAPKHO' table. You can move, or remove it, as needed.
+            this.hANGHOANHAPKHOTableAdapter.Fill(this.hoaDonDataSet.HANGHOANHAPKHO);
             lblTenKhach.Text = TenKhach;
             lblSoDienThoai.Text = SoDienThoai;
             lblLoaiKhachHang.Text = LoaiKhachHang;
@@ -80,17 +82,26 @@ namespace FinalProject.Form
 
         private void btnThanhToanVaIn_Click(object sender, EventArgs e)
         {
+            // 1. Lưu thông tin khách hàng vào cơ sở dữ liệu
             int maKhachHang = LuuKhachHangVaoCSDL();
+
+            // 2. Lưu thông tin đơn hàng vào cơ sở dữ liệu
             int maDonHang = LuuDonHangVaoCSDL(maKhachHang);
 
+            // 3. Giảm số lượng sản phẩm trong bảng HANGHOA
             if (maDonHang > 0)
             {
                 GiamSoLuongSanPham();
+
+                // 4. Hiển thị MessageBox
                 DialogResult result = MessageBox.Show("Thanh toán thành công!\nBạn có muốn xem trước hóa đơn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
-                    // Tạo và hiển thị Report (bạn cần thiết kế report này)
+                    // 5. Hiển thị Report
                     HienThiReport(maDonHang);
+
+                    // 6. Lưu dữ liệu vào bảng HOADON
+                    LuuDuLieuVaoHOADON(maDonHang);
                 }
             }
             else
@@ -99,15 +110,156 @@ namespace FinalProject.Form
             }
         }
 
+        private void LuuDuLieuVaoHOADON(int maDonHang)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Lấy thông tin từ LICHSUGIAODICH based on maDonHang
+                    string sqlDonHang = "SELECT * FROM LICHSUGIAODICH WHERE MAGD = @MAGD";
+                    using (SqlCommand cmdDonHang = new SqlCommand(sqlDonHang, connection))
+                    {
+                        cmdDonHang.Parameters.AddWithValue("@MAGD", maDonHang);
+                        using (SqlDataReader readerDonHang = cmdDonHang.ExecuteReader())
+                        {
+                            if (readerDonHang.Read())
+                            {
+                                // Lấy thông tin cần thiết từ readerDonHang
+                                int maKhachHang = Convert.ToInt32(readerDonHang["MAKHACH"]);
+                                string soLuong = readerDonHang["SOLUONG"].ToString();
+                                decimal thanhTien = Convert.ToDecimal(readerDonHang["THANHTIEN"]);
+                                DateTime ngayMua = Convert.ToDateTime(readerDonHang["NGAYMUA"]);
+                                string tenSanPham = readerDonHang["SANPHAMDAMUA"].ToString();
+                                string giamGia = readerDonHang["GIAMGIA"].ToString();
+
+                                // Lấy đơn giá từ HANGHOANHAPKHO dựa vào tenSanPham (giả định mỗi sản phẩm chỉ có 1 đơn giá)
+                                string sqlDonGia = "SELECT GIABAN FROM HANGHOANHAPKHO WHERE TENSANPHAM = @TENSANPHAM";
+                                using (SqlCommand cmdDonGia = new SqlCommand(sqlDonGia, connection))
+                                {
+                                    cmdDonGia.Parameters.AddWithValue("@TENSANPHAM", tenSanPham);
+                                    decimal donGia = Convert.ToDecimal(cmdDonGia.ExecuteScalar());
+
+                                    // Lưu dữ liệu vào HOADON
+                                    string sqlInsert = @"
+                                INSERT INTO HOADON (SOLUONG, DONGIA, GIAMGIA, THANHTIEN, NGAYMUA, TENSANPHAM, MASANPHAM) 
+                                VALUES (@SOLUONG, @DONGIA, @GIAMGIA, @THANHTIEN, @NGAYMUA, @TENSANPHAM, @MASANPHAM)";
+                                    using (SqlCommand cmdInsert = new SqlCommand(sqlInsert, connection))
+                                    {
+                                        cmdInsert.Parameters.AddWithValue("@SOLUONG", soLuong);
+                                        cmdInsert.Parameters.AddWithValue("@DONGIA", donGia);
+                                        cmdInsert.Parameters.AddWithValue("@GIAMGIA", giamGia);
+                                        cmdInsert.Parameters.AddWithValue("@THANHTIEN", thanhTien);
+                                        cmdInsert.Parameters.AddWithValue("@NGAYMUA", ngayMua);
+                                        cmdInsert.Parameters.AddWithValue("@TENSANPHAM", tenSanPham);
+                                        cmdInsert.Parameters.AddWithValue("@MASANPHAM", maKhachHang); // Giả định MASANPHAM là MAKHACH
+
+                                        cmdInsert.ExecuteNonQuery();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu dữ liệu vào HOADON: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void HienThiReport(int maDonHang)
         {
-            throw new NotImplementedException();
-            //// Tạo Report và truyền dữ liệu (bạn cần thiết kế report này)
-            //XtraReport report = new XtraReport();
-            //// ... Thêm logic để thiết kế report và truyền dữ liệu, ví dụ: maDonHang ...
+            // Tạo DataSet chứa dữ liệu hóa đơn cho maDonHang
+            HoaDonDataSet dsHoaDon = TaoHoaDonDataSet(maDonHang);
 
-            //ReportPrintTool printTool = new ReportPrintTool(report);
-            //printTool.ShowPreviewDialog();
+            // Tạo XtraReport object dựa trên file .repx
+            Report_HoaDon report = new Report_HoaDon();
+
+            // Gán DataSet cho thuộc tính DataSource của Report
+            report.DataSource = dsHoaDon;
+
+            // Tạo ReportPrintTool và hiển thị preview
+            ReportPrintTool printTool = new ReportPrintTool(report);
+            printTool.ShowPreviewDialog();
+
+            // Lưu dữ liệu vào bảng HOADON sau khi hiển thị report
+            LuuDuLieuVaoHOADON(maDonHang);
+        }
+
+        private HoaDonDataSet TaoHoaDonDataSet(int maDonHang)
+        {
+            HoaDonDataSet dsHoaDon = new HoaDonDataSet();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // 1. Lấy thông tin đơn hàng từ LICHSUGIAODICH
+                string sqlDonHang = "SELECT * FROM LICHSUGIAODICH WHERE MAGD = @MAGD";
+                using (SqlCommand cmdDonHang = new SqlCommand(sqlDonHang, connection))
+                {
+                    cmdDonHang.Parameters.AddWithValue("@MAGD", maDonHang);
+                    using (SqlDataReader readerDonHang = cmdDonHang.ExecuteReader())
+                    {
+                        if (readerDonHang.Read())
+                        {
+                            // Lấy thông tin cần thiết từ readerDonHang
+                            int maKhachHang = Convert.ToInt32(readerDonHang["MAKHACH"]);
+                            DateTime ngayMua = Convert.ToDateTime(readerDonHang["NGAYMUA"]);
+                            string phuongThucThanhToan = readerDonHang["PHUONGTHUCTHANHTOAN"].ToString();
+                            string sanPhamDaMua = readerDonHang["SANPHAMDAMUA"].ToString(); // Lưu trữ giá trị SANPHAMDAMUA vào biến
+
+                            // 2. Lấy thông tin khách hàng từ KHACHHANG
+                            string sqlKhachHang = "SELECT * FROM KHACHHANG WHERE MAKHACH = @MAKHACH";
+                            using (SqlCommand cmdKhachHang = new SqlCommand(sqlKhachHang, connection))
+                            {
+                                cmdKhachHang.Parameters.AddWithValue("@MAKHACH", maKhachHang);
+                                using (SqlDataReader readerKhachHang = cmdKhachHang.ExecuteReader())
+                                {
+                                    if (readerKhachHang.Read())
+                                    {
+                                        // 4. Lấy thông tin sản phẩm từ HANGHOANHAPKHO
+                                        string[] tenSanPhamArray = sanPhamDaMua.Split(new[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+                                        foreach (string sanPham in tenSanPhamArray)
+                                        {
+                                            string sqlSanPham = "SELECT * FROM HANGHOANHAPKHO WHERE TENSANPHAM = @TENSANPHAM";
+                                            using (SqlCommand cmdSanPham = new SqlCommand(sqlSanPham, connection))
+                                            {
+                                                cmdSanPham.Parameters.AddWithValue("@TENSANPHAM", sanPham);
+                                                using (SqlDataReader readerSanPham = cmdSanPham.ExecuteReader())
+                                                {
+                                                    if (readerSanPham.Read())
+                                                    {
+                                                        // 3. Thêm dữ liệu vào DataTable HoaDon
+                                                        DataRow rowHoaDon = dsHoaDon.HOADON.NewRow();
+                                                        rowHoaDon["TENKHACH"] = readerKhachHang["TENKHACH"];
+                                                        rowHoaDon["SODIENTHOAI"] = readerKhachHang["SODIENTHOAI"];
+                                                        rowHoaDon["DIACHI"] = readerKhachHang["DIACHI"];
+                                                        rowHoaDon["NGAYMUA"] = ngayMua;
+                                                        rowHoaDon["PHUONGTHUCTHANHTOAN"] = phuongThucThanhToan;
+                                                        rowHoaDon["TENSANPHAM"] = sanPham;
+                                                        rowHoaDon["SOLUONG"] = readerDonHang["SOLUONG"];
+                                                        rowHoaDon["GIABAN"] = readerSanPham["GIABAN"];
+                                                        rowHoaDon["GIAMGIA"] = readerDonHang["GIAMGIA"];
+                                                        rowHoaDon["THANHTIEN"] = readerDonHang["THANHTIEN"];
+                                                        //dsHoaDon.HOADON.Rows.Add(rowHoaDon);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    // Đóng readerKhachHang sau khi sử dụng
+                                    readerKhachHang.Close();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return dsHoaDon;
         }
 
         private void GiamSoLuongSanPham()
@@ -120,7 +272,7 @@ namespace FinalProject.Form
                     foreach (CartItem item in ucDMThanhToan.cartItems)
                     {
                         string query = @"
-                            UPDATE HANGHOA 
+                            UPDATE HANGHOANHAPKHO 
                             SET SOLUONG = SOLUONG - @SoLuong 
                             WHERE TENSANPHAM = @TenSanPham";
 
@@ -208,28 +360,38 @@ namespace FinalProject.Form
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
+                    if (ucDMThanhToan.customerItems.Count > 0)
+                    {
+                        string tenKhachHang = ucDMThanhToan.customerItems[0].TenKhach;
+                        string soDienThoai = ucDMThanhToan.customerItems[0].SoDienThoai.ToString();
+                        string diaChi = ucDMThanhToan.customerItems[0].DiaChi;
+                        string gioiTinh = ucDMThanhToan.customerItems[0].GioiTinh;
+                        string loaiKhachHang = ucDMThanhToan.customerItems[0].LoaiKhachHang;
 
-                    string tenKhachHang = ucDMThanhToan.customerItems[0].TenKhach;
-                    string soDienThoai = ucDMThanhToan.customerItems[0].SoDienThoai.ToString();
-                    string diaChi = ucDMThanhToan.customerItems[0].DiaChi;
-                    string gioiTinh = ucDMThanhToan.customerItems[0].GioiTinh;
-                    string loaiKhachHang = ucDMThanhToan.customerItems[0].LoaiKhachHang;
-
-                    string query = @"
+                        string query = @"
                         INSERT INTO KHACHHANG (TENKHACH, SODIENTHOAI, DIACHI, GIOITINH, LOAIKHACHHANG)
                         VALUES (@TENKHACH, @SODIENTHOAI, @DIACHI, @GIOITINH, @LOAIKHACHHANG);
                         SELECT SCOPE_IDENTITY();";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@TENKHACH", tenKhachHang);
-                        command.Parameters.AddWithValue("@SODIENTHOAI", soDienThoai);
-                        command.Parameters.AddWithValue("@DIACHI", diaChi);
-                        command.Parameters.AddWithValue("@GIOITINH", gioiTinh);
-                        command.Parameters.AddWithValue("@LOAIKHACHHANG", loaiKhachHang);
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@TENKHACH", tenKhachHang);
+                            command.Parameters.AddWithValue("@SODIENTHOAI", soDienThoai);
+                            command.Parameters.AddWithValue("@DIACHI", diaChi);
+                            command.Parameters.AddWithValue("@GIOITINH", gioiTinh);
+                            command.Parameters.AddWithValue("@LOAIKHACHHANG", loaiKhachHang);
 
-                        maKhachHang = Convert.ToInt32(command.ExecuteScalar());
+                            maKhachHang = Convert.ToInt32(command.ExecuteScalar());
+                        }
                     }
+                    else
+                    {
+                        // Xử lý trường hợp list rỗng (ví dụ: hiển thị thông báo lỗi)
+                        MessageBox.Show("Chưa có thông tin khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return 0; // Hoặc xử lý theo logic của bạn
+                    }
+
+                    
                 }
             }
             catch (Exception ex)
@@ -237,6 +399,18 @@ namespace FinalProject.Form
                 MessageBox.Show("Lỗi khi lưu khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return maKhachHang;
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hANGHOANHAPKHOBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.hANGHOANHAPKHOBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.hoaDonDataSet);
         }
     }
 }

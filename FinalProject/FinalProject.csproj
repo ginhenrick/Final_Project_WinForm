@@ -44,10 +44,12 @@
     <Reference Include="DevExpress.ExpressApp.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Map.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Persistent.Base.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v23.2.Core" />
     <Reference Include="DevExpress.RichEdit.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v23.2.Export, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.TreeMap.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v23.2" />
     <Reference Include="DevExpress.Utils.v23.2.UI, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -157,8 +159,32 @@
     <Compile Include="Form\Form_VeChuongTrinh.Designer.cs">
       <DependentUpon>Form_VeChuongTrinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOADONBANDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HOADONBANDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonDataSet.cs">
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDonReportDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report_HoaDon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report_HoaDon.Designer.cs">
+      <DependentUpon>Report_HoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\SqlDataApdapter.cs" />
     <Compile Include="UI\uc_BCDoanhThu.cs">
       <SubType>UserControl</SubType>
@@ -264,6 +290,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report_HoaDon.resx">
+      <DependentUpon>Report_HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\uc_BCDoanhThu.resx">
+      <DependentUpon>uc_BCDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\uc_BCHangTon.resx">
       <DependentUpon>uc_BCHangTon.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +327,39 @@
       <DependentUpon>uc_HDBan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="HOADONBANDataSet.xsc">
+      <DependentUpon>HOADONBANDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HOADONBANDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HOADONBANDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HOADONBANDataSet.xss">
+      <DependentUpon>HOADONBANDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDonDataSet.xsc">
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HoaDonDataSet.xss">
+      <DependentUpon>HoaDonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDonReportDataSet.xsc">
+      <DependentUpon>HoaDonReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDonReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDonReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HoaDonReportDataSet.xss">
+      <DependentUpon>HoaDonReportDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -306,9 +371,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Report\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Banner.png" />
   </ItemGroup>

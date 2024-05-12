@@ -33,33 +33,31 @@ namespace FinalProject.UI
 
         private void LoadDanhSachHangHoa()
         {
-            string sql = @"SELECT hh.MAHANG, hh.TENSANPHAM, hh.SOLUONG, hh.MACHATLIEU, cl.TENCHATLIEU, hh.ANH, nh.GIABAN
-                    FROM HANGHOA hh
+            string sql = @"SELECT hh.MANHAPKHO, hh.MASANPHAM, hh.TENSANPHAM, hh.SOLUONG, hh.MACHATLIEU, cl.TENCHATLIEU, hh.ANH, nh.GIABAN, nh.GIANHAP
+                    FROM HANGHOANHAPKHO hh
                     INNER JOIN CHATLIEU cl ON hh.MACHATLIEU = cl.MACHATLIEU
-                    INNER JOIN NHAPHANGHOA nh ON hh.MAHANG = nh.MAHANG";
+                    INNER JOIN HANGHOANHAPKHO nh ON hh.MASANPHAM = nh.MASANPHAM";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlDataAdapter adapter = new SqlDataAdapter(sql, connection))
             {
                 System.Data.DataTable dataTable = new System.Data.DataTable();
                 adapter.Fill(dataTable);
-
-                gridControlHangHoa.DataSource = dataTable; // Assuming your GridControl is named gridControlHangHoa
-
-                // Access the GridView to configure columns
-                GridView gridView = gridViewHangHoa; // Assuming your GridView is named gridViewHangHoa
-
-                // Add columns to GridView (optional, you can customize captions and formatting)
-                gridView.Columns.Add(new GridColumn() { FieldName = "MAHANG", Caption = "Mã Hàng" });
+                gridControlHangHoa.DataSource = dataTable; 
+                GridView gridView = gridViewHangHoa; 
+                
+                gridView.Columns.Add(new GridColumn() { FieldName = "MANHAPKHO", Caption = "Mã nhập kho" });
+                gridView.Columns.Add(new GridColumn() { FieldName = "MASANPHAM", Caption = "Mã Sản Phẩm" });
                 gridView.Columns.Add(new GridColumn() { FieldName = "TENSANPHAM", Caption = "Tên Sản Phẩm" });
                 gridView.Columns.Add(new GridColumn() { FieldName = "SOLUONG", Caption = "Số lượng" });
                 gridView.Columns.Add(new GridColumn() { FieldName = "MACHATLIEU", Caption = "Mã chất liệu" });
                 gridView.Columns.Add(new GridColumn() { FieldName = "TENCHATLIEU", Caption = "Tên chất liệu" });
                 gridView.Columns.Add(new GridColumn() { FieldName = "ANH", Caption = "Ảnh" });
+                gridView.Columns.Add(new GridColumn() { FieldName = "GIANHAP", Caption = "Giá nhập" });
                 gridView.Columns.Add(new GridColumn() { FieldName = "GIABAN", Caption = "Giá bán ra" });
-                // ... (Add other columns for SOLUONG, MACHATLIEU, TENCHATLIEU, ANH, GIABAN)
+                
 
-                gridView.OptionsView.ColumnAutoWidth = true; // Auto-size columns
+                gridView.OptionsView.ColumnAutoWidth = true;
             }
         }
 

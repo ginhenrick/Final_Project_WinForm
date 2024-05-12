@@ -706,3 +706,6 @@ D:\Winforms\DNC1921_FinalProject\Final_Project_WinForm\FinalProject\obj\Debug\Fi
 D:\Winforms\DNC1921_FinalProject\Final_Project_WinForm\FinalProject\obj\Debug\FinalPro.8C09D514.Up2Date
 D:\Winforms\DNC1921_FinalProject\Final_Project_WinForm\FinalProject\obj\Debug\FinalProject.exe
 D:\Winforms\DNC1921_FinalProject\Final_Project_WinForm\FinalProject\obj\Debug\FinalProject.pdb
+D:\Winforms\DNC1921_FinalProject\Final_Project_WinForm\FinalProject\bin\Debug\DevExpress.RichEdit.v23.2.Export.dll
+D:\Winforms\DNC1921_FinalProject\Final_Project_WinForm\FinalProject\obj\Debug\FinalProject.Report_HoaDon.resources
+D:\Winforms\DNC1921_FinalProject\Final_Project_WinForm\FinalProject\obj\Debug\FinalProject.UI.uc_BCDoanhThu.resources

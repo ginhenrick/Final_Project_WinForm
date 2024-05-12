@@ -62,6 +62,10 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnThanhToanVaIn = new DevExpress.XtraEditors.SimpleButton();
+            this.hoaDonDataSet = new FinalProject.HoaDonDataSet();
+            this.hANGHOANHAPKHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hANGHOANHAPKHOTableAdapter = new FinalProject.HoaDonDataSetTableAdapters.HANGHOANHAPKHOTableAdapter();
+            this.tableAdapterManager = new FinalProject.HoaDonDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
@@ -70,6 +74,8 @@
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPhamDaMua)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hANGHOANHAPKHOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -362,11 +368,12 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(235, 30);
+            this.labelControl1.Location = new System.Drawing.Point(201, 30);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(200, 24);
+            this.labelControl1.Size = new System.Drawing.Size(244, 24);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "NỘI THẤT DNC1921";
+            this.labelControl1.Text = "CTY NỘI THẤT DNC1921";
+            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // btnHuy
             // 
@@ -387,6 +394,28 @@
             this.btnThanhToanVaIn.TabIndex = 0;
             this.btnThanhToanVaIn.Text = "Thanh Toán &\r\nIn Hóa Đơn";
             this.btnThanhToanVaIn.Click += new System.EventHandler(this.btnThanhToanVaIn_Click);
+            // 
+            // hoaDonDataSet
+            // 
+            this.hoaDonDataSet.DataSetName = "HoaDonDataSet";
+            this.hoaDonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hANGHOANHAPKHOBindingSource
+            // 
+            this.hANGHOANHAPKHOBindingSource.DataMember = "HANGHOANHAPKHO";
+            this.hANGHOANHAPKHOBindingSource.DataSource = this.hoaDonDataSet;
+            // 
+            // hANGHOANHAPKHOTableAdapter
+            // 
+            this.hANGHOANHAPKHOTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.HANGHOANHAPKHOTableAdapter = this.hANGHOANHAPKHOTableAdapter;
+            this.tableAdapterManager.KHACHHANGTableAdapter = null;
+            this.tableAdapterManager.LICHSUGIAODICHTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = FinalProject.HoaDonDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // Form_ThanhToan
             // 
@@ -412,6 +441,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPhamDaMua)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hANGHOANHAPKHOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,5 +482,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GIAMGIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOTIENDAGIAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn THANHTIEN;
+        private System.Windows.Forms.BindingSource hANGHOANHAPKHOBindingSource;
+        private HoaDonDataSet hoaDonDataSet;
+        private HoaDonDataSetTableAdapters.HANGHOANHAPKHOTableAdapter hANGHOANHAPKHOTableAdapter;
+        private HoaDonDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
